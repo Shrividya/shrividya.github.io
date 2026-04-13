@@ -544,16 +544,6 @@ a:hover { opacity: 0.75; }
 .ot-amber { background: var(--amber-bg); border-color: var(--amber); color: var(--amber); }
 
 /* ══════════════════════════════════════
-   BLOG POSTS
-══════════════════════════════════════ */
-.post-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; margin-top: 0.6rem; }
-.post-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.75rem 1rem; transition: border-color 0.2s; }
-.post-item:hover { border-color: var(--accent-af); }
-.post-date { font-family: var(--mono); font-size: 0.6rem; color: var(--text-dim); display: block; margin-bottom: 0.2rem; }
-.post-title { color: var(--heading); font-size: 0.9rem; font-weight: 500; }
-.post-excerpt { font-size: 0.76rem; color: var(--text-muted); margin-top: 0.2rem; }
-
-/* ══════════════════════════════════════
    FOOTERS
 ══════════════════════════════════════ */
 .af-footer {

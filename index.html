@@ -27,7 +27,6 @@ title: Home
       <a class="afactive" onclick="showStage(0);return false;" href="#">DAGs</a>
       <a onclick="showStage(0);return false;" href="#">Graph</a>
       <a onclick="showStage(2);return false;" href="#">Runs</a>
-      {% if site.posts.size > 0 %}<a href="/blog">Blog</a>{% endif %}
     </nav>
     <div class="af-status"><div class="dot"></div><span>Scheduler: running</span></div>
   </div>
@@ -242,19 +241,6 @@ title: Home
           <span class="otag ot-green">🌐 Women in Data</span>
         </div>
       </div>
-
-      {% if site.posts.size > 0 %}
-      <div class="sh" style="margin-top:2rem;">Recent Blog Posts</div>
-      <ul class="post-list">
-        {% for post in site.posts limit:3 %}
-        <li class="post-item">
-          <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
-          <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          {% if post.excerpt %}<p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>{% endif %}
-        </li>
-        {% endfor %}
-      </ul>
-      {% endif %}
     </main>
   </div>
   <footer class="af-footer">⭐ From <a href="https://github.com/{{ site.author.github }}">{{ site.author.name }}</a> with ❤️ &nbsp;·&nbsp; {{ site.url | remove: 'https://' }}</footer>
@@ -393,20 +379,6 @@ title: Home
       <span class="n-badge nb-teal" style="border-radius:4px;">🧑‍🏫 Mentoring</span>
       <span class="n-badge nb-amber" style="border-radius:4px;">📝 Technical Writing</span>
     </div>
-
-    {% if site.posts.size > 0 %}
-    <div class="n-sh">Recent Blog Posts</div>
-    <ul class="post-list">
-      {% for post in site.posts limit:3 %}
-      <li class="post-item">
-        <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
-        <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        {% if post.excerpt %}<p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>{% endif %}
-      </li>
-      {% endfor %}
-    </ul>
-    {% endif %}
-
   </div>
   <footer class="n-footer">⭐ From <a href="https://github.com/{{ site.author.github }}">{{ site.author.name }}</a> with ❤️ &nbsp;·&nbsp; {{ site.url | remove: 'https://' }}</footer>
 </div>
