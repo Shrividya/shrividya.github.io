@@ -1,67 +1,70 @@
-# shrividya.github.io — Jekyll Profile Site
+# shrividya.github.io — Airflow-Themed Career Profile
 
-Personal portfolio and profile site built with Jekyll, hosted on GitHub Pages.
+Personal portfolio built with Jekyll, styled as an Apache Airflow DAG scheduler UI.
 
-## 🚀 Quick Deploy (5 minutes)
+## 🚀 Deploy in 5 Minutes
 
-1. **Create the repo** on GitHub named exactly: `shrividya.github.io`
-2. **Push this folder** to the `main` branch
-3. Go to **Settings → Pages → Source → main branch / root**
-4. Your site is live at `https://shrividya.github.io` in ~2 minutes
+**Option A — GitHub web UI (no terminal needed):**
+1. Create a repo named exactly `shrividya.github.io` on GitHub
+2. Drag and drop ALL files from this folder into the repo
+3. Go to Settings → Pages → Source → `main` branch → Save
+4. Live at `https://shrividya.github.io` in ~2 minutes ✓
+
+**Option B — Git CLI:**
+```bash
+cd jekyll-final
+git init
+git remote add origin https://github.com/Shrividya/shrividya.github.io.git
+git add .
+git commit -m "Launch: Airflow-themed career profile"
+git push -u origin main
+```
+Then enable Pages in repo Settings.
 
 ---
 
-## 🏗️ Project Structure
+## 📁 File Structure
 
 ```
 shrividya.github.io/
-├── _config.yml          ← ✏️ Edit this: your name, socials, bio
-├── index.md             ← Homepage — pulls in all sections via includes
-├── Gemfile              ← Ruby dependencies (for local preview)
+├── _config.yml          ← Your info: name, email, social handles
+├── index.html           ← The full Airflow-themed profile page
+├── Gemfile              ← Ruby deps (for local preview only)
 │
 ├── _layouts/
-│   ├── default.html     ← HTML shell: head, nav, header, footer
-│   └── post.html        ← Layout for blog posts
+│   ├── default.html     ← HTML shell with SEO + JSON-LD
+│   └── post.html        ← Blog post layout
 │
-├── _includes/           ← Page sections (edit content here)
-│   ├── nav.html
-│   ├── hero.html
-│   ├── about.html       ← ✏️ Update bio text
-│   ├── writing.html     ← ✏️ Replace with your real article links
-│   ├── analytics.html
-│   ├── techstack.html
-│   ├── projects.html    ← ✏️ Add/remove project rows
-│   ├── achievements.html
-│   ├── connect.html
-│   └── footer.html
-│
-├── _posts/              ← Blog posts (Markdown files)
+├── _posts/              ← Blog posts (Markdown)
 │   └── 2025-01-15-getting-started-with-airflow.md
 │
 └── assets/
     └── css/
-        └── style.css    ← All styles
+        └── style.css    ← Full Airflow dark theme CSS
 ```
 
 ---
 
 ## ✏️ Updating Your Info
 
-Most info is in `_config.yml` — change it once, updates everywhere:
+Edit `_config.yml` — change once, updates everywhere:
 
 ```yaml
 author:
   name: "Shrividya Hegde"
+  email: "shrividyahegde222@gmail.com"
   github: "Shrividya"
   linkedin: "shrividya-hegde-shri-91562365"
-  # ...etc
+  medium: "@shrihegde"
+  substack: "@shrividyahegde"
+  youtube: "@shrividyahegde3119"
 ```
 
 ---
 
-## 📝 Writing a New Blog Post
+## 📝 Adding Blog Posts
 
-Create a file in `_posts/` named: `YYYY-MM-DD-your-post-title.md`
+Create `_posts/YYYY-MM-DD-your-title.md`:
 
 ```markdown
 ---
@@ -71,40 +74,46 @@ date: 2025-03-01
 tags: [airflow, python]
 ---
 
-Your content here in Markdown...
+Your content here...
 ```
 
-The post automatically appears in the Blog section on the homepage.
+Posts auto-appear in the "Recent Blog Posts" section on the homepage.
 
 ---
 
-## 💻 Local Preview
+## 💻 Local Preview (optional)
 
-Requires Ruby. Install once:
+Requires Ruby 3.2+ (see rbenv setup if needed):
 
 ```bash
 gem install bundler
 bundle install
-```
-
-Then to preview:
-
-```bash
 bundle exec jekyll serve
 # Open http://localhost:4000
 ```
 
 ---
 
-## 🌐 Custom Domain (Optional)
+## 🌐 Custom Domain (optional)
 
-1. Buy a domain (e.g. `shrividya.dev`) — ~$12/year
-2. Add a `CNAME` file to this repo containing: `shrividya.dev`
-3. In your domain registrar, add these DNS records:
+1. Buy a domain e.g. `shrividya.dev` (~$12/yr)
+2. Add a `CNAME` file containing: `shrividya.dev`
+3. Add DNS A records at your registrar:
    ```
-   A     185.199.108.153
-   A     185.199.109.153
-   A     185.199.110.153
-   A     185.199.111.153
+   185.199.108.153
+   185.199.109.153
+   185.199.110.153
+   185.199.111.153
    ```
-4. In GitHub Settings → Pages → Custom domain → enter your domain
+4. GitHub Settings → Pages → Custom domain → enter domain
+
+---
+
+## 🎨 Theme Notes
+
+The site is styled as an Apache Airflow UI:
+- **Top bar** mimics Airflow's navigation
+- **Left sidebar** shows DAG runs as your career timeline (years)
+- **Task graph** shows your career as a pipeline: Ingest → Transform → Validate → AI/RAG → Serve
+- **Each stage** opens with log output, stats, and task instance tables
+- **Scheduler dot** pulses green — always running!

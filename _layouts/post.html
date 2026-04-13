@@ -1,18 +1,14 @@
 ---
 layout: default
 ---
-
-<article class="post-content">
-  <h1>{{ page.title }}</h1>
-  <p class="post-meta">
+<div style="max-width:800px;margin:2rem auto;padding:0 1.5rem;font-family:'DM Sans',sans-serif;color:#c9d1d9;">
+  <div style="margin-bottom:1rem;">
+    <a href="{{ '/' | relative_url }}" style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:#017cee;">← Back to DAGs</a>
+  </div>
+  <h1 style="font-family:'JetBrains Mono',monospace;font-size:1.3rem;color:#e8f4ff;margin-bottom:0.5rem;">{{ page.title }}</h1>
+  <p style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:#555;margin-bottom:2rem;">
     <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
     {% if page.tags %} · {{ page.tags | join: " · " }}{% endif %}
   </p>
-
-  {{ content }}
-
-  <hr/>
-  <p style="font-size:0.88rem;color:var(--text-muted);">
-    ← <a href="{{ '/' | relative_url }}">Back to home</a>
-  </p>
-</article>
+  <div style="line-height:1.8;">{{ content }}</div>
+</div>
