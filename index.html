@@ -1,0 +1,440 @@
+---
+layout: default
+title: Home
+---
+
+<!-- THEME TOGGLE BAR -->
+<div class="toggle-bar">
+  <span class="toggle-label">// view mode</span>
+  <div class="toggle-wrap">
+    <button class="theme-opt active" id="btn-airflow" onclick="switchTheme('airflow')">⚡ Airflow DAG</button>
+    <button class="theme-opt" id="btn-normal" onclick="switchTheme('normal')">👤 Normal Profile</button>
+  </div>
+  <span class="toggle-hint">new to Airflow? try Normal →</span>
+</div>
+
+<!-- ==================== AIRFLOW VIEW ==================== -->
+<div id="view-airflow">
+  <div class="af-topbar">
+    <div class="af-logo">
+      <div class="logo-icon">SH</div>
+      <span class="logo-text">Shrividya Hegde</span>
+      <span class="ver">v3.0</span>
+    </div>
+    <nav class="af-nav" aria-label="Pipeline navigation">
+      <a class="afactive" onclick="showStage(0);return false;" href="#">DAGs</a>
+      <a onclick="showStage(0);return false;" href="#">Graph</a>
+      <a onclick="showStage(2);return false;" href="#">Runs</a>
+      {% if site.posts.size > 0 %}<a href="/blog">Blog</a>{% endif %}
+    </nav>
+    <div class="af-status"><div class="dot"></div><span>Scheduler: running</span></div>
+  </div>
+
+  <div class="af-breadcrumb">
+    <span class="crumb">Career Pipeline</span><span class="sep">›</span>
+    <span class="crumb active">shrividya_career_pipeline</span><span class="sep">›</span>
+    <span class="crumb">Graph View</span>
+  </div>
+
+  <div class="dag-header">
+    <div class="dag-id">shrividya_career_pipeline <span class="dag-badge">ACTIVE</span></div>
+    <div class="dag-meta">
+      <div class="dag-meta-item">Schedule: <span>@yearly</span></div>
+      <div class="dag-meta-item">Owner: <span>{{ site.author.name | downcase | replace: ' ', '.' }}</span></div>
+      <div class="dag-meta-item">Last Run: <span>2025-11-01 ✓ success</span></div>
+      <div class="dag-meta-item">Location: <span>Parsippany, NJ 🇺🇸 (since Nov 2024)</span></div>
+      <div class="dag-meta-item">Tags: <span>data-engineering, ai, airflow, career</span></div>
+      <div class="dag-meta-item">Number of runs: <span id="af-views"><img src="https://komarev.com/ghpvc/?username=Shrividya&amp;style=for-the-badge&amp;color=abd200" alt="profile views" style="vertical-align:middle;"/></span></div>
+    </div>
+  </div>
+
+  <div class="state-legend">
+    <span class="state-pill s-success">● success</span>
+    <span class="state-pill s-running">● running</span>
+    <span class="legend-hint">Click a task node or DAG run to inspect</span>
+  </div>
+
+  <div class="af-body">
+    <aside class="af-sidebar">
+      <div class="sidebar-label">DAG Runs</div>
+      <div class="run-item" onclick="showStage(0)" id="run0"><div class="run-year">2014–2020</div><div class="run-company">TCS · KPMG · CBA</div><div class="run-state"><div class="run-dot" style="background:#00b452;"></div><span class="run-label" style="color:#00b452;">success</span></div></div>
+      <div class="run-item" onclick="showStage(1)" id="run1"><div class="run-year">2022–2025</div><div class="run-company">Astronomer</div><div class="run-state"><div class="run-dot" style="background:#00b452;"></div><span class="run-label" style="color:#00b452;">success</span></div></div>
+      <div class="run-item" onclick="showStage(1)" id="run2"><div class="run-year">2026–now</div><div class="run-company">Apache OSS</div><div class="run-state"><div class="run-dot" style="background:#017cee;"></div><span class="run-label" style="color:#017cee;">running</span></div></div>
+      <div class="run-item" onclick="showStage(2)" id="run3"><div class="run-year">Certs</div><div class="run-company">2024–2026</div><div class="run-state"><div class="run-dot" style="background:#00b452;"></div><span class="run-label" style="color:#00b452;">success</span></div></div>
+      <div class="run-item" onclick="showStage(3)" id="run4"><div class="run-year">AI / RAG</div><div class="run-company">Projects</div><div class="run-state"><div class="run-dot" style="background:#017cee;"></div><span class="run-label" style="color:#017cee;">running</span></div></div>
+      <div class="run-item" onclick="showStage(4)" id="run5"><div class="run-year">Community</div><div class="run-company">Serve layer</div><div class="run-state"><div class="run-dot" style="background:#017cee;"></div><span class="run-label" style="color:#017cee;">running</span></div></div>
+      <div class="sidebar-label" style="margin-top:0.75rem;">Stats</div>
+      <div class="sidebar-stats"><div>Tasks: <span>24</span></div><div>Success: <span style="color:#00b452;">18</span></div><div>Running: <span style="color:#017cee;">6</span></div><div>Duration: <span>12 yrs</span></div></div>
+    </aside>
+
+    <main class="af-content" id="main-content" role="main">
+      <div class="graph-wrap">
+        <div class="graph-label">Task Graph — shrividya_career_pipeline</div>
+        <div class="graph-row">
+          <div class="task-node success" onclick="showStage(0)">ingest_sdet_roots</div><div class="task-arrow">▶</div>
+          <div class="task-node success" onclick="showStage(1)">transform_astronomer</div><div class="task-arrow">▶</div>
+          <div class="task-node success" onclick="showStage(2)">validate_certs_oss</div><div class="task-arrow">▶</div>
+          <div class="task-node running" onclick="showStage(3)">ai_rag_projects</div><div class="task-arrow">▶</div>
+          <div class="task-node running" onclick="showStage(4)">serve_community</div>
+        </div>
+      </div>
+      <div class="hint">▲ click a task node or DAG run on the left to inspect</div>
+
+      <!-- STAGE 0 -->
+      <div class="stage-panel" id="stage0">
+        <div class="sh">ingest_sdet_roots &nbsp;<span class="state-pill s-success" style="font-size:0.55rem;">● success</span></div>
+        <div class="stage-header"><span class="stage-icon">📥</span><div><div class="stage-title">INGEST — SDET & QA Engineering Roots</div><div class="stage-sub">8 years building quality-first foundations across TCS, KPMG, and CBA</div></div></div>
+        <div class="log-box">
+          <span class="log-line"><span class="log-ts">[2014-06-01]</span> <span class="log-info">INFO</span> TCS joined — Bengaluru, IN → Sydney, AU</span>
+          <span class="log-line"><span class="log-ts">[2016-06-01]</span> <span class="log-ok">INFO</span> Promoted: ASE Trainee → IT Analyst</span>
+          <span class="log-line"><span class="log-ts">[2020-04-01]</span> <span class="log-warn">INFO</span> KPMG transition — Automation Specialist</span>
+          <span class="log-line"><span class="log-ts">[2021-05-01]</span> <span class="log-ok">INFO</span> CBA onboarded — Core Payments Data</span>
+          <span class="log-line"><span class="log-ts">[2022-02-01]</span> <span class="log-ok">INFO</span> Task complete. Duration: 8 yrs. Exit code: 0</span>
+        </div>
+        <div class="stat-row">
+          <div class="stat"><div class="sv">8+</div><div class="sl">Yrs SDET</div></div>
+          <div class="stat"><div class="sv">4</div><div class="sl">Companies</div></div>
+          <div class="stat"><div class="sv">50%</div><div class="sl">Effort ↓ TCS</div></div>
+          <div class="stat"><div class="sv">95%</div><div class="sl">Coverage CBA</div></div>
+        </div>
+        <div class="sh">Task Instances</div>
+        <table class="ti-table">
+          <thead><tr><th>Run ID</th><th>Company</th><th>Role & Stack</th><th>Dur</th><th>State</th></tr></thead>
+          <tbody>
+            <tr><td><span class="run-id">manual__2014-06-01</span></td><td>TCS <span class="award-chip">🏅 ×5</span></td><td style="font-size:0.72rem;color:#8b949e;">SE / IT Analyst · Sydney & Bangalore · Banking & Finance · CI/CD · SQL · Selenium · Java · Python</td><td><span class="ti-dur">6 yrs</span></td><td><span class="ti-state s-success">● success</span></td></tr>
+            <tr><td><span class="run-id">manual__2020-05-01</span></td><td>KPMG India</td><td style="font-size:0.72rem;color:#8b949e;">Automation Specialist · SAP S/4 HANA · BrowserStack · Appium · 4+ teams</td><td><span class="ti-dur">1 yr</span></td><td><span class="ti-state s-success">● success</span></td></tr>
+            <tr><td><span class="run-id">manual__2021-05-01</span></td><td>CBA <span class="award-chip">🏅 Best Partner</span></td><td style="font-size:0.72rem;color:#8b949e;">Sr Test Automation — Core Payments · 95% coverage · microservices</td><td><span class="ti-dur">9 mo</span></td><td><span class="ti-state s-success">● success</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- STAGE 1 -->
+      <div class="stage-panel" id="stage1">
+        <div class="sh">transform_astronomer &nbsp;<span class="state-pill s-success" style="font-size:0.55rem;">● success</span> &nbsp;<span class="state-pill s-running" style="font-size:0.55rem;">● running (OSS)</span></div>
+        <div class="stage-header"><span class="stage-icon">⚙️</span><div><div class="stage-title">TRANSFORM — Astronomer & Apache Airflow</div><div class="stage-sub">Where raw SDET experience was transformed into full-stack AI Data Engineering</div></div></div>
+        <div class="log-box">
+          <span class="log-line"><span class="log-ts">[2022-03-01]</span> <span class="log-info">INFO</span> Joined Astronomer — Bengaluru, India (Remote)</span>
+          <span class="log-line"><span class="log-ts">[2022-09-01]</span> <span class="log-ok">INFO</span> ETL/ELT pipelines live — GCP, Azure, AWS · delivery ↓ 20%</span>
+          <span class="log-line"><span class="log-ts">[2023-06-01]</span> <span class="log-ok">INFO</span> RAG pipeline deployed — LangChain + ChromaDB · productivity ↑ 40%</span>
+          <span class="log-line"><span class="log-ts">[2024-11-01]</span> <span class="log-ok">INFO</span> 🇺🇸 Relocated: Bengaluru, IN → Parsippany, NJ, USA</span>
+          <span class="log-line"><span class="log-ts">[2026-01-01]</span> <span class="log-ok">INFO</span> 🏆 Airflow Champion awarded by Astronomer</span>
+          <span class="log-line"><span class="log-ts">[2026-03-01]</span> <span class="log-info">INFO</span> Apache OSS — 7 PRs merged — task still running...</span>
+        </div>
+        <div class="stat-row">
+          <div class="stat"><div class="sv">3+</div><div class="sl">Yrs</div></div>
+          <div class="stat"><div class="sv">30%</div><div class="sl">Throughput ↑</div></div>
+          <div class="stat"><div class="sv">60%</div><div class="sl">Infra cost ↓</div></div>
+          <div class="stat"><div class="sv">40%</div><div class="sl">Dev prod ↑</div></div>
+          <div class="stat"><div class="sv">7</div><div class="sl">OSS PRs</div></div>
+        </div>
+        <div class="sh">Task Instances</div>
+        <table class="ti-table">
+          <thead><tr><th>Run ID</th><th>Task</th><th>Details</th><th>State</th></tr></thead>
+          <tbody>
+            <tr><td><span class="run-id">scheduled__2022-03-01</span></td><td style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#e8f4ff;">Astronomer Sr SWE<br><span style="color:#555;font-size:0.6rem;">Mar 2022 – Nov 2025 · Bengaluru → NJ (Nov 2024)</span></td><td style="font-size:0.72rem;color:#8b949e;">Astro Observe · Airflow DAGs · Python · Cloud SDKs · Kubernetes · RAG · LangChain</td><td><span class="ti-state s-success">● success</span></td></tr>
+            <tr><td><span class="run-id">scheduled__2026-03-01</span></td><td style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#017cee;">Apache OSS Contributor<br><span style="color:#555;font-size:0.6rem;">Mar 2026 – present</span></td><td style="font-size:0.72rem;color:#8b949e;">Airflow 3 · Dynamic task mapping · Scheduler improvements · 7 merged PRs</td><td><span class="ti-state s-running">● running</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- STAGE 2 -->
+      <div class="stage-panel" id="stage2">
+        <div class="sh">validate_certs_oss &nbsp;<span class="state-pill s-success" style="font-size:0.55rem;">● success</span></div>
+        <div class="stage-header"><span class="stage-icon">✅</span><div><div class="stage-title">VALIDATE — Certifications & Recognition</div><div class="stage-sub">11 certifications, Airflow Champion, 7 merged OSS PRs — all checks passed</div></div></div>
+        <div class="log-box">
+          <span class="log-line"><span class="log-ts">[2025-03-01]</span> <span class="log-ok">PASS</span> Airflow 2 Fundamentals — Astronomer ✓</span>
+          <span class="log-line"><span class="log-ts">[2025-06-01]</span> <span class="log-ok">PASS</span> AWS Cloud Practitioner ✓ · Airflow 3 Fundamentals ✓</span>
+          <span class="log-line"><span class="log-ts">[2026-01-01]</span> <span class="log-ok">PASS</span> 🏆 Astronomer Champions Program ✓ · All checks passed.</span>
+        </div>
+        <div class="stat-row">
+          <div class="stat"><div class="sv">11</div><div class="sl">Certs</div></div>
+          <div class="stat"><div class="sv">7</div><div class="sl">OSS PRs</div></div>
+          <div class="stat"><div class="sv">Jan 2026</div><div class="sl">Champion</div></div>
+          <div class="stat"><div class="sv">9.06</div><div class="sl">BE CGPA</div></div>
+        </div>
+        <div class="sh">Certifications</div>
+        <div class="cert-grid">
+          <div class="cert-card"><span class="cert-icon">🏆</span><div><div class="cert-name">Astronomer Champions Program</div><div class="cert-org">Astronomer</div><div class="cert-date">Jan 2026</div></div></div>
+          <div class="cert-card"><span class="cert-icon">☁️</span><div><div class="cert-name">AWS Certified Cloud Practitioner</div><div class="cert-org">Amazon Web Services</div><div class="cert-date">Jun 2025</div></div></div>
+          <div class="cert-card"><span class="cert-icon">✈️</span><div><div class="cert-name">DAG Authoring — Airflow 3</div><div class="cert-org">Astronomer</div><div class="cert-date">Jun 2025</div></div></div>
+          <div class="cert-card"><span class="cert-icon">✈️</span><div><div class="cert-name">Airflow 3 Fundamentals</div><div class="cert-org">Astronomer</div><div class="cert-date">Jun 2025</div></div></div>
+          <div class="cert-card"><span class="cert-icon">✈️</span><div><div class="cert-name">DAG Authoring — Airflow 2</div><div class="cert-org">Astronomer</div><div class="cert-date">May 2025</div></div></div>
+          <div class="cert-card"><span class="cert-icon">✈️</span><div><div class="cert-name">Airflow 2 Fundamentals</div><div class="cert-org">Astronomer</div><div class="cert-date">Mar 2025</div></div></div>
+          <div class="cert-card"><span class="cert-icon">🤖</span><div><div class="cert-name">Generative AI Fundamentals</div><div class="cert-org">Databricks Academy</div><div class="cert-date">Mar 2025</div></div></div>
+          <div class="cert-card"><span class="cert-icon">🤖</span><div><div class="cert-name">AI Fundamentals</div><div class="cert-org">DataCamp</div><div class="cert-date">2025</div></div></div>
+          <div class="cert-card"><span class="cert-icon">☕</span><div><div class="cert-name">Java Certified</div><div class="cert-org">HackerRank</div></div></div>
+          <div class="cert-card"><span class="cert-icon">🧪</span><div><div class="cert-name">Certified Selenium Professional</div><div class="cert-org">Vskills</div></div></div>
+          <div class="cert-card"><span class="cert-icon">🎓</span><div><div class="cert-name">WES Canadian Credentials</div><div class="cert-org">WES</div></div></div>
+        </div>
+        <div class="sh">Education</div>
+        <table class="ti-table" style="margin-top:0.4rem;">
+          <thead><tr><th>Institution</th><th>Degree</th><th>CGPA</th><th>Year</th></tr></thead>
+          <tbody><tr><td style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:#e8f4ff;">Malnad College of Engineering</td><td style="font-size:0.72rem;">BE — Computer Science & Engineering</td><td><span style="color:#00b452;font-family:'JetBrains Mono',monospace;font-weight:700;">9.06</span></td><td><span class="ti-dur">2010–2014</span></td></tr></tbody>
+        </table>
+      </div>
+
+      <!-- STAGE 3 -->
+      <div class="stage-panel" id="stage3">
+        <div class="sh">ai_rag_projects &nbsp;<span class="state-pill s-running" style="font-size:0.55rem;">● running</span></div>
+        <div class="stage-header"><span class="stage-icon">🧠</span><div><div class="stage-title">AI / RAG — Projects & Conference Talks</div><div class="stage-sub">Production AI systems, LLM pipelines, and community speaking</div></div></div>
+        <div class="log-box">
+          <span class="log-line"><span class="log-ts">[2024-06-01]</span> <span class="log-ok">INFO</span> Resume RAG deployed — FAISS + OpenAI API</span>
+          <span class="log-line"><span class="log-ts">[2025-01-01]</span> <span class="log-ok">INFO</span> Article Insights NLP pipeline — Airflow 3 live</span>
+          <span class="log-line"><span class="log-ts">[2025-06-01]</span> <span class="log-ok">INFO</span> Stock Sentiment Analyzer — Dockerized + CI/CD deployed</span>
+          <span class="log-line"><span class="log-ts">[2026-04-12]</span> <span class="log-info">INFO</span> Task still running — more projects in queue...</span>
+        </div>
+        <div class="sh">Featured Projects</div>
+        <div class="proj-grid">
+          <div class="pcard"><span class="ptag">NLP · Airflow 3</span><div class="ptitle">Article Insights NLP Pipeline</div><div class="pdesc">Airflow 3 NLP pipeline — keyword extraction, summarization, sentiment, NER, readability scoring.</div><div class="pstack">Airflow 3 · Python · NLTK · TextBlob</div><a class="plink" href="https://github.com/{{ site.author.github }}/article-insights-pipeline" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
+          <div class="pcard"><span class="ptag">RAG · LangChain</span><div class="ptitle">Resume Analyser RAG</div><div class="pdesc">LangChain + FAISS RAG answering natural language questions about uploaded resumes via OpenAI.</div><div class="pstack">LangChain · FAISS · OpenAI · Python</div><a class="plink" href="https://github.com/{{ site.author.github }}/article-insights-pipeline/tree/main/rag_resume" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
+          <div class="pcard"><span class="ptag">MLOps · Streamlit</span><div class="ptitle">Stock Sentiment Analyzer</div><div class="pdesc">Live stock + news sentiment dashboard, Dockerized with GitHub Actions CI/CD.</div><div class="pstack">Streamlit · TextBlob · yFinance · Docker</div><a class="plink" href="https://github.com/{{ site.author.github }}/SentimentAnalysis" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
+          <div class="pcard"><span class="ptag">Gen AI · OpenAI</span><div class="ptitle">OpenAI Sample Chatbot</div><div class="pdesc">Chatbot with prompt engineering, context management, OpenAI API patterns.</div><div class="pstack">OpenAI API · Python · Prompt Engineering</div><a class="plink" href="https://github.com/{{ site.author.github }}/OpenAISampleProject" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
+        </div>
+        <div class="sh">Conference & Speaking</div>
+        <div class="speak-card">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:#e8f4ff;margin-bottom:0.3rem;">Topics: Apache Airflow · Data Engineering · Generative AI · RAG · Women in Tech</div>
+          <div style="font-size:0.72rem;color:#8b949e;margin-bottom:0.6rem;">View full talk history, accepted sessions and proposals on Sessionize.</div>
+          <a class="plink" href="https://sessionize.com/shrividya-hegde" target="_blank" rel="noopener noreferrer">🎤 Sessionize Profile →</a>
+        </div>
+      </div>
+
+      <!-- STAGE 4 -->
+      <div class="stage-panel" id="stage4">
+        <div class="sh">serve_community &nbsp;<span class="state-pill s-running" style="font-size:0.55rem;">● running</span></div>
+        <div class="stage-header"><span class="stage-icon">🚀</span><div><div class="stage-title">SERVE — Community, Content & Connect</div><div class="stage-sub">The output layer — where knowledge and experience are published to the world</div></div></div>
+        <div class="log-box">
+          <span class="log-line"><span class="log-ts">[2025-03-01]</span> <span class="log-ok">INFO</span> Women in Data NJ Chapter Lead — activated</span>
+          <span class="log-line"><span class="log-ts">[2025-06-01]</span> <span class="log-ok">INFO</span> Data Engineering Byte — Content Expert onboarded</span>
+          <span class="log-line"><span class="log-ts">[2025-12-01]</span> <span class="log-ok">INFO</span> Medium: 5 articles · Substack: active · YouTube: active</span>
+          <span class="log-line"><span class="log-ts">[2026-04-12]</span> <span class="log-info">INFO</span> serve_community running — output: open to opportunities</span>
+        </div>
+        <div class="sh">Community Leadership</div>
+        <div class="two-col">
+          <div class="scard feat"><div class="sc-plat">👩‍💼 Women in Data™</div><div class="sc-handle">NJ Chapter Lead · Mar 2025–present</div><div class="sc-desc">Organizing events, fostering local data community. Bootcamps: SQL, Python, PySpark, applied ML.</div></div>
+          <div class="scard feat"><div class="sc-plat">📊 Data Engineering Byte</div><div class="sc-handle">Content Expert</div><div class="sc-desc">Expert content on Apache Airflow, modern data stack, and AI pipeline patterns.</div></div>
+        </div>
+        <div class="sh">Technical Writing — Medium</div>
+        <div class="art-grid">
+          <div class="acard"><span class="atag">AI</span><div class="atitle">The 4 AI Concepts Every AI Developer Should Know</div><div class="apub">Stackademic</div><a class="alink" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
+          <div class="acard"><span class="atag">DevOps</span><div class="atitle">How Kubernetes Is Quietly Draining Your Cloud Budget</div><div class="apub">DevSecOps Community</div><a class="alink" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
+          <div class="acard"><span class="atag">Data Eng</span><div class="atitle">Linux 101 for Data Engineers</div><div class="apub">Medium · Jan 2026</div><a class="alink" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
+          <div class="acard"><span class="atag">Python</span><div class="atitle">Practical Uses of Python Lambda Functions</div><div class="apub">Python in Plain English · Jan 2026</div><a class="alink" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
+          <div class="acard"><span class="atag">Python</span><div class="atitle">10 Python Snippets That Make Coding Easier</div><div class="apub">Medium · Dec 2025</div><a class="alink" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
+        </div>
+        <div class="sh">Find Me Online</div>
+        <div class="serve-grid">
+          <div class="scard feat"><div class="sc-plat">💼 LinkedIn</div><div class="sc-handle">{{ site.author.name }}</div><div class="sc-desc">Career history, posts on Data Engineering & AI.</div><a class="sc-link" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" target="_blank" rel="noopener noreferrer">Connect →</a></div>
+          <div class="scard"><div class="sc-plat">🐙 GitHub</div><div class="sc-handle">@{{ site.author.github }}</div><div class="sc-desc">16+ repos — Airflow, NLP, RAG, OSS contributions.</div><a class="sc-link" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer">View →</a></div>
+          <div class="scard"><div class="sc-plat">✍️ Medium</div><div class="sc-handle">{{ site.author.medium }}</div><div class="sc-desc">5 articles on AI, Data Engineering, Python.</div><a class="sc-link" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
+          <div class="scard"><div class="sc-plat">📬 Substack</div><div class="sc-handle">{{ site.author.substack }}</div><div class="sc-desc">Newsletter — GenAI, Airflow, modern data stack.</div><a class="sc-link" href="https://substack.com/{{ site.author.substack }}" target="_blank" rel="noopener noreferrer">Subscribe →</a></div>
+          <div class="scard"><div class="sc-plat">▶️ YouTube</div><div class="sc-handle">{{ site.author.youtube }}</div><div class="sc-desc">Tutorials on Airflow, Data Engineering, AI/ML.</div><a class="sc-link" href="https://www.youtube.com/{{ site.author.youtube }}" target="_blank" rel="noopener noreferrer">Watch →</a></div>
+          <div class="scard"><div class="sc-plat">📧 Email</div><div class="sc-handle">{{ site.author.email }}</div><div class="sc-desc">Roles, collaboration, speaking, mentoring.</div><a class="sc-link" href="mailto:{{ site.author.email }}">Email →</a></div>
+        </div>
+        <div class="sh">Open For</div>
+        <div class="tag-row">
+          <span class="otag ot-green">💼 Hiring — Open</span>
+          <span class="otag ot-blue">🤝 Collaboration</span>
+          <span class="otag ot-purple">🎤 Speaking</span>
+          <span class="otag ot-blue">🧑‍🏫 Mentoring</span>
+          <span class="otag ot-amber">📝 Technical Writing</span>
+          <span class="otag ot-green">🌐 Women in Data</span>
+        </div>
+      </div>
+
+      {% if site.posts.size > 0 %}
+      <div class="sh" style="margin-top:2rem;">Recent Blog Posts</div>
+      <ul class="post-list">
+        {% for post in site.posts limit:3 %}
+        <li class="post-item">
+          <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
+          <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          {% if post.excerpt %}<p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </main>
+  </div>
+  <footer class="af-footer">⭐ From <a href="https://github.com/{{ site.author.github }}">{{ site.author.name }}</a> with ❤️ &nbsp;·&nbsp; {{ site.url | remove: 'https://' }}</footer>
+</div>
+
+<!-- ==================== NORMAL VIEW ==================== -->
+<div id="view-normal">
+  <div class="n-hero">
+    <div class="n-avatar">SH</div>
+    <div class="n-name">{{ site.author.name }}</div>
+    <div class="n-title">Senior AI Data Engineer · Apache Airflow Champion · OSS Contributor</div>
+    <div class="n-location">📍 Parsippany, NJ 🇺🇸 &nbsp;·&nbsp; Relocated from Bengaluru, IN (Nov 2024)</div>
+    <div class="n-views">👁 Profile views: <img src="https://komarev.com/ghpvc/?username=Shrividya&amp;style=for-the-badge&amp;color=abd200" alt="profile views" style="vertical-align:middle;"/></div>
+    <div class="n-bio">10+ years of experience in data engineering, AI/ML, and test automation. Building production-grade Apache Airflow pipelines, RAG systems, and Generative AI workflows at Astronomer. NJ Chapter Lead for Women in Data™.</div>
+    <div class="n-badges">
+      <span class="n-badge nb-teal">🏆 Airflow Champion 2026</span>
+      <span class="n-badge nb-blue">5× Astronomer Certified</span>
+      <span class="n-badge nb-green">AWS Certified</span>
+      <span class="n-badge nb-purple">Women in Data NJ Lead</span>
+      <span class="n-badge nb-amber">7 OSS PRs Merged</span>
+    </div>
+    <div class="n-socials">
+      <a class="n-social-btn" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
+      <a class="n-social-btn" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
+      <a class="n-social-btn" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">✍️ Medium</a>
+      <a class="n-social-btn" href="https://substack.com/{{ site.author.substack }}" target="_blank" rel="noopener noreferrer">📬 Substack</a>
+      <a class="n-social-btn" href="https://www.youtube.com/{{ site.author.youtube }}" target="_blank" rel="noopener noreferrer">▶️ YouTube</a>
+      <a class="n-social-btn" href="mailto:{{ site.author.email }}">📧 Email</a>
+    </div>
+  </div>
+
+  <div class="n-main">
+    <div class="n-sh">GitHub Analytics</div>
+    <div class="gh-stats">
+      <img src="https://github-readme-stats-fl2ozbqve-shrividya-hegdes-projects.vercel.app/api?username={{ site.author.github }}&amp;show_icons=true&amp;theme=merko&amp;hide_border=true&amp;bg_color=0d1117&amp;title_color=abd200&amp;icon_color=abd200&amp;text_color=ffffff&amp;count_private=true&amp;include_all_commits=true" alt="GitHub stats"/>
+      <img src="https://github-readme-stats-fl2ozbqve-shrividya-hegdes-projects.vercel.app/api/top-langs?username={{ site.author.github }}&amp;layout=compact&amp;theme=merko&amp;hide_border=true&amp;bg_color=0d1117&amp;title_color=abd200&amp;text_color=ffffff" alt="Top languages"/>
+    </div>
+    <div style="text-align:center;margin-top:0.75rem;">
+      <img src="https://github-readme-streak-stats-xi-topaz.vercel.app?user={{ site.author.github }}&amp;theme=merko&amp;hide_border=true&amp;background=0d1117&amp;ring=abd200&amp;fire=abd200&amp;currStreakLabel=abd200" alt="GitHub streak" style="max-width:100%;"/>
+    </div>
+
+    <div class="n-sh">Experience</div>
+    <div class="n-timeline">
+      <div class="n-tcard hi">
+        <div class="n-tc-top"><span class="n-tc-co">Apache Software Foundation</span><span class="n-tc-dt">Mar 2026 – present</span></div>
+        <div class="n-tc-role">Apache Airflow Open-Source Contributor · Remote</div>
+        <ul class="n-bullets">
+          <li>7 merged PRs — code improvements, bug fixes, documentation enhancements</li>
+          <li>Recognized as <strong style="color:#00897b;">Airflow Champion (Jan 2026)</strong> by Astronomer</li>
+          <li>Contributing to Airflow 3 — dynamic task mapping and scheduler improvements</li>
+        </ul>
+      </div>
+      <div class="n-tcard hi">
+        <div class="n-tc-top"><span class="n-tc-co">Astronomer</span><span class="n-tc-dt">Mar 2022 – Nov 2025</span></div>
+        <div class="n-tc-role">Senior Software Engineer — Astro Observe · Bengaluru (Remote) → Parsippany, NJ (Nov 2024)</div>
+        <ul class="n-bullets">
+          <li>Cloud-native data pipeline frameworks using Airflow DAGs, Python, and cloud SDKs — throughput ↑ 30%</li>
+          <li>RAG pipelines using LangChain + ChromaDB — developer productivity ↑ 40%</li>
+          <li>Automated cloud resource lifecycle — infrastructure costs ↓ 60%</li>
+        </ul>
+      </div>
+      <div class="n-tcard">
+        <div class="n-tc-top"><span class="n-tc-co">Commonwealth Bank (CBA)</span><span class="n-tc-dt">May 2021 – Feb 2022</span></div>
+        <div class="n-tc-role">Senior Test Automation Engineer — Core Payments Data · Bangalore, India</div>
+        <ul class="n-bullets"><li>95% automation coverage · costs ↓ 15% <span class="n-award">🏅 Best Partner Award</span></li></ul>
+      </div>
+      <div class="n-tcard">
+        <div class="n-tc-top"><span class="n-tc-co">KPMG India</span><span class="n-tc-dt">May 2020 – May 2021</span></div>
+        <div class="n-tc-role">Consultant — Automation Specialist · Bengaluru, India</div>
+        <ul class="n-bullets"><li>Automation across 4+ teams · manual QA ↓ 25% · SAP S/4 HANA PoC</li></ul>
+      </div>
+      <div class="n-tcard">
+        <div class="n-tc-top"><span class="n-tc-co">Tata Consultancy Services (TCS)</span><span class="n-tc-dt">Jun 2014 – Apr 2020</span></div>
+        <div class="n-tc-role">Software Engineer / IT Analyst · Sydney, AU & Bangalore, IN</div>
+        <ul class="n-bullets">
+          <li>Banking & Finance automation · manual testing ↓ 50% · deployment freq ↑ 35%</li>
+          <li>Service Commitment Award <span class="n-award">🏅</span> · On the Spot Award <span class="n-award">🏅 ×3</span> · National Debate 1st Prize <span class="n-award">🏅</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="n-sh">Certifications</div>
+    <div class="n-cert-grid">
+      <div class="n-cert-card"><span class="cert-icon">🏆</span><div><div class="cert-name">Astronomer Champions Program</div><div class="cert-org">Astronomer · Jan 2026</div></div></div>
+      <div class="n-cert-card"><span class="cert-icon">☁️</span><div><div class="cert-name">AWS Cloud Practitioner</div><div class="cert-org">Amazon Web Services · Jun 2025</div></div></div>
+      <div class="n-cert-card"><span class="cert-icon">✈️</span><div><div class="cert-name">DAG Authoring — Airflow 3</div><div class="cert-org">Astronomer · Jun 2025</div></div></div>
+      <div class="n-cert-card"><span class="cert-icon">✈️</span><div><div class="cert-name">Airflow 3 Fundamentals</div><div class="cert-org">Astronomer · Jun 2025</div></div></div>
+      <div class="n-cert-card"><span class="cert-icon">✈️</span><div><div class="cert-name">DAG Authoring — Airflow 2</div><div class="cert-org">Astronomer · May 2025</div></div></div>
+      <div class="n-cert-card"><span class="cert-icon">✈️</span><div><div class="cert-name">Airflow 2 Fundamentals</div><div class="cert-org">Astronomer · Mar 2025</div></div></div>
+      <div class="n-cert-card"><span class="cert-icon">🤖</span><div><div class="cert-name">Generative AI Fundamentals</div><div class="cert-org">Databricks · Mar 2025</div></div></div>
+      <div class="n-cert-card"><span class="cert-icon">🤖</span><div><div class="cert-name">AI Fundamentals</div><div class="cert-org">DataCamp · 2025</div></div></div>
+    </div>
+
+    <div class="n-sh">Featured Projects</div>
+    <div class="n-proj-grid">
+      <div class="n-pcard"><span class="n-ptag">NLP · Airflow 3</span><div class="n-ptitle">Article Insights NLP Pipeline</div><div class="n-pdesc">Airflow 3 NLP pipeline — keyword extraction, summarization, sentiment analysis, NER, readability.</div><div class="n-pstack">Airflow 3 · NLTK · TextBlob · Python</div><a class="n-plink" href="https://github.com/{{ site.author.github }}/article-insights-pipeline" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
+      <div class="n-pcard"><span class="n-ptag">RAG · LangChain</span><div class="n-ptitle">Resume Analyser RAG</div><div class="n-pdesc">LangChain + FAISS RAG answering natural language questions about uploaded resumes.</div><div class="n-pstack">LangChain · FAISS · OpenAI · Python</div><a class="n-plink" href="https://github.com/{{ site.author.github }}/article-insights-pipeline/tree/main/rag_resume" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
+      <div class="n-pcard"><span class="n-ptag">MLOps · Streamlit</span><div class="n-ptitle">Stock Sentiment Analyzer</div><div class="n-pdesc">Live stock + news sentiment dashboard, Dockerized with GitHub Actions CI/CD.</div><div class="n-pstack">Streamlit · TextBlob · yFinance · Docker</div><a class="n-plink" href="https://github.com/{{ site.author.github }}/SentimentAnalysis" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
+      <div class="n-pcard"><span class="n-ptag">Gen AI · OpenAI</span><div class="n-ptitle">OpenAI Sample Chatbot</div><div class="n-pdesc">Chatbot with prompt engineering and OpenAI API integration patterns.</div><div class="n-pstack">OpenAI API · Python · Prompt Engineering</div><a class="n-plink" href="https://github.com/{{ site.author.github }}/OpenAISampleProject" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
+    </div>
+
+    <div class="n-sh">Technical Writing</div>
+    <div class="n-art-grid">
+      <div class="n-acard"><span class="n-atag">AI</span><div class="n-atitle">The 4 AI Concepts Every AI Developer Should Know</div><div class="n-apub">Stackademic · Medium</div><a class="n-alink" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
+      <div class="n-acard"><span class="n-atag">DevOps</span><div class="n-atitle">How Kubernetes Is Quietly Draining Your Cloud Budget</div><div class="n-apub">DevSecOps Community</div><a class="n-alink" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
+      <div class="n-acard"><span class="n-atag">Data Eng</span><div class="n-atitle">Linux 101 for Data Engineers</div><div class="n-apub">Medium · Jan 2026</div><a class="n-alink" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
+      <div class="n-acard"><span class="n-atag">Python</span><div class="n-atitle">Practical Uses of Python Lambda Functions</div><div class="n-apub">Python in Plain English · Jan 2026</div><a class="n-alink" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
+      <div class="n-acard"><span class="n-atag">Python</span><div class="n-atitle">10 Python Snippets That Make Coding Easier</div><div class="n-apub">Medium · Dec 2025</div><a class="n-alink" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
+    </div>
+
+    <div class="n-sh">Community & Leadership</div>
+    <div class="two-col">
+      <div class="n-scard" style="border-color:#00897b;background:#0a1a18;"><div class="n-sc-plat">👩‍💼 Women in Data™</div><div class="n-sc-handle">NJ Chapter Lead · Mar 2025–present</div><div class="n-sc-desc">Organizing events, fostering a local community of data professionals. Bootcamps: SQL, Python, PySpark, applied ML.</div></div>
+      <div class="n-scard"><div class="n-sc-plat">📊 Data Engineering Byte</div><div class="n-sc-handle">Content Expert</div><div class="n-sc-desc">Expert content on Apache Airflow, modern data stack, and AI pipeline patterns for practitioners.</div></div>
+    </div>
+
+    <div class="n-sh">Connect</div>
+    <div class="n-connect-grid">
+      <div class="n-scard feat"><div class="n-sc-plat">💼 LinkedIn</div><div class="n-sc-handle">{{ site.author.name }}</div><div class="n-sc-desc">Career history, posts on Data Engineering & AI.</div><a class="n-sc-link" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" target="_blank" rel="noopener noreferrer">Connect →</a></div>
+      <div class="n-scard"><div class="n-sc-plat">🐙 GitHub</div><div class="n-sc-handle">@{{ site.author.github }}</div><div class="n-sc-desc">16+ repos — Airflow, NLP, RAG, OSS contributions.</div><a class="n-sc-link" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer">View →</a></div>
+      <div class="n-scard"><div class="n-sc-plat">✍️ Medium</div><div class="n-sc-handle">{{ site.author.medium }}</div><div class="n-sc-desc">5 articles on AI, Data Engineering, Python.</div><a class="n-sc-link" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
+      <div class="n-scard"><div class="n-sc-plat">📬 Substack</div><div class="n-sc-handle">{{ site.author.substack }}</div><div class="n-sc-desc">Newsletter — GenAI, Airflow, modern data stack.</div><a class="n-sc-link" href="https://substack.com/{{ site.author.substack }}" target="_blank" rel="noopener noreferrer">Subscribe →</a></div>
+      <div class="n-scard"><div class="n-sc-plat">▶️ YouTube</div><div class="n-sc-handle">{{ site.author.youtube }}</div><div class="n-sc-desc">Tutorials on Airflow, Data Engineering, AI/ML.</div><a class="n-sc-link" href="https://www.youtube.com/{{ site.author.youtube }}" target="_blank" rel="noopener noreferrer">Watch →</a></div>
+      <div class="n-scard"><div class="n-sc-plat">📧 Email</div><div class="n-sc-handle">{{ site.author.email }}</div><div class="n-sc-desc">Roles, collaboration, speaking, mentoring.</div><a class="n-sc-link" href="mailto:{{ site.author.email }}">Email →</a></div>
+    </div>
+
+    <div class="n-sh">Open For</div>
+    <div class="n-open-row">
+      <span class="n-badge nb-green" style="border-radius:4px;">💼 Hiring — Open</span>
+      <span class="n-badge nb-blue" style="border-radius:4px;">🤝 Collaboration</span>
+      <span class="n-badge nb-purple" style="border-radius:4px;">🎤 Speaking</span>
+      <span class="n-badge nb-teal" style="border-radius:4px;">🧑‍🏫 Mentoring</span>
+      <span class="n-badge nb-amber" style="border-radius:4px;">📝 Technical Writing</span>
+    </div>
+
+    {% if site.posts.size > 0 %}
+    <div class="n-sh">Recent Blog Posts</div>
+    <ul class="post-list">
+      {% for post in site.posts limit:3 %}
+      <li class="post-item">
+        <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
+        <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        {% if post.excerpt %}<p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+  </div>
+  <footer class="n-footer">⭐ From <a href="https://github.com/{{ site.author.github }}">{{ site.author.name }}</a> with ❤️ &nbsp;·&nbsp; {{ site.url | remove: 'https://' }}</footer>
+</div>
+
+<script>
+function switchTheme(t) {
+  document.getElementById('view-airflow').style.display = t === 'airflow' ? 'block' : 'none';
+  document.getElementById('view-normal').style.display = t === 'normal' ? 'block' : 'none';
+  document.getElementById('btn-airflow').classList.toggle('active', t === 'airflow');
+  document.getElementById('btn-normal').classList.toggle('active', t === 'normal');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+let autoCycle = true, autoIdx = 0;
+const nodes = document.querySelectorAll('.task-node');
+const runs = document.querySelectorAll('.run-item');
+
+function showStage(i) {
+  autoCycle = false;
+  document.querySelectorAll('.stage-panel').forEach(p => p.classList.remove('open'));
+  const panel = document.getElementById('stage' + i);
+  if (panel) panel.classList.add('open');
+  nodes.forEach((n, j) => n.classList.toggle('atask', j === i));
+  runs.forEach(r => r.classList.remove('active'));
+  if (runs[i]) runs[i].classList.add('active');
+  if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+setInterval(() => {
+  if (!autoCycle) return;
+  nodes.forEach(n => n.classList.remove('atask'));
+  if (nodes[autoIdx]) nodes[autoIdx].classList.add('atask');
+  autoIdx = (autoIdx + 1) % nodes.length;
+}, 900);
+
+setTimeout(() => showStage(0), 500);
+</script>

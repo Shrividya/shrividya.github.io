@@ -10,7 +10,7 @@ Apache Airflow is the industry standard for orchestrating data pipelines. Think 
 
 ## What is a DAG?
 
-A DAG (Directed Acyclic Graph) is just a fancy term for a pipeline where tasks run in a defined order, without loops. Like a recipe — you can't frost a cake before baking it.
+A DAG (Directed Acyclic Graph) is a pipeline where tasks run in a defined order, without loops. Like a recipe — you can't frost a cake before baking it.
 
 ```python
 from airflow import DAG
@@ -40,7 +40,7 @@ with DAG(
         python_callable=transform,
     )
 
-    extract_task >> transform_task  # extract runs first, then transform
+    extract_task >> transform_task
 ```
 
 ## Key Concepts
@@ -49,7 +49,7 @@ with DAG(
 
 **Operators** are the task types — Python, Bash, SQL, HTTP, and hundreds more.
 
-**Connections** store credentials securely so your DAGs can talk to databases, APIs, and cloud services.
+**Connections** store credentials securely so your DAGs can talk to databases and APIs.
 
 ## Best Practices
 
@@ -60,4 +60,4 @@ with DAG(
 
 ---
 
-*Want to go deeper? Check out the [official Airflow docs](https://airflow.apache.org/docs/) or reach out on [LinkedIn](https://www.linkedin.com/in/shrividya-hegde-shri-91562365/).*
+*Want to go deeper? Reach out on [LinkedIn](https://www.linkedin.com/in/shrividya-hegde-shri-91562365/).*

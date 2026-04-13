@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }} | {{ site.tagline }}{% endif %}</title>
-
-  <!-- SEO -->
-  <meta name="description" content="{{ page.description | default: site.description | strip_html | truncate: 160 }}" />
-  <meta name="keywords" content="{{ site.keywords }}" />
-  <meta property="og:title" content="{{ page.title | default: site.title }}" />
-  <meta property="og:description" content="{{ page.description | default: site.description | strip_html | truncate: 160 }}" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-  <meta name="theme-color" content="#0a0e17" />
-
-  <!-- JSON-LD Person Schema -->
+  <meta name="description" content="{{ page.description | default: site.description | strip_html | truncate: 160 }}"/>
+  <meta name="keywords" content="{{ site.keywords }}"/>
+  <meta property="og:title" content="{{ page.title | default: site.title }}"/>
+  <meta property="og:description" content="{{ page.description | default: site.description | strip_html | truncate: 160 }}"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
+  <meta name="theme-color" content="#0f1117"/>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -24,6 +20,7 @@
     "description": "{{ site.description | strip_newlines }}",
     "url": "{{ site.url }}",
     "image": "https://github.com/{{ site.author.github }}.png",
+    "email": "{{ site.author.email }}",
     "sameAs": [
       "https://www.linkedin.com/in/{{ site.author.linkedin }}/",
       "https://github.com/{{ site.author.github }}",
@@ -31,43 +28,15 @@
       "https://substack.com/{{ site.author.substack }}",
       "https://www.youtube.com/{{ site.author.youtube }}"
     ],
-    "knowsAbout": ["Apache Airflow","Data Engineering","Generative AI","RAG","LLMs","Python","Kubernetes","Docker","CI/CD","dbt","Snowflake","LangChain","Machine Learning","Test Automation"],
-    "worksFor": { "@type": "Organization", "name": "{{ site.author.company }}" },
-    "award": ["Astronomer Champion for Apache Airflow","5x Apache Airflow Certified","AWS Certified Cloud Practitioner"],
-    "memberOf": [
-      { "@type": "Organization", "name": "Women in Data" },
-      { "@type": "Organization", "name": "Women in Tech" }
-    ]
+    "knowsAbout": ["Apache Airflow","Data Engineering","Generative AI","RAG","LLMs","Python","Kubernetes","dbt","Snowflake","LangChain","MLOps"],
+    "worksFor": {"@type": "Organization","name": "{{ site.author.company }}"},
+    "award": ["Astronomer Champion for Apache Airflow","5x Apache Airflow Certified","AWS Certified Cloud Practitioner"]
   }
   </script>
-
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-
   {% seo %}
 </head>
-
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
-
-  {% include nav.html %}
-
-  <header class="site-header" role="banner">
-    <img
-      class="banner"
-      src="https://capsule-render.vercel.app/api?type=waving&color=0:0a0e17,50:a8cc00,100:0a0e17&height=200&section=header&text={{ site.author.name | uri_escape }}&fontSize=50&fontColor=fff&animation=fadeIn&fontAlignY=35&desc={{ site.tagline | uri_escape }}&descAlignY=55&descSize=20"
-      alt="{{ site.author.name }}"
-      loading="eager"
-    />
-  </header>
-
-  <main id="main-content" role="main">
-    <div class="container">
-      {{ content }}
-    </div>
-  </main>
-
-  {% include footer.html %}
-
+  {{ content }}
 </body>
 </html>
