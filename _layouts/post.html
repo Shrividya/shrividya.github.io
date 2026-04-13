@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<article class="post-content">
+  <h1>{{ page.title }}</h1>
+  <p class="post-meta">
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+    {% if page.tags %} · {{ page.tags | join: " · " }}{% endif %}
+  </p>
+
+  {{ content }}
+
+  <hr/>
+  <p style="font-size:0.88rem;color:var(--text-muted);">
+    ← <a href="{{ '/' | relative_url }}">Back to home</a>
+  </p>
+</article>

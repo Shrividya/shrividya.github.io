@@ -1,0 +1,521 @@
+/* =============================================
+   Shrividya Hegde — Jekyll Profile Theme
+   Dark + Lime Green, modernized
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg:          #0a0e17;
+  --bg-card:     #111827;
+  --bg-elevated: #1a2332;
+  --text:        #c9d1d9;
+  --text-muted:  #6b7280;
+  --heading:     #f0f6fc;
+  --accent:      #a8cc00;
+  --accent-dim:  #1e2d00;
+  --accent-glow: rgba(168, 204, 0, 0.15);
+  --border:      #1f2937;
+  --border-lit:  #2d3f00;
+  --radius:      10px;
+  --mono:        'JetBrains Mono', monospace;
+  --sans:        'DM Sans', sans-serif;
+}
+
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* =============================================
+   Typography
+   ============================================= */
+h1, h2, h3, h4 {
+  font-family: var(--mono);
+  color: var(--heading);
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin: 2.5rem 0 1.25rem;
+}
+
+h2::before {
+  content: '// ';
+  color: var(--accent);
+  font-family: var(--mono);
+}
+
+h3 { font-size: 1rem; color: var(--accent); margin-bottom: 0.5rem; }
+
+a { color: var(--accent); text-decoration: none; transition: opacity 0.15s; }
+a:hover { opacity: 0.8; }
+a:focus { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+p { margin-bottom: 0.75rem; }
+
+/* =============================================
+   Layout
+   ============================================= */
+.skip-link {
+  position: absolute; left: -999px; top: -999px;
+  background: #fff; color: #000; padding: 0.5rem 1rem; z-index: 200;
+}
+.skip-link:focus { left: 1rem; top: 1rem; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+main { padding-bottom: 4rem; }
+section { padding: 1.5rem 0; }
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* =============================================
+   Navigation
+   ============================================= */
+.site-nav {
+  background: rgba(10, 14, 23, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0.65rem 0;
+}
+
+.site-nav .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-nav a {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.site-nav a:hover {
+  color: var(--accent);
+  background: var(--accent-dim);
+  opacity: 1;
+}
+
+/* =============================================
+   Header Banner
+   ============================================= */
+.site-header {
+  text-align: center;
+  padding: 0;
+  overflow: hidden;
+}
+
+.site-header img.banner { width: 100%; height: auto; display: block; }
+
+/* =============================================
+   Intro / Hero
+   ============================================= */
+.hero {
+  text-align: center;
+  padding: 2rem 0 1rem;
+}
+
+.hero .typing-wrap { margin-bottom: 1rem; }
+.hero .typing-wrap img { max-width: 100%; height: auto; }
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0.75rem 0;
+}
+
+.badge-row img { display: inline-block; vertical-align: middle; }
+
+/* =============================================
+   Bio Card
+   ============================================= */
+.bio-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin: 1.25rem 0;
+  font-size: 0.97rem;
+  line-height: 1.8;
+  box-shadow: 0 0 30px var(--accent-glow);
+}
+
+.bio-card strong { color: var(--heading); }
+
+/* =============================================
+   Info list (About bullets)
+   ============================================= */
+.info-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.info-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.info-list li .icon { font-size: 1.1rem; flex-shrink: 0; }
+.info-list li strong { color: var(--heading); }
+
+/* =============================================
+   Champion Banner
+   ============================================= */
+.champion-banner {
+  background: linear-gradient(135deg, #0e1a00 0%, #091428 100%);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1rem 1.5rem;
+  margin: 1.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  box-shadow: inset 0 0 40px rgba(168,204,0,0.05);
+}
+
+.champion-banner .trophy { font-size: 2rem; flex-shrink: 0; }
+.champion-banner .label { color: var(--accent); font-weight: 600; font-size: 0.95rem; font-family: var(--mono); }
+.champion-banner .sub { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.2rem; }
+
+/* =============================================
+   Writing Cards
+   ============================================= */
+.writing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.writing-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.writing-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(168,204,0,0.08);
+}
+
+.writing-card .tag {
+  font-size: 0.7rem;
+  font-family: var(--mono);
+  background: var(--accent-dim);
+  color: var(--accent);
+  border: 1px solid var(--border-lit);
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  display: inline-block;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.writing-card .title {
+  color: var(--heading);
+  font-weight: 600;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.writing-card .excerpt { font-size: 0.83rem; color: var(--text-muted); }
+
+.writing-card .read-link {
+  font-size: 0.8rem;
+  font-family: var(--mono);
+  color: var(--accent);
+  margin-top: auto;
+  padding-top: 0.4rem;
+}
+
+.writing-links { margin-top: 1rem; font-size: 0.9rem; }
+.writing-note { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.5rem; font-style: italic; }
+
+/* =============================================
+   GitHub Analytics
+   ============================================= */
+.analytics-wrap {
+  text-align: center;
+}
+
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.stats-row img, .analytics-wrap img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =============================================
+   Tech Stack Table
+   ============================================= */
+.stack-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.stack-table td {
+  border: 1px solid var(--border);
+  padding: 1rem;
+  vertical-align: top;
+  background: var(--bg-card);
+}
+
+.stack-table h3 {
+  text-align: center;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.stack-badge-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.stack-badge-wrap img { display: inline-block; }
+
+/* =============================================
+   Projects Table
+   ============================================= */
+.projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.projects-table th {
+  background: var(--bg-elevated);
+  color: var(--heading);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+.projects-table td {
+  border: 1px solid var(--border);
+  padding: 0.7rem 0.9rem;
+  vertical-align: middle;
+  background: var(--bg-card);
+}
+
+.projects-table tr:hover td { background: var(--bg-elevated); }
+
+.projects-table td:first-child a {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.repo-count {
+  text-align: center;
+  margin-top: 0.75rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* =============================================
+   Achievements Table
+   ============================================= */
+.achievements-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.achievements-table th {
+  background: var(--bg-elevated);
+  color: var(--heading);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--border);
+}
+
+.achievements-table td {
+  border: 1px solid var(--border);
+  padding: 0.7rem 1rem;
+  text-align: center;
+  background: var(--bg-card);
+}
+
+.achievements-table tr:hover td { background: var(--bg-elevated); }
+
+/* =============================================
+   Featured Project Cards
+   ============================================= */
+.featured-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+.featured-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  text-align: center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.featured-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 20px rgba(168,204,0,0.08);
+}
+
+.featured-card h3 { font-size: 0.95rem; margin-bottom: 0.5rem; }
+.featured-card .badge-row { margin: 0.5rem 0; }
+
+/* =============================================
+   Blog / Posts
+   ============================================= */
+.post-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.post-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  transition: border-color 0.2s;
+}
+
+.post-item:hover { border-color: var(--accent); }
+
+.post-item .post-date {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.post-item .post-title {
+  color: var(--heading);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.post-item .post-excerpt { font-size: 0.85rem; color: var(--text-muted); }
+
+/* Post page */
+.post-content {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.post-content h1 { font-size: 1.6rem; margin-bottom: 0.5rem; }
+.post-content .post-meta { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 2rem; }
+.post-content p { margin-bottom: 1rem; }
+.post-content code {
+  font-family: var(--mono);
+  background: var(--bg-elevated);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.88em;
+  color: var(--accent);
+}
+.post-content pre {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  margin: 1.25rem 0;
+}
+.post-content pre code { background: none; padding: 0; }
+
+/* =============================================
+   Connect Section
+   ============================================= */
+.connect-section { text-align: center; padding: 2rem 0; }
+.connect-section p { margin-bottom: 1rem; }
+
+/* =============================================
+   Footer
+   ============================================= */
+.site-footer { text-align: center; padding-bottom: 2rem; font-size: 0.88rem; color: var(--text-muted); }
+.site-footer img { width: 100%; height: auto; display: block; }
+.site-footer p { margin-top: 0.75rem; }
+
+/* =============================================
+   Responsive
+   ============================================= */
+@media (max-width: 768px) {
+  .stack-table, .stack-table tbody, .stack-table tr, .stack-table td {
+    display: block; width: 100%;
+  }
+  .writing-grid { grid-template-columns: 1fr; }
+  .featured-projects { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  h2 { font-size: 1.1rem; }
+  .champion-banner { flex-direction: column; text-align: center; }
+}

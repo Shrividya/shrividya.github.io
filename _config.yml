@@ -1,0 +1,45 @@
+
+title: "Shrividya Hegde"
+tagline: "Senior AI Data Engineer"
+description: >
+  Senior Software Engineer with 10+ years of experience in data engineering,
+  AI/ML, Apache Airflow, and test automation. Building Generative AI pipelines
+  and RAG systems.
+url: "https://shrividya.github.io"
+baseurl: ""
+
+# Author
+author:
+  name: "Shrividya Hegde"
+  title: "Senior AI Data Engineer"
+  company: "Astronomer"
+  location: "NJ"
+  github: "Shrividya"
+  linkedin: "shrividya-hegde-shri-91562365"
+  youtube: "@shrividyahegde3119"
+  medium: "@shrihegde"
+  substack: "@shrividyahegde"
+
+# SEO keywords
+keywords: >
+  Apache Airflow, RAG, Data Engineering, AI Engineer, NJ, Generative AI,
+  LangChain, Astronomer, dbt, Snowflake, Python, Kubernetes, MLOps, LLMs,
+  Embeddings, Airflow Certified
+
+# Build
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+
+# Plugins (all supported by GitHub Pages)
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Exclude from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
