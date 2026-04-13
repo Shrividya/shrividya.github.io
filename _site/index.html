@@ -1,9 +1,61 @@
----
-layout: default
-title: Home
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home | Shrividya Hegde</title>
+  <meta name="description" content="Senior AI Data Engineer with 10+ years of experience in data engineering, AI/ML, Apache Airflow, and test automation. Airflow Champion, OSS contributor, buil..."/>
+  <meta name="keywords" content="Apache Airflow, RAG, Data Engineering, AI Engineer, NJ, Generative AI, LangChain, Astronomer, dbt, Snowflake, Python, Kubernetes, MLOps, LLMs, Airflow Champion, Women in Data
+"/>
+  <meta property="og:title" content="Home"/>
+  <meta property="og:description" content="Senior AI Data Engineer with 10+ years of experience in data engineering, AI/ML, Apache Airflow, and test automation. Airflow Champion, OSS contributor, buil..."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="http://localhost:4000/"/>
+  <meta name="theme-color" content="#0f1117"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shrividya Hegde",
+    "jobTitle": "Senior AI Data Engineer",
+    "description": "Senior AI Data Engineer with 10+ years of experience in data engineering, AI/ML, Apache Airflow, and test automation. Airflow Champion, OSS contributor, building LLM & RAG pipelines. NJ Women in Data Chapter Lead.",
+    "url": "http://localhost:4000",
+    "image": "https://github.com/Shrividya.png",
+    "email": "shrividyahegde222@gmail.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/shrividya-hegde-shri-91562365/",
+      "https://github.com/Shrividya",
+      "https://medium.com/@shrihegde",
+      "https://substack.com/@shrividyahegde",
+      "https://www.youtube.com/@shrividyahegde3119"
+    ],
+    "knowsAbout": ["Apache Airflow","Data Engineering","Generative AI","RAG","LLMs","Python","Kubernetes","dbt","Snowflake","LangChain","MLOps"],
+    "worksFor": {"@type": "Organization","name": "Astronomer"},
+    "award": ["Astronomer Champion for Apache Airflow","5x Apache Airflow Certified","AWS Certified Cloud Practitioner"]
+  }
+  </script>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Home | Shrividya Hegde</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Home" />
+<meta name="author" content="Shrividya Hegde" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Senior AI Data Engineer with 10+ years of experience in data engineering, AI/ML, Apache Airflow, and test automation. Airflow Champion, OSS contributor, building LLM &amp; RAG pipelines. NJ Women in Data Chapter Lead." />
+<meta property="og:description" content="Senior AI Data Engineer with 10+ years of experience in data engineering, AI/ML, Apache Airflow, and test automation. Airflow Champion, OSS contributor, building LLM &amp; RAG pipelines. NJ Women in Data Chapter Lead." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Shrividya Hegde" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Home" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Shrividya Hegde"},"description":"Senior AI Data Engineer with 10+ years of experience in data engineering, AI/ML, Apache Airflow, and test automation. Airflow Champion, OSS contributor, building LLM &amp; RAG pipelines. NJ Women in Data Chapter Lead.","headline":"Home","name":"Shrividya Hegde","url":"http://localhost:4000/"}</script>
+<!-- End Jekyll SEO tag -->
 
-<!-- THEME TOGGLE BAR -->
+</head>
+<body>
+  <!-- THEME TOGGLE BAR -->
 <div class="toggle-bar">
   <span class="toggle-label">// view mode</span>
   <div class="toggle-wrap">
@@ -25,7 +77,7 @@ title: Home
       <a class="afactive" onclick="showStage(0);return false;" href="#">DAGs</a>
       <a onclick="showStage(0);return false;" href="#">Graph</a>
       <a onclick="showStage(2);return false;" href="#">Runs</a>
-      {% if site.posts.size > 0 %}<a href="/blog">Blog</a>{% endif %}
+      <a href="/blog">Blog</a>
     </nav>
     <div class="af-status"><div class="dot"></div><span>Scheduler: running</span></div>
   </div>
@@ -40,7 +92,7 @@ title: Home
     <div class="dag-id">shrividya_career_pipeline <span class="dag-badge">ACTIVE</span></div>
     <div class="dag-meta">
       <div class="dag-meta-item">Schedule: <span>@yearly</span></div>
-      <div class="dag-meta-item">Owner: <span>{{ site.author.name | downcase | replace: ' ', '.' }}</span></div>
+      <div class="dag-meta-item">Owner: <span>shrividya.hegde</span></div>
       <div class="dag-meta-item">Last Run: <span>2025-11-01 ✓ success</span></div>
       <div class="dag-meta-item">Location: <span>Parsippany, NJ 🇺🇸 (since Nov 2024)</span></div>
       <div class="dag-meta-item">Tags: <span>data-engineering, ai, airflow, career</span></div>
@@ -185,10 +237,10 @@ title: Home
         </div>
         <div class="sh">Featured Projects</div>
         <div class="proj-grid">
-          <div class="pcard"><span class="ptag">NLP · Airflow 3</span><div class="ptitle">Article Insights NLP Pipeline</div><div class="pdesc">Airflow 3 NLP pipeline — keyword extraction, summarization, sentiment, NER, readability scoring.</div><div class="pstack">Airflow 3 · Python · NLTK · TextBlob</div><a class="plink" href="https://github.com/{{ site.author.github }}/article-insights-pipeline" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
-          <div class="pcard"><span class="ptag">RAG · LangChain</span><div class="ptitle">Resume Analyser RAG</div><div class="pdesc">LangChain + FAISS RAG answering natural language questions about uploaded resumes via OpenAI.</div><div class="pstack">LangChain · FAISS · OpenAI · Python</div><a class="plink" href="https://github.com/{{ site.author.github }}/article-insights-pipeline/tree/main/rag_resume" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
-          <div class="pcard"><span class="ptag">MLOps · Streamlit</span><div class="ptitle">Stock Sentiment Analyzer</div><div class="pdesc">Live stock + news sentiment dashboard, Dockerized with GitHub Actions CI/CD.</div><div class="pstack">Streamlit · TextBlob · yFinance · Docker</div><a class="plink" href="https://github.com/{{ site.author.github }}/SentimentAnalysis" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
-          <div class="pcard"><span class="ptag">Gen AI · OpenAI</span><div class="ptitle">OpenAI Sample Chatbot</div><div class="pdesc">Chatbot with prompt engineering, context management, OpenAI API patterns.</div><div class="pstack">OpenAI API · Python · Prompt Engineering</div><a class="plink" href="https://github.com/{{ site.author.github }}/OpenAISampleProject" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
+          <div class="pcard"><span class="ptag">NLP · Airflow 3</span><div class="ptitle">Article Insights NLP Pipeline</div><div class="pdesc">Airflow 3 NLP pipeline — keyword extraction, summarization, sentiment, NER, readability scoring.</div><div class="pstack">Airflow 3 · Python · NLTK · TextBlob</div><a class="plink" href="https://github.com/Shrividya/article-insights-pipeline" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
+          <div class="pcard"><span class="ptag">RAG · LangChain</span><div class="ptitle">Resume Analyser RAG</div><div class="pdesc">LangChain + FAISS RAG answering natural language questions about uploaded resumes via OpenAI.</div><div class="pstack">LangChain · FAISS · OpenAI · Python</div><a class="plink" href="https://github.com/Shrividya/article-insights-pipeline/tree/main/rag_resume" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
+          <div class="pcard"><span class="ptag">MLOps · Streamlit</span><div class="ptitle">Stock Sentiment Analyzer</div><div class="pdesc">Live stock + news sentiment dashboard, Dockerized with GitHub Actions CI/CD.</div><div class="pstack">Streamlit · TextBlob · yFinance · Docker</div><a class="plink" href="https://github.com/Shrividya/SentimentAnalysis" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
+          <div class="pcard"><span class="ptag">Gen AI · OpenAI</span><div class="ptitle">OpenAI Sample Chatbot</div><div class="pdesc">Chatbot with prompt engineering, context management, OpenAI API patterns.</div><div class="pstack">OpenAI API · Python · Prompt Engineering</div><a class="plink" href="https://github.com/Shrividya/OpenAISampleProject" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
         </div>
         <div class="sh">Conference & Speaking</div>
         <div class="speak-card">
@@ -215,20 +267,20 @@ title: Home
         </div>
         <div class="sh">Technical Writing — Medium</div>
         <div class="art-grid">
-          <div class="acard"><span class="atag">AI</span><div class="atitle">The 4 AI Concepts Every AI Developer Should Know</div><div class="apub">Stackademic</div><a class="alink" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
-          <div class="acard"><span class="atag">DevOps</span><div class="atitle">How Kubernetes Is Quietly Draining Your Cloud Budget</div><div class="apub">DevSecOps Community</div><a class="alink" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
-          <div class="acard"><span class="atag">Data Eng</span><div class="atitle">Linux 101 for Data Engineers</div><div class="apub">Medium · Jan 2026</div><a class="alink" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
-          <div class="acard"><span class="atag">Python</span><div class="atitle">Practical Uses of Python Lambda Functions</div><div class="apub">Python in Plain English · Jan 2026</div><a class="alink" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
-          <div class="acard"><span class="atag">Python</span><div class="atitle">10 Python Snippets That Make Coding Easier</div><div class="apub">Medium · Dec 2025</div><a class="alink" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
+          <div class="acard"><span class="atag">AI</span><div class="atitle">The 4 AI Concepts Every AI Developer Should Know</div><div class="apub">Stackademic</div><a class="alink" href="https://medium.com/@shrihegde" target="_blank" rel="noopener noreferrer">Read →</a></div>
+          <div class="acard"><span class="atag">DevOps</span><div class="atitle">How Kubernetes Is Quietly Draining Your Cloud Budget</div><div class="apub">DevSecOps Community</div><a class="alink" href="https://medium.com/@shrihegde" target="_blank" rel="noopener noreferrer">Read →</a></div>
+          <div class="acard"><span class="atag">Data Eng</span><div class="atitle">Linux 101 for Data Engineers</div><div class="apub">Medium · Jan 2026</div><a class="alink" href="https://medium.com/@shrihegde" target="_blank" rel="noopener noreferrer">Read →</a></div>
+          <div class="acard"><span class="atag">Python</span><div class="atitle">Practical Uses of Python Lambda Functions</div><div class="apub">Python in Plain English · Jan 2026</div><a class="alink" href="https://medium.com/@shrihegde" target="_blank" rel="noopener noreferrer">Read →</a></div>
+          <div class="acard"><span class="atag">Python</span><div class="atitle">10 Python Snippets That Make Coding Easier</div><div class="apub">Medium · Dec 2025</div><a class="alink" href="https://medium.com/@shrihegde" target="_blank" rel="noopener noreferrer">Read →</a></div>
         </div>
         <div class="sh">Find Me Online</div>
         <div class="serve-grid">
-          <div class="scard feat"><div class="sc-plat">💼 LinkedIn</div><div class="sc-handle">{{ site.author.name }}</div><div class="sc-desc">Career history, posts on Data Engineering & AI.</div><a class="sc-link" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" target="_blank" rel="noopener noreferrer">Connect →</a></div>
-          <div class="scard"><div class="sc-plat">🐙 GitHub</div><div class="sc-handle">@{{ site.author.github }}</div><div class="sc-desc">16+ repos — Airflow, NLP, RAG, OSS contributions.</div><a class="sc-link" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer">View →</a></div>
-          <div class="scard"><div class="sc-plat">✍️ Medium</div><div class="sc-handle">{{ site.author.medium }}</div><div class="sc-desc">5 articles on AI, Data Engineering, Python.</div><a class="sc-link" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
-          <div class="scard"><div class="sc-plat">📬 Substack</div><div class="sc-handle">{{ site.author.substack }}</div><div class="sc-desc">Newsletter — GenAI, Airflow, modern data stack.</div><a class="sc-link" href="https://substack.com/{{ site.author.substack }}" target="_blank" rel="noopener noreferrer">Subscribe →</a></div>
-          <div class="scard"><div class="sc-plat">▶️ YouTube</div><div class="sc-handle">{{ site.author.youtube }}</div><div class="sc-desc">Tutorials on Airflow, Data Engineering, AI/ML.</div><a class="sc-link" href="https://www.youtube.com/{{ site.author.youtube }}" target="_blank" rel="noopener noreferrer">Watch →</a></div>
-          <div class="scard"><div class="sc-plat">📧 Email</div><div class="sc-handle">{{ site.author.email }}</div><div class="sc-desc">Roles, collaboration, speaking, mentoring.</div><a class="sc-link" href="mailto:{{ site.author.email }}">Email →</a></div>
+          <div class="scard feat"><div class="sc-plat">💼 LinkedIn</div><div class="sc-handle">Shrividya Hegde</div><div class="sc-desc">Career history, posts on Data Engineering & AI.</div><a class="sc-link" href="https://www.linkedin.com/in/shrividya-hegde-shri-91562365/" target="_blank" rel="noopener noreferrer">Connect →</a></div>
+          <div class="scard"><div class="sc-plat">🐙 GitHub</div><div class="sc-handle">@Shrividya</div><div class="sc-desc">16+ repos — Airflow, NLP, RAG, OSS contributions.</div><a class="sc-link" href="https://github.com/Shrividya" target="_blank" rel="noopener noreferrer">View →</a></div>
+          <div class="scard"><div class="sc-plat">✍️ Medium</div><div class="sc-handle">@shrihegde</div><div class="sc-desc">5 articles on AI, Data Engineering, Python.</div><a class="sc-link" href="https://medium.com/@shrihegde" target="_blank" rel="noopener noreferrer">Read →</a></div>
+          <div class="scard"><div class="sc-plat">📬 Substack</div><div class="sc-handle">@shrividyahegde</div><div class="sc-desc">Newsletter — GenAI, Airflow, modern data stack.</div><a class="sc-link" href="https://substack.com/@shrividyahegde" target="_blank" rel="noopener noreferrer">Subscribe →</a></div>
+          <div class="scard"><div class="sc-plat">▶️ YouTube</div><div class="sc-handle">@shrividyahegde3119</div><div class="sc-desc">Tutorials on Airflow, Data Engineering, AI/ML.</div><a class="sc-link" href="https://www.youtube.com/@shrividyahegde3119" target="_blank" rel="noopener noreferrer">Watch →</a></div>
+          <div class="scard"><div class="sc-plat">📧 Email</div><div class="sc-handle">shrividyahegde222@gmail.com</div><div class="sc-desc">Roles, collaboration, speaking, mentoring.</div><a class="sc-link" href="mailto:shrividyahegde222@gmail.com">Email →</a></div>
         </div>
         <div class="sh">Open For</div>
         <div class="tag-row">
@@ -241,28 +293,28 @@ title: Home
         </div>
       </div>
 
-      {% if site.posts.size > 0 %}
+      
       <div class="sh" style="margin-top:2rem;">Recent Blog Posts</div>
       <ul class="post-list">
-        {% for post in site.posts limit:3 %}
+        
         <li class="post-item">
-          <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
-          <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          {% if post.excerpt %}<p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>{% endif %}
+          <span class="post-date">January 15, 2025</span>
+          <a class="post-title" href="/blog/2025/01/15/getting-started-with-airflow/">Getting Started with Apache Airflow: A Practical Guide</a>
+          <p class="post-excerpt">Apache Airflow is the industry standard for orchestrating data pipelines. Think of it like a traffic controller for y...</p>
         </li>
-        {% endfor %}
+        
       </ul>
-      {% endif %}
+      
     </main>
   </div>
-  <footer class="af-footer">⭐ From <a href="https://github.com/{{ site.author.github }}">{{ site.author.name }}</a> with ❤️ &nbsp;·&nbsp; {{ site.url | remove: 'https://' }}</footer>
+  <footer class="af-footer">⭐ From <a href="https://github.com/Shrividya">Shrividya Hegde</a> with ❤️ &nbsp;·&nbsp; http://localhost:4000</footer>
 </div>
 
 <!-- ==================== NORMAL VIEW ==================== -->
 <div id="view-normal">
   <div class="n-hero">
     <div class="n-avatar">SH</div>
-    <div class="n-name">{{ site.author.name }}</div>
+    <div class="n-name">Shrividya Hegde</div>
     <div class="n-title">Senior AI Data Engineer · Apache Airflow Champion · OSS Contributor</div>
     <div class="n-location">📍 Parsippany, NJ 🇺🇸 &nbsp;·&nbsp; Relocated from Bengaluru, IN (Nov 2024)</div>
     <div class="n-views">👁 Profile views: <img src="https://komarev.com/ghpvc/?username=Shrividya&amp;style=for-the-badge&amp;color=abd200" alt="profile views" style="vertical-align:middle;"/></div>
@@ -275,23 +327,23 @@ title: Home
       <span class="n-badge nb-amber">7 OSS PRs Merged</span>
     </div>
     <div class="n-socials">
-      <a class="n-social-btn" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
-      <a class="n-social-btn" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
-      <a class="n-social-btn" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">✍️ Medium</a>
-      <a class="n-social-btn" href="https://substack.com/{{ site.author.substack }}" target="_blank" rel="noopener noreferrer">📬 Substack</a>
-      <a class="n-social-btn" href="https://www.youtube.com/{{ site.author.youtube }}" target="_blank" rel="noopener noreferrer">▶️ YouTube</a>
-      <a class="n-social-btn" href="mailto:{{ site.author.email }}">📧 Email</a>
+      <a class="n-social-btn" href="https://www.linkedin.com/in/shrividya-hegde-shri-91562365/" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
+      <a class="n-social-btn" href="https://github.com/Shrividya" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
+      <a class="n-social-btn" href="https://medium.com/@shrihegde" target="_blank" rel="noopener noreferrer">✍️ Medium</a>
+      <a class="n-social-btn" href="https://substack.com/@shrividyahegde" target="_blank" rel="noopener noreferrer">📬 Substack</a>
+      <a class="n-social-btn" href="https://www.youtube.com/@shrividyahegde3119" target="_blank" rel="noopener noreferrer">▶️ YouTube</a>
+      <a class="n-social-btn" href="mailto:shrividyahegde222@gmail.com">📧 Email</a>
     </div>
   </div>
 
   <div class="n-main">
     <div class="n-sh">GitHub Analytics</div>
     <div class="gh-stats">
-      <img src="https://github-readme-stats-fl2ozbqve-shrividya-hegdes-projects.vercel.app/api?username={{ site.author.github }}&amp;show_icons=true&amp;theme=merko&amp;hide_border=true&amp;bg_color=0d1117&amp;title_color=abd200&amp;icon_color=abd200&amp;text_color=ffffff&amp;count_private=true&amp;include_all_commits=true" alt="GitHub stats"/>
-      <img src="https://github-readme-stats-fl2ozbqve-shrividya-hegdes-projects.vercel.app/api/top-langs?username={{ site.author.github }}&amp;layout=compact&amp;theme=merko&amp;hide_border=true&amp;bg_color=0d1117&amp;title_color=abd200&amp;text_color=ffffff" alt="Top languages"/>
+      <img src="https://github-readme-stats-fl2ozbqve-shrividya-hegdes-projects.vercel.app/api?username=Shrividya&amp;show_icons=true&amp;theme=merko&amp;hide_border=true&amp;bg_color=0d1117&amp;title_color=abd200&amp;icon_color=abd200&amp;text_color=ffffff&amp;count_private=true&amp;include_all_commits=true" alt="GitHub stats"/>
+      <img src="https://github-readme-stats-fl2ozbqve-shrividya-hegdes-projects.vercel.app/api/top-langs?username=Shrividya&amp;layout=compact&amp;theme=merko&amp;hide_border=true&amp;bg_color=0d1117&amp;title_color=abd200&amp;text_color=ffffff" alt="Top languages"/>
     </div>
     <div style="text-align:center;margin-top:0.75rem;">
-      <img src="https://github-readme-streak-stats-xi-topaz.vercel.app?user={{ site.author.github }}&amp;theme=merko&amp;hide_border=true&amp;background=0d1117&amp;ring=abd200&amp;fire=abd200&amp;currStreakLabel=abd200" alt="GitHub streak" style="max-width:100%;"/>
+      <img src="https://github-readme-streak-stats-xi-topaz.vercel.app?user=Shrividya&amp;theme=merko&amp;hide_border=true&amp;background=0d1117&amp;ring=abd200&amp;fire=abd200&amp;currStreakLabel=abd200" alt="GitHub streak" style="max-width:100%;"/>
     </div>
 
     <div class="n-sh">Experience</div>
@@ -348,19 +400,19 @@ title: Home
 
     <div class="n-sh">Featured Projects</div>
     <div class="n-proj-grid">
-      <div class="n-pcard"><span class="n-ptag">NLP · Airflow 3</span><div class="n-ptitle">Article Insights NLP Pipeline</div><div class="n-pdesc">Airflow 3 NLP pipeline — keyword extraction, summarization, sentiment analysis, NER, readability.</div><div class="n-pstack">Airflow 3 · NLTK · TextBlob · Python</div><a class="n-plink" href="https://github.com/{{ site.author.github }}/article-insights-pipeline" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
-      <div class="n-pcard"><span class="n-ptag">RAG · LangChain</span><div class="n-ptitle">Resume Analyser RAG</div><div class="n-pdesc">LangChain + FAISS RAG answering natural language questions about uploaded resumes.</div><div class="n-pstack">LangChain · FAISS · OpenAI · Python</div><a class="n-plink" href="https://github.com/{{ site.author.github }}/article-insights-pipeline/tree/main/rag_resume" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
-      <div class="n-pcard"><span class="n-ptag">MLOps · Streamlit</span><div class="n-ptitle">Stock Sentiment Analyzer</div><div class="n-pdesc">Live stock + news sentiment dashboard, Dockerized with GitHub Actions CI/CD.</div><div class="n-pstack">Streamlit · TextBlob · yFinance · Docker</div><a class="n-plink" href="https://github.com/{{ site.author.github }}/SentimentAnalysis" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
-      <div class="n-pcard"><span class="n-ptag">Gen AI · OpenAI</span><div class="n-ptitle">OpenAI Sample Chatbot</div><div class="n-pdesc">Chatbot with prompt engineering and OpenAI API integration patterns.</div><div class="n-pstack">OpenAI API · Python · Prompt Engineering</div><a class="n-plink" href="https://github.com/{{ site.author.github }}/OpenAISampleProject" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
+      <div class="n-pcard"><span class="n-ptag">NLP · Airflow 3</span><div class="n-ptitle">Article Insights NLP Pipeline</div><div class="n-pdesc">Airflow 3 NLP pipeline — keyword extraction, summarization, sentiment analysis, NER, readability.</div><div class="n-pstack">Airflow 3 · NLTK · TextBlob · Python</div><a class="n-plink" href="https://github.com/Shrividya/article-insights-pipeline" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
+      <div class="n-pcard"><span class="n-ptag">RAG · LangChain</span><div class="n-ptitle">Resume Analyser RAG</div><div class="n-pdesc">LangChain + FAISS RAG answering natural language questions about uploaded resumes.</div><div class="n-pstack">LangChain · FAISS · OpenAI · Python</div><a class="n-plink" href="https://github.com/Shrividya/article-insights-pipeline/tree/main/rag_resume" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
+      <div class="n-pcard"><span class="n-ptag">MLOps · Streamlit</span><div class="n-ptitle">Stock Sentiment Analyzer</div><div class="n-pdesc">Live stock + news sentiment dashboard, Dockerized with GitHub Actions CI/CD.</div><div class="n-pstack">Streamlit · TextBlob · yFinance · Docker</div><a class="n-plink" href="https://github.com/Shrividya/SentimentAnalysis" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
+      <div class="n-pcard"><span class="n-ptag">Gen AI · OpenAI</span><div class="n-ptitle">OpenAI Sample Chatbot</div><div class="n-pdesc">Chatbot with prompt engineering and OpenAI API integration patterns.</div><div class="n-pstack">OpenAI API · Python · Prompt Engineering</div><a class="n-plink" href="https://github.com/Shrividya/OpenAISampleProject" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
     </div>
 
     <div class="n-sh">Technical Writing</div>
     <div class="n-art-grid">
-      <div class="n-acard"><span class="n-atag">AI</span><div class="n-atitle">The 4 AI Concepts Every AI Developer Should Know</div><div class="n-apub">Stackademic · Medium</div><a class="n-alink" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
-      <div class="n-acard"><span class="n-atag">DevOps</span><div class="n-atitle">How Kubernetes Is Quietly Draining Your Cloud Budget</div><div class="n-apub">DevSecOps Community</div><a class="n-alink" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
-      <div class="n-acard"><span class="n-atag">Data Eng</span><div class="n-atitle">Linux 101 for Data Engineers</div><div class="n-apub">Medium · Jan 2026</div><a class="n-alink" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
-      <div class="n-acard"><span class="n-atag">Python</span><div class="n-atitle">Practical Uses of Python Lambda Functions</div><div class="n-apub">Python in Plain English · Jan 2026</div><a class="n-alink" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
-      <div class="n-acard"><span class="n-atag">Python</span><div class="n-atitle">10 Python Snippets That Make Coding Easier</div><div class="n-apub">Medium · Dec 2025</div><a class="n-alink" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
+      <div class="n-acard"><span class="n-atag">AI</span><div class="n-atitle">The 4 AI Concepts Every AI Developer Should Know</div><div class="n-apub">Stackademic · Medium</div><a class="n-alink" href="https://medium.com/@shrihegde" target="_blank" rel="noopener noreferrer">Read →</a></div>
+      <div class="n-acard"><span class="n-atag">DevOps</span><div class="n-atitle">How Kubernetes Is Quietly Draining Your Cloud Budget</div><div class="n-apub">DevSecOps Community</div><a class="n-alink" href="https://medium.com/@shrihegde" target="_blank" rel="noopener noreferrer">Read →</a></div>
+      <div class="n-acard"><span class="n-atag">Data Eng</span><div class="n-atitle">Linux 101 for Data Engineers</div><div class="n-apub">Medium · Jan 2026</div><a class="n-alink" href="https://medium.com/@shrihegde" target="_blank" rel="noopener noreferrer">Read →</a></div>
+      <div class="n-acard"><span class="n-atag">Python</span><div class="n-atitle">Practical Uses of Python Lambda Functions</div><div class="n-apub">Python in Plain English · Jan 2026</div><a class="n-alink" href="https://medium.com/@shrihegde" target="_blank" rel="noopener noreferrer">Read →</a></div>
+      <div class="n-acard"><span class="n-atag">Python</span><div class="n-atitle">10 Python Snippets That Make Coding Easier</div><div class="n-apub">Medium · Dec 2025</div><a class="n-alink" href="https://medium.com/@shrihegde" target="_blank" rel="noopener noreferrer">Read →</a></div>
     </div>
 
     <div class="n-sh">Community & Leadership</div>
@@ -371,12 +423,12 @@ title: Home
 
     <div class="n-sh">Connect</div>
     <div class="n-connect-grid">
-      <div class="n-scard feat"><div class="n-sc-plat">💼 LinkedIn</div><div class="n-sc-handle">{{ site.author.name }}</div><div class="n-sc-desc">Career history, posts on Data Engineering & AI.</div><a class="n-sc-link" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" target="_blank" rel="noopener noreferrer">Connect →</a></div>
-      <div class="n-scard"><div class="n-sc-plat">🐙 GitHub</div><div class="n-sc-handle">@{{ site.author.github }}</div><div class="n-sc-desc">16+ repos — Airflow, NLP, RAG, OSS contributions.</div><a class="n-sc-link" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer">View →</a></div>
-      <div class="n-scard"><div class="n-sc-plat">✍️ Medium</div><div class="n-sc-handle">{{ site.author.medium }}</div><div class="n-sc-desc">5 articles on AI, Data Engineering, Python.</div><a class="n-sc-link" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
-      <div class="n-scard"><div class="n-sc-plat">📬 Substack</div><div class="n-sc-handle">{{ site.author.substack }}</div><div class="n-sc-desc">Newsletter — GenAI, Airflow, modern data stack.</div><a class="n-sc-link" href="https://substack.com/{{ site.author.substack }}" target="_blank" rel="noopener noreferrer">Subscribe →</a></div>
-      <div class="n-scard"><div class="n-sc-plat">▶️ YouTube</div><div class="n-sc-handle">{{ site.author.youtube }}</div><div class="n-sc-desc">Tutorials on Airflow, Data Engineering, AI/ML.</div><a class="n-sc-link" href="https://www.youtube.com/{{ site.author.youtube }}" target="_blank" rel="noopener noreferrer">Watch →</a></div>
-      <div class="n-scard"><div class="n-sc-plat">📧 Email</div><div class="n-sc-handle">{{ site.author.email }}</div><div class="n-sc-desc">Roles, collaboration, speaking, mentoring.</div><a class="n-sc-link" href="mailto:{{ site.author.email }}">Email →</a></div>
+      <div class="n-scard feat"><div class="n-sc-plat">💼 LinkedIn</div><div class="n-sc-handle">Shrividya Hegde</div><div class="n-sc-desc">Career history, posts on Data Engineering & AI.</div><a class="n-sc-link" href="https://www.linkedin.com/in/shrividya-hegde-shri-91562365/" target="_blank" rel="noopener noreferrer">Connect →</a></div>
+      <div class="n-scard"><div class="n-sc-plat">🐙 GitHub</div><div class="n-sc-handle">@Shrividya</div><div class="n-sc-desc">16+ repos — Airflow, NLP, RAG, OSS contributions.</div><a class="n-sc-link" href="https://github.com/Shrividya" target="_blank" rel="noopener noreferrer">View →</a></div>
+      <div class="n-scard"><div class="n-sc-plat">✍️ Medium</div><div class="n-sc-handle">@shrihegde</div><div class="n-sc-desc">5 articles on AI, Data Engineering, Python.</div><a class="n-sc-link" href="https://medium.com/@shrihegde" target="_blank" rel="noopener noreferrer">Read →</a></div>
+      <div class="n-scard"><div class="n-sc-plat">📬 Substack</div><div class="n-sc-handle">@shrividyahegde</div><div class="n-sc-desc">Newsletter — GenAI, Airflow, modern data stack.</div><a class="n-sc-link" href="https://substack.com/@shrividyahegde" target="_blank" rel="noopener noreferrer">Subscribe →</a></div>
+      <div class="n-scard"><div class="n-sc-plat">▶️ YouTube</div><div class="n-sc-handle">@shrividyahegde3119</div><div class="n-sc-desc">Tutorials on Airflow, Data Engineering, AI/ML.</div><a class="n-sc-link" href="https://www.youtube.com/@shrividyahegde3119" target="_blank" rel="noopener noreferrer">Watch →</a></div>
+      <div class="n-scard"><div class="n-sc-plat">📧 Email</div><div class="n-sc-handle">shrividyahegde222@gmail.com</div><div class="n-sc-desc">Roles, collaboration, speaking, mentoring.</div><a class="n-sc-link" href="mailto:shrividyahegde222@gmail.com">Email →</a></div>
     </div>
 
     <div class="n-sh">Open For</div>
@@ -388,21 +440,21 @@ title: Home
       <span class="n-badge nb-amber" style="border-radius:4px;">📝 Technical Writing</span>
     </div>
 
-    {% if site.posts.size > 0 %}
+    
     <div class="n-sh">Recent Blog Posts</div>
     <ul class="post-list">
-      {% for post in site.posts limit:3 %}
+      
       <li class="post-item">
-        <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
-        <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        {% if post.excerpt %}<p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>{% endif %}
+        <span class="post-date">January 15, 2025</span>
+        <a class="post-title" href="/blog/2025/01/15/getting-started-with-airflow/">Getting Started with Apache Airflow: A Practical Guide</a>
+        <p class="post-excerpt">Apache Airflow is the industry standard for orchestrating data pipelines. Think of it like a traffic controller for y...</p>
       </li>
-      {% endfor %}
+      
     </ul>
-    {% endif %}
+    
 
   </div>
-  <footer class="n-footer">⭐ From <a href="https://github.com/{{ site.author.github }}">{{ site.author.name }}</a> with ❤️ &nbsp;·&nbsp; {{ site.url | remove: 'https://' }}</footer>
+  <footer class="n-footer">⭐ From <a href="https://github.com/Shrividya">Shrividya Hegde</a> with ❤️ &nbsp;·&nbsp; http://localhost:4000</footer>
 </div>
 
 <script>
@@ -438,3 +490,6 @@ setInterval(() => {
 
 setTimeout(() => showStage(0), 500);
 </script>
+
+</body>
+</html>
