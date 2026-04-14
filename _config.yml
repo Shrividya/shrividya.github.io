@@ -38,3 +38,5 @@ exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
+
+image: /assets/images/preview.png
