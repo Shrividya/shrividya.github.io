@@ -324,6 +324,31 @@ a:hover { opacity: 0.75; }
    BODY LAYOUT
 ══════════════════════════════════════ */
 .af-body { display: flex; min-height: 600px; }
+@media (max-width: 768px) {
+  .af-body {
+    flex-direction: column;
+  }
+
+  .af-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .graph-row {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .task-arrow {
+    display: none;
+  }
+
+  .toggle-bar {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+}
 
 .af-sidebar {
   width: 200px; flex-shrink: 0;
