@@ -22,7 +22,7 @@
   sub: "Getting into DE"
   alt: "The DataFlow cast by Kenten Danas"
 
-- file: Airflow+dbt@dbtlabs_wid.png
+- file: Airflow+dbt session .png
   title: "Session at dbt community channel"
   cat: "Technical session + Demo"
   sub: "women in data @ dbt labs"
