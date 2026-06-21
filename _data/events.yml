@@ -92,3 +92,11 @@
   link: "https://luma.com/ktgequzw"
   tags: ["AI", "Data Orchestration", "Data Engineering", "Speaking"]
 
+- title: "Orchestrating and Testing RAG Pipelines with Airflow"
+  date: "2026-09-01"
+  type: "Airflow Summit 2026"
+  venue: "Online"
+  location: "Texas Ballroom 1-2-3,Hyatt Regency Austin in Austin, Texas"
+  description: "This session presents a reference DAG architecture for production-grade RAG ingestion built on Airflow 3,"
+  link: "https://airflowsummit.org/tickets/"
+  tags: ["AI", "Data Orchestration", "Data Engineering", "Speaking"]
