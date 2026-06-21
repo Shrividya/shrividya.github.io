@@ -55,8 +55,14 @@ permalink: /gallery/
     }
 
     /* FRONT — photo */
-    .flip-front { background: #000; }
-    .flip-front img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .flip-front { background: #111; }
+    .flip-front img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .flip-front-hint {
+      position: absolute; bottom: 0.6rem; right: 0.75rem;
+      font-family: 'Caveat', cursive; font-size: 0.8rem;
+      color: rgba(255,255,255,0.55); pointer-events: none;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    }
 
     /* BACK — handwritten paper */
     .flip-back {
@@ -130,6 +136,7 @@ permalink: /gallery/
       <div class="flip-card-inner">
         <div class="flip-front">
           <img src="/assets/images/gallery/{{ photo.file }}" alt="{{ photo.alt | default: photo.title }}">
+          <div class="flip-front-hint">tap ✦</div>
         </div>
         <div class="flip-back">
           <div class="flip-cat">{{ photo.cat }}</div>
