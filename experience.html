@@ -1,0 +1,115 @@
+---
+layout: null
+permalink: /experience/
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Experience — {{ site.author.name }}</title>
+  <meta name="description" content="10+ years of experience in AI Data Engineering, Apache Airflow, and test automation — {{ site.author.name }}"/>
+  <link rel="stylesheet" href="/assets/css/style.css"/>
+  <script>
+    const _t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', _t);
+  </script>
+</head>
+<body>
+
+<div class="page-nav">
+  <a class="page-nav-back" href="/?view=normal">← Back to portfolio</a>
+  <span class="page-nav-title">💼 Experience</span>
+  <button class="dark-toggle" style="margin-left:auto;" onclick="toggleDark()" id="dark-toggle">🌙</button>
+</div>
+
+<main class="page-main">
+  <div class="page-hero">
+    <div class="page-hero-title">Experience</div>
+    <div class="page-hero-sub">10+ years across AI Data Engineering, Apache Airflow, and Test Automation · 3 countries</div>
+  </div>
+
+  <div class="n-sh">Current</div>
+  <div class="n-timeline">
+    <div class="n-tcard hi">
+      <div class="n-tc-top"><span class="n-tc-co">Apache Software Foundation</span><span class="n-tc-dt">Mar 2026 – present</span></div>
+      <div class="n-tc-role">Apache Airflow Open-Source Contributor · Remote</div>
+      <ul class="n-bullets">
+        <li>7 merged PRs — code improvements, bug fixes, documentation enhancements across the Airflow core repo</li>
+        <li>Recognized as <strong style="color:#00897b;">Airflow Champion (Jan 2026)</strong> by Astronomer — top-tier community contributor designation</li>
+        <li>Contributing to Airflow 3 — dynamic task mapping, scheduler improvements, and provider packages</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="n-sh">Industry</div>
+  <div class="n-timeline">
+    <div class="n-tcard hi">
+      <div class="n-tc-top"><span class="n-tc-co">Astronomer</span><span class="n-tc-dt">Mar 2022 – Nov 2025</span></div>
+      <div class="n-tc-role">Senior Software Engineer — Astro Observe · Bengaluru (Remote) → Parsippany, NJ (Nov 2024)</div>
+      <ul class="n-bullets">
+        <li>Designed and delivered cloud-native data pipeline frameworks using Airflow DAGs, Python, and cloud SDKs — throughput ↑ 30%</li>
+        <li>Built RAG pipelines using LangChain + ChromaDB integrated with Airflow — developer productivity ↑ 40%</li>
+        <li>Automated cloud resource lifecycle management — infrastructure costs ↓ 60%</li>
+        <li>Led migration of legacy ETL workloads to Airflow 2/3 for enterprise customers on GCP, Azure, AWS</li>
+        <li>Contributed to internal tooling for DAG observability and alerting (Astro Observe product)</li>
+      </ul>
+    </div>
+    <div class="n-tcard">
+      <div class="n-tc-top"><span class="n-tc-co">Commonwealth Bank (CBA)</span><span class="n-tc-dt">May 2021 – Feb 2022</span></div>
+      <div class="n-tc-role">Senior Test Automation Engineer — Core Payments Data · Bangalore, India</div>
+      <ul class="n-bullets">
+        <li>95% automation coverage across Core Payments microservices — costs ↓ 15%</li>
+        <li>Built end-to-end test frameworks for payment orchestration pipelines</li>
+        <li>Awarded <span class="n-award">🏅 Best Partner Award</span> for cross-team quality impact</li>
+      </ul>
+    </div>
+    <div class="n-tcard">
+      <div class="n-tc-top"><span class="n-tc-co">KPMG India</span><span class="n-tc-dt">May 2020 – May 2021</span></div>
+      <div class="n-tc-role">Consultant — Automation Specialist · Bengaluru, India</div>
+      <ul class="n-bullets">
+        <li>Built automation frameworks across 4+ delivery teams — manual QA effort ↓ 25%</li>
+        <li>Delivered SAP S/4 HANA automation proof-of-concept using BrowserStack + Appium</li>
+        <li>Established test automation standards across the consulting practice</li>
+      </ul>
+    </div>
+    <div class="n-tcard">
+      <div class="n-tc-top"><span class="n-tc-co">Tata Consultancy Services (TCS)</span><span class="n-tc-dt">Jun 2014 – Apr 2020</span></div>
+      <div class="n-tc-role">Software Engineer / IT Analyst · Sydney, AU &amp; Bangalore, IN</div>
+      <ul class="n-bullets">
+        <li>6 years across Banking &amp; Finance clients in Australia and India</li>
+        <li>Built Selenium + Java automation frameworks — manual testing ↓ 50% · deployment frequency ↑ 35%</li>
+        <li>Led CI/CD pipeline integrations (Jenkins, Maven) for test automation at scale</li>
+        <li>Service Commitment Award <span class="n-award">🏅</span> · On the Spot Award <span class="n-award">🏅 ×3</span> · National Debate 1st Prize <span class="n-award">🏅</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="n-sh">Early Career</div>
+  <div class="n-timeline">
+    <div class="n-tcard">
+      <div class="n-tc-top"><span class="n-tc-co">ISRO — Master Control Facility, Hassan</span><span class="n-tc-dt">Feb 2014 – Jun 2014</span></div>
+      <div class="n-tc-role">Engineering Intern · Hassan, Karnataka, India</div>
+      <ul class="n-bullets">
+        <li>Project: <em>Automatic Weather Storage Analysis &amp; Display System</em> under guidance of Sh. S.K. Khuba, Scientist Engineer</li>
+        <li>Developed data collection and visualization system for weather monitoring at MCF Pithlapur</li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<footer class="n-footer">⭐ From <a href="https://github.com/{{ site.author.github }}">{{ site.author.name }}</a> with ❤️ &nbsp;·&nbsp; {{ site.url | remove: 'https://' }}</footer>
+
+<script>
+function toggleDark() {
+  const curr = document.documentElement.getAttribute('data-theme');
+  const next = curr === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  document.getElementById('dark-toggle').textContent = next === 'dark' ? '🌙' : '☀️';
+}
+const _s = localStorage.getItem('theme');
+if (_s) { document.documentElement.setAttribute('data-theme', _s); document.getElementById('dark-toggle').textContent = _s === 'dark' ? '🌙' : '☀️'; }
+</script>
+</body>
+</html>
