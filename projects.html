@@ -29,52 +29,53 @@ permalink: /projects/
     <div class="page-hero-sub">AI pipelines, RAG systems, and open-source contributions</div>
   </div>
 
+  {% assign ai_projects = site.data.projects | where: "category", "AI & RAG" %}
+  {% if ai_projects.size > 0 %}
   <div class="n-sh">AI &amp; RAG</div>
   <div class="n-proj-grid">
+    {% for project in ai_projects %}
     <div class="n-pcard">
-      <span class="n-ptag">RAG · LangChain</span>
-      <div class="n-ptitle">Resume Analyser RAG</div>
-      <div class="n-pdesc">LangChain + FAISS RAG pipeline that answers natural language questions about uploaded resumes. Supports multi-document retrieval and prompt chaining for nuanced comparisons.</div>
-      <div class="n-pstack">LangChain · FAISS · OpenAI · Python</div>
-      <a class="n-plink" href="https://github.com/{{ site.author.github }}/article-insights-pipeline/tree/main/rag_resume" target="_blank" rel="noopener noreferrer">GitHub →</a>
+      <span class="n-ptag">{{ project.tag }}</span>
+      <div class="n-ptitle">{{ project.title }}</div>
+      <div class="n-pdesc">{{ project.description }}</div>
+      <div class="n-pstack">{{ project.stack }}</div>
+      <a class="n-plink" href="{{ project.link }}" target="_blank" rel="noopener noreferrer">{{ project.link_label }}</a>
     </div>
-    <div class="n-pcard">
-      <span class="n-ptag">Gen AI · OpenAI</span>
-      <div class="n-ptitle">OpenAI Sample Chatbot</div>
-      <div class="n-pdesc">Chatbot with advanced prompt engineering and OpenAI API integration patterns. Demonstrates system message design, context management, and streaming responses.</div>
-      <div class="n-pstack">OpenAI API · Python · Prompt Engineering</div>
-      <a class="n-plink" href="https://github.com/{{ site.author.github }}/OpenAISampleProject" target="_blank" rel="noopener noreferrer">GitHub →</a>
-    </div>
+    {% endfor %}
   </div>
+  {% endif %}
 
+  {% assign de_projects = site.data.projects | where: "category", "Data Engineering & MLOps" %}
+  {% if de_projects.size > 0 %}
   <div class="n-sh">Data Engineering &amp; MLOps</div>
   <div class="n-proj-grid">
+    {% for project in de_projects %}
     <div class="n-pcard">
-      <span class="n-ptag">NLP · Airflow 3</span>
-      <div class="n-ptitle">Article Insights NLP Pipeline</div>
-      <div class="n-pdesc">Production-grade Airflow 3 NLP pipeline — keyword extraction, summarization, sentiment analysis, named entity recognition, and readability scoring across article corpora.</div>
-      <div class="n-pstack">Airflow 3 · NLTK · TextBlob · Python</div>
-      <a class="n-plink" href="https://github.com/{{ site.author.github }}/article-insights-pipeline" target="_blank" rel="noopener noreferrer">GitHub →</a>
+      <span class="n-ptag">{{ project.tag }}</span>
+      <div class="n-ptitle">{{ project.title }}</div>
+      <div class="n-pdesc">{{ project.description }}</div>
+      <div class="n-pstack">{{ project.stack }}</div>
+      <a class="n-plink" href="{{ project.link }}" target="_blank" rel="noopener noreferrer">{{ project.link_label }}</a>
     </div>
-    <div class="n-pcard">
-      <span class="n-ptag">MLOps · Streamlit</span>
-      <div class="n-ptitle">Stock Sentiment Analyzer</div>
-      <div class="n-pdesc">Live stock + news sentiment dashboard with real-time price feeds, sentiment scoring, and trend visualization. Fully Dockerized with GitHub Actions CI/CD for automated deployments.</div>
-      <div class="n-pstack">Streamlit · TextBlob · yFinance · Docker · GH Actions</div>
-      <a class="n-plink" href="https://github.com/{{ site.author.github }}/SentimentAnalysis" target="_blank" rel="noopener noreferrer">GitHub →</a>
-    </div>
+    {% endfor %}
   </div>
+  {% endif %}
 
+  {% assign oss_projects = site.data.projects | where: "category", "Open Source" %}
+  {% if oss_projects.size > 0 %}
   <div class="n-sh">Open Source</div>
   <div class="n-proj-grid">
+    {% for project in oss_projects %}
     <div class="n-pcard">
-      <span class="n-ptag">OSS · Apache Airflow</span>
-      <div class="n-ptitle">Apache Airflow Core Contributions</div>
-      <div class="n-pdesc">7 merged PRs to the Apache Airflow core repository — code quality improvements, bug fixes, documentation enhancements, and provider package contributions for Airflow 3.</div>
-      <div class="n-pstack">Python · Apache Airflow · GitHub</div>
-      <a class="n-plink" href="https://github.com/apache/airflow/pulls?q=is%3Apr+author%3AShrividya+is%3Amerged" target="_blank" rel="noopener noreferrer">View PRs →</a>
+      <span class="n-ptag">{{ project.tag }}</span>
+      <div class="n-ptitle">{{ project.title }}</div>
+      <div class="n-pdesc">{{ project.description }}</div>
+      <div class="n-pstack">{{ project.stack }}</div>
+      <a class="n-plink" href="{{ project.link }}" target="_blank" rel="noopener noreferrer">{{ project.link_label }}</a>
     </div>
+    {% endfor %}
   </div>
+  {% endif %}
 
   <div style="margin-top:2rem;text-align:center;">
     <a class="n-social-btn" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;">🐙 View all repos on GitHub</a>

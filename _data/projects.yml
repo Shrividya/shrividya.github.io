@@ -1,0 +1,43 @@
+# Projects data — add new entries here; pages update automatically.
+# Fields: title, tag, category, description, stack, link, link_label
+# Categories: "AI & RAG" | "Data Engineering & MLOps" | "Open Source"
+
+- title: "Resume Analyser RAG"
+  tag: "RAG · LangChain"
+  category: "AI & RAG"
+  description: "LangChain + FAISS RAG pipeline that answers natural language questions about uploaded resumes. Supports multi-document retrieval and prompt chaining for nuanced comparisons."
+  stack: "LangChain · FAISS · OpenAI · Python"
+  link: "https://github.com/Shrividya/article-insights-pipeline/tree/main/rag_resume"
+  link_label: "GitHub →"
+
+- title: "OpenAI Sample Chatbot"
+  tag: "Gen AI · OpenAI"
+  category: "AI & RAG"
+  description: "Chatbot with advanced prompt engineering and OpenAI API integration patterns. Demonstrates system message design, context management, and streaming responses."
+  stack: "OpenAI API · Python · Prompt Engineering"
+  link: "https://github.com/Shrividya/OpenAISampleProject"
+  link_label: "GitHub →"
+
+- title: "Article Insights NLP Pipeline"
+  tag: "NLP · Airflow 3"
+  category: "Data Engineering & MLOps"
+  description: "Production-grade Airflow 3 NLP pipeline — keyword extraction, summarization, sentiment analysis, named entity recognition, and readability scoring across article corpora."
+  stack: "Airflow 3 · NLTK · TextBlob · Python"
+  link: "https://github.com/Shrividya/article-insights-pipeline"
+  link_label: "GitHub →"
+
+- title: "Stock Sentiment Analyzer"
+  tag: "MLOps · Streamlit"
+  category: "Data Engineering & MLOps"
+  description: "Live stock + news sentiment dashboard with real-time price feeds, sentiment scoring, and trend visualization. Fully Dockerized with GitHub Actions CI/CD for automated deployments."
+  stack: "Streamlit · TextBlob · yFinance · Docker · GH Actions"
+  link: "https://github.com/Shrividya/SentimentAnalysis"
+  link_label: "GitHub →"
+
+- title: "Apache Airflow Core Contributions"
+  tag: "OSS · Apache Airflow"
+  category: "Open Source"
+  description: "7 merged PRs to the Apache Airflow core repository — code quality improvements, bug fixes, documentation enhancements, and provider package contributions for Airflow 3."
+  stack: "Python · Apache Airflow · GitHub"
+  link: "https://github.com/apache/airflow/pulls?q=is%3Apr+author%3AShrividya+is%3Amerged"
+  link_label: "View PRs →"
