@@ -976,3 +976,80 @@ a.n-gcard { text-decoration: none; }
 .n-gcard .gcard-body { padding: 0.65rem 0.9rem 0.8rem; flex: 1; display: flex; flex-direction: column; }
 .n-gcard .gcard-cat { color: var(--accent-n); }
 .n-gcard .gcard-link { color: var(--accent-n); margin-top: auto; }
+
+/* ══════════════════════════════════════
+   SECTION INDEX (normal profile hub)
+══════════════════════════════════════ */
+.sec-index-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.7rem; margin-top: 0.7rem; margin-bottom: 0.5rem;
+}
+.sec-card {
+  display: flex; align-items: center; gap: 0.7rem;
+  padding: 0.8rem 1rem; text-decoration: none; color: inherit;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.sec-card:hover { border-color: var(--accent-n); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.18); opacity: 1; }
+.sec-card.sec-ext { border-style: dashed; }
+.sec-card.sec-ext:hover { border-color: var(--accent-n); border-style: solid; }
+.sec-icon { font-size: 1.35rem; flex-shrink: 0; line-height: 1; }
+.sec-info { flex: 1; min-width: 0; }
+.sec-title { font-size: 0.8rem; font-weight: 600; color: var(--heading); }
+.sec-sub { font-size: 0.62rem; font-family: var(--mono); color: var(--text-muted); margin-top: 0.1rem; }
+.sec-arr { font-size: 0.85rem; color: var(--accent-n); flex-shrink: 0; }
+
+/* view-all link */
+.n-view-all {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  font-family: var(--mono); font-size: 0.65rem; font-weight: 600;
+  color: var(--accent-n); margin-top: 0.65rem; margin-bottom: 0.25rem;
+  text-decoration: none; transition: opacity 0.15s;
+}
+.n-view-all:hover { opacity: 0.75; }
+
+/* ══════════════════════════════════════
+   STANDALONE PAGES (gallery, writing)
+══════════════════════════════════════ */
+.page-nav {
+  position: sticky; top: 0; z-index: 200;
+  display: flex; align-items: center; gap: 1rem;
+  padding: 0.55rem 1.5rem;
+  background: var(--bg); border-bottom: 1px solid var(--border);
+}
+.page-nav-back {
+  font-family: var(--mono); font-size: 0.65rem; font-weight: 600;
+  color: var(--accent-n); text-decoration: none; white-space: nowrap;
+  transition: opacity 0.15s;
+}
+.page-nav-back:hover { opacity: 0.75; }
+.page-nav-title {
+  font-family: var(--mono); font-size: 0.7rem; color: var(--text-muted);
+}
+.page-main { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+.page-hero { text-align: center; padding: 2rem 1rem 1.5rem; }
+.page-hero-title { font-family: var(--mono); font-size: 1.5rem; font-weight: 700; color: var(--heading); }
+.page-hero-sub { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; }
+
+/* Writing page article cards (richer than n-acard) */
+.wr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 0.75rem; }
+.wr-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 1rem 1.1rem 1rem;
+  display: flex; flex-direction: column; gap: 0.35rem;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.wr-card:hover { border-color: var(--accent-n); transform: translateY(-2px); }
+.wr-tag { display: inline-block; font-family: var(--mono); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; background: var(--accent-n-dim, rgba(0,137,123,0.12)); color: var(--accent-n); padding: 0.15rem 0.5rem; border-radius: 3px; margin-bottom: 0.15rem; }
+.wr-title { font-size: 0.85rem; font-weight: 600; color: var(--heading); line-height: 1.45; }
+.wr-pub { font-family: var(--mono); font-size: 0.6rem; color: var(--text-muted); }
+.wr-desc { font-size: 0.72rem; color: var(--text-muted); line-height: 1.55; flex: 1; }
+.wr-link { font-family: var(--mono); font-size: 0.62rem; font-weight: 600; color: var(--accent-n); text-decoration: none; margin-top: 0.4rem; align-self: flex-start; transition: opacity 0.15s; }
+.wr-link:hover { opacity: 0.75; }
+
+@media (max-width: 640px) {
+  .sec-index-grid { grid-template-columns: 1fr 1fr; }
+  .wr-grid { grid-template-columns: 1fr; }
+  .page-main { padding: 1.25rem 1rem 2.5rem; }
+}

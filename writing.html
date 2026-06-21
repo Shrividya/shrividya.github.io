@@ -1,0 +1,142 @@
+---
+layout: null
+permalink: /writing/
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Technical Writing — {{ site.author.name }}</title>
+  <meta name="description" content="Articles on AI, Data Engineering, Apache Airflow, Python, and more by {{ site.author.name }}."/>
+  <link rel="stylesheet" href="/assets/css/style.css"/>
+  <script>
+    const _t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', _t);
+  </script>
+</head>
+<body>
+
+<div class="page-nav">
+  <a class="page-nav-back" href="/?view=normal">← Back to portfolio</a>
+  <span class="page-nav-title">✍️ Technical Writing</span>
+  <button class="dark-toggle" style="margin-left:auto;" onclick="toggleDark()" id="dark-toggle">🌙</button>
+</div>
+
+<main class="page-main">
+  <div class="page-hero">
+    <div class="page-hero-title">Technical Writing</div>
+    <div class="page-hero-sub">Articles on AI, Apache Airflow, Data Engineering, and Python · Medium &amp; Substack</div>
+  </div>
+
+  <div class="n-sh">AI &amp; Agents</div>
+  <div class="wr-grid">
+    <div class="wr-card">
+      <span class="wr-tag">AI</span>
+      <div class="wr-title">The 4 AI Concepts Every AI Developer Should Know</div>
+      <div class="wr-pub">Stackademic · Medium</div>
+      <div class="wr-desc">A practical breakdown of foundational AI concepts — embeddings, vector stores, prompt engineering, and retrieval — that every developer building AI systems needs to understand.</div>
+      <a class="wr-link" href="https://shrihegde.medium.com/the-4-ai-concepts-every-ai-developer-should-know-d116ca9575dd" target="_blank" rel="noopener noreferrer">Read on Medium →</a>
+    </div>
+    <div class="wr-card">
+      <span class="wr-tag">RAG</span>
+      <div class="wr-title">RAG Without Vectors: How LLMs Are Learning to Navigate Documents Like Humans</div>
+      <div class="wr-pub">Data Engineering Byte · Medium</div>
+      <div class="wr-desc">Explores emerging RAG architectures that go beyond vector similarity — BM25, hybrid retrieval, and late-interaction models — and when to choose them over classic vector stores.</div>
+      <a class="wr-link" href="https://medium.com/@shrihegde/rag-without-vectors-how-llms-are-learning-to-navigate-documents-like-humans-03bbc7158113" target="_blank" rel="noopener noreferrer">Read on Medium →</a>
+    </div>
+    <div class="wr-card">
+      <span class="wr-tag">Agent Ops</span>
+      <div class="wr-title">Before You Deploy an AI Agent, Read This</div>
+      <div class="wr-pub">Data Engineering Byte · Medium</div>
+      <div class="wr-desc">A pre-flight checklist for production AI agents — tool scoping, guardrails, observability, fallback strategies, and the failure modes teams skip until they're on-call.</div>
+      <a class="wr-link" href="https://medium.com/@shrihegde/before-you-deploy-an-ai-agent-read-this-ac0223097a27" target="_blank" rel="noopener noreferrer">Read on Medium →</a>
+    </div>
+    <div class="wr-card">
+      <span class="wr-tag">LangChain</span>
+      <div class="wr-title">LangChain's Deep Agents Are Actually Worth Your Time</div>
+      <div class="wr-pub">Shrividya Hegde's Substack</div>
+      <div class="wr-desc">A hands-on take on LangChain's latest agent primitives — when they shine, when they over-engineer, and how to wire them into real data pipelines.</div>
+      <a class="wr-link" href="https://shrividyahegde.substack.com/p/langchains-deep-agents-are-actually" target="_blank" rel="noopener noreferrer">Read on Substack →</a>
+    </div>
+    <div class="wr-card">
+      <span class="wr-tag">Podcast</span>
+      <div class="wr-title">Why AI Makes Data Engineers More Important</div>
+      <div class="wr-pub">Stackademic · Medium</div>
+      <div class="wr-desc">A counterintuitive argument: as AI abstracts away more coding, the data engineer's role in pipeline reliability, data quality, and infrastructure becomes more critical — not less.</div>
+      <a class="wr-link" href="https://medium.com/stackademic/why-ai-makes-data-engineers-more-important-0520a747ff02" target="_blank" rel="noopener noreferrer">Read on Medium →</a>
+    </div>
+  </div>
+
+  <div class="n-sh">Apache Airflow</div>
+  <div class="wr-grid">
+    <div class="wr-card">
+      <span class="wr-tag">Airflow</span>
+      <div class="wr-title">What's Actually Costing You in Apache Airflow®?</div>
+      <div class="wr-pub">Data Engineering Byte · Medium</div>
+      <div class="wr-desc">Breaks down the hidden performance and cost traps in Airflow deployments — scheduler bottlenecks, pool misconfiguration, and DAG serialization overhead — with fixes.</div>
+      <a class="wr-link" href="https://medium.com/@shrihegde/whats-actually-costing-you-in-apache-airflow-b2e8ded3b5fb" target="_blank" rel="noopener noreferrer">Read on Medium →</a>
+    </div>
+  </div>
+
+  <div class="n-sh">DevOps &amp; Infrastructure</div>
+  <div class="wr-grid">
+    <div class="wr-card">
+      <span class="wr-tag">DevOps</span>
+      <div class="wr-title">How Kubernetes Is Quietly Draining Your Cloud Budget</div>
+      <div class="wr-pub">DevSecOps Community · Medium</div>
+      <div class="wr-desc">A cost-engineering deep dive into Kubernetes resource requests, over-provisioning defaults, and namespace sprawl — with concrete strategies to cut waste without sacrificing reliability.</div>
+      <a class="wr-link" href="https://medium.com/devsecops-community/the-hidden-tax-how-kubernetes-is-quietly-draining-your-cloud-budget-and-ways-to-stop-it-ff2afb311498" target="_blank" rel="noopener noreferrer">Read on Medium →</a>
+    </div>
+    <div class="wr-card">
+      <span class="wr-tag">Data Eng</span>
+      <div class="wr-title">Linux 101 for Data Engineers</div>
+      <div class="wr-pub">DevSecOps Community · Medium · Jan 2026</div>
+      <div class="wr-desc">A practical command-line guide for data engineers who need Linux fluency — file operations, process management, cron, pipes, and shell scripting patterns for pipeline work.</div>
+      <a class="wr-link" href="https://medium.com/devsecops-community/linux-101-for-data-engineers-a-beginners-command-line-guide-110e397502bd" target="_blank" rel="noopener noreferrer">Read on Medium →</a>
+    </div>
+  </div>
+
+  <div class="n-sh">Python</div>
+  <div class="wr-grid">
+    <div class="wr-card">
+      <span class="wr-tag">Python</span>
+      <div class="wr-title">Practical Uses of Python Lambda Functions</div>
+      <div class="wr-pub">Python in Plain English · Medium · Jan 2026</div>
+      <div class="wr-desc">Goes beyond toy examples — real-world lambda patterns for data transformation, sorting, filtering, and functional pipelines in Python, with trade-offs vs. named functions.</div>
+      <a class="wr-link" href="https://medium.com/python-in-plain-english/practical-uses-of-python-lambda-functions-with-real-examples-855b476a627d" target="_blank" rel="noopener noreferrer">Read on Medium →</a>
+    </div>
+    <div class="wr-card">
+      <span class="wr-tag">Python</span>
+      <div class="wr-title">10 Python Snippets That Make Coding Easier</div>
+      <div class="wr-pub">Python in Plain English · Medium · Dec 2025</div>
+      <div class="wr-desc">Ten concise, production-ready Python patterns — walrus operator, dataclasses, zip with strict, contextlib tricks, and more — that reduce boilerplate in everyday engineering.</div>
+      <a class="wr-link" href="https://medium.com/python-in-plain-english/10-python-snippets-that-make-coding-easier-84db9154ef30" target="_blank" rel="noopener noreferrer">Read on Medium →</a>
+    </div>
+  </div>
+
+  <div style="margin-top:2rem;text-align:center;">
+    <a class="n-social-btn" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;">✍️ Follow on Medium</a>
+    &nbsp;
+    <a class="n-social-btn" href="https://substack.com/{{ site.author.substack }}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;">Subscribe on Substack</a>
+  </div>
+</main>
+
+<footer class="n-footer">⭐ From <a href="https://github.com/{{ site.author.github }}">{{ site.author.name }}</a> with ❤️ &nbsp;·&nbsp; {{ site.url | remove: 'https://' }}</footer>
+
+<script>
+function toggleDark() {
+  const curr = document.documentElement.getAttribute('data-theme');
+  const next = curr === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  document.getElementById('dark-toggle').textContent = next === 'dark' ? '🌙' : '☀️';
+}
+const _savedTheme = localStorage.getItem('theme');
+if (_savedTheme) {
+  document.documentElement.setAttribute('data-theme', _savedTheme);
+  document.getElementById('dark-toggle').textContent = _savedTheme === 'dark' ? '🌙' : '☀️';
+}
+</script>
+</body>
+</html>

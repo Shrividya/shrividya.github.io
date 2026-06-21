@@ -1,0 +1,113 @@
+---
+layout: null
+permalink: /gallery/
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery — {{ site.author.name }}</title>
+  <meta name="description" content="Gallery of talks, conference appearances, community events, and media featuring {{ site.author.name }}."/>
+  <link rel="stylesheet" href="/assets/css/style.css"/>
+  <script>
+    const _t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', _t);
+  </script>
+</head>
+<body>
+
+<div class="page-nav">
+  <a class="page-nav-back" href="/?view=normal">← Back to portfolio</a>
+  <span class="page-nav-title">🖼️ Gallery &amp; Media</span>
+  <button class="dark-toggle" style="margin-left:auto;" onclick="toggleDark()" id="dark-toggle">🌙</button>
+</div>
+
+<main class="page-main">
+  <div class="page-hero">
+    <div class="page-hero-title">Gallery &amp; Media</div>
+    <div class="page-hero-sub">Conference talks, community events, and featured media appearances</div>
+  </div>
+
+  <div class="n-sh">Speaking &amp; Talks</div>
+  <div class="n-gallery-grid">
+    <a class="n-gcard" href="https://sessionize.com/shrividya-hegde" target="_blank" rel="noopener noreferrer">
+      <div class="gcard-thumb gt-conf">🎤</div>
+      <div class="gcard-body">
+        <div class="gcard-cat">Speaking Profile</div>
+        <div class="gcard-title">Conference &amp; Talk History</div>
+        <div class="gcard-sub">Apache Airflow · Data Engineering · Gen AI · Women in Tech</div>
+        <span class="gcard-link">View on Sessionize →</span>
+      </div>
+    </a>
+    <div class="n-gcard">
+      <div class="gcard-thumb gcard-thumb--photo"><img src="/assets/images/gallery/airflow-nyc-speaking.png" alt="Shrividya presenting at Airflow NYC MeetUp June 2026"/></div>
+      <div class="gcard-body">
+        <div class="gcard-cat">Speaking · Jun 2026</div>
+        <div class="gcard-title">Airflow + AI: Orchestrating the Intelligent Stack</div>
+        <div class="gcard-sub">Airflow NYC MeetUp · "Six Ways to Put AI in Your DAG"</div>
+      </div>
+    </div>
+    <div class="n-gcard">
+      <div class="gcard-thumb gcard-thumb--photo"><img src="/assets/images/gallery/airflow-nyc-audience.png" alt="Full room at Airflow NYC MeetUp June 2026"/></div>
+      <div class="gcard-body">
+        <div class="gcard-cat">Speaking · Jun 2026</div>
+        <div class="gcard-title">Airflow NYC MeetUp — Full House</div>
+        <div class="gcard-sub">Packed room for the Airflow + AI session · New York City</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="n-sh">Community Events</div>
+  <div class="n-gallery-grid">
+    <div class="n-gcard">
+      <div class="gcard-thumb gt-comm">👩‍💼</div>
+      <div class="gcard-body">
+        <div class="gcard-cat">Community · Mar 2025–present</div>
+        <div class="gcard-title">Women in Data™ NJ Events</div>
+        <div class="gcard-sub">Bootcamps, meetups &amp; community events — SQL, Python, PySpark, applied ML</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="n-sh">Videos &amp; Podcasts</div>
+  <div class="n-gallery-grid">
+    <a class="n-gcard" href="https://www.youtube.com/{{ site.author.youtube }}" target="_blank" rel="noopener noreferrer">
+      <div class="gcard-thumb gt-yt">▶️</div>
+      <div class="gcard-body">
+        <div class="gcard-cat">YouTube</div>
+        <div class="gcard-title">Tutorial Videos</div>
+        <div class="gcard-sub">Airflow, Data Engineering, and AI/ML tutorials</div>
+        <span class="gcard-link">Watch →</span>
+      </div>
+    </a>
+    <a class="n-gcard" href="https://youtube.com/playlist?list=PLWBnUPKFNrLvN9gQPHKd4PjR-Ne5D3hAt&si=Sa0xO6YPfFXs9gH3" target="_blank" rel="noopener noreferrer">
+      <div class="gcard-thumb gt-yt">🎙️</div>
+      <div class="gcard-body">
+        <div class="gcard-cat">Podcasts</div>
+        <div class="gcard-title">Featured Podcast Appearances</div>
+        <div class="gcard-sub">Panel discussions and podcast episodes featuring Shrividya</div>
+        <span class="gcard-link">Watch Playlist →</span>
+      </div>
+    </a>
+  </div>
+</main>
+
+<footer class="n-footer">⭐ From <a href="https://github.com/{{ site.author.github }}">{{ site.author.name }}</a> with ❤️ &nbsp;·&nbsp; {{ site.url | remove: 'https://' }}</footer>
+
+<script>
+function toggleDark() {
+  const curr = document.documentElement.getAttribute('data-theme');
+  const next = curr === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  document.getElementById('dark-toggle').textContent = next === 'dark' ? '🌙' : '☀️';
+}
+const _savedTheme = localStorage.getItem('theme');
+if (_savedTheme) {
+  document.documentElement.setAttribute('data-theme', _savedTheme);
+  document.getElementById('dark-toggle').textContent = _savedTheme === 'dark' ? '🌙' : '☀️';
+}
+</script>
+</body>
+</html>

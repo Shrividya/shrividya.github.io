@@ -336,6 +336,17 @@ title: Home
   </div>
 
   <div class="n-main">
+    <div class="n-sh">Sections</div>
+    <div class="sec-index-grid">
+      <a class="sec-card" href="#experience"><span class="sec-icon">💼</span><div class="sec-info"><div class="sec-title">Experience</div><div class="sec-sub">5 roles · 10+ years</div></div><span class="sec-arr">↓</span></a>
+      <a class="sec-card" href="#certifications"><span class="sec-icon">🏆</span><div class="sec-info"><div class="sec-title">Certifications</div><div class="sec-sub">14 credentials</div></div><span class="sec-arr">↓</span></a>
+      <a class="sec-card" href="#projects"><span class="sec-icon">🚀</span><div class="sec-info"><div class="sec-title">Projects</div><div class="sec-sub">4 featured builds</div></div><span class="sec-arr">↓</span></a>
+      <a class="sec-card sec-ext" href="/writing"><span class="sec-icon">✍️</span><div class="sec-info"><div class="sec-title">Technical Writing</div><div class="sec-sub">10 articles · Medium &amp; Substack</div></div><span class="sec-arr">→</span></a>
+      <a class="sec-card sec-ext" href="/gallery"><span class="sec-icon">🖼️</span><div class="sec-info"><div class="sec-title">Gallery</div><div class="sec-sub">Talks, photos &amp; media</div></div><span class="sec-arr">→</span></a>
+      <a class="sec-card" href="#community"><span class="sec-icon">👩‍💼</span><div class="sec-info"><div class="sec-title">Community</div><div class="sec-sub">Women in Data NJ Lead</div></div><span class="sec-arr">↓</span></a>
+      <a class="sec-card" href="#connect"><span class="sec-icon">📅</span><div class="sec-info"><div class="sec-title">Connect</div><div class="sec-sub">Book a meeting · Calendly</div></div><span class="sec-arr">↓</span></a>
+    </div>
+
     <div class="n-sh">GitHub Analytics</div>
     <div class="gh-stats">
       <img src="https://github-readme-stats-tau-nine-15.vercel.app/api?username={{ site.author.github }}&amp;show_icons=true&amp;theme=merko&amp;hide_border=true&amp;bg_color=0d1117&amp;title_color=abd200&amp;icon_color=abd200&amp;text_color=ffffff&amp;count_private=true&amp;include_all_commits=true" alt="GitHub stats"/>
@@ -345,7 +356,7 @@ title: Home
       <img src="https://github-readme-streak-stats-xi-topaz.vercel.app?user={{ site.author.github }}&amp;theme=merko&amp;hide_border=true&amp;background=0d1117&amp;ring=abd200&amp;fire=abd200&amp;currStreakLabel=abd200" alt="GitHub streak" style="max-width:100%;"/>
     </div>
 
-    <div class="n-sh">Experience</div>
+    <div class="n-sh" id="experience">Experience</div>
     <div class="n-timeline">
       <div class="n-tcard hi">
         <div class="n-tc-top"><span class="n-tc-co">Apache Software Foundation</span><span class="n-tc-dt">Mar 2026 – present</span></div>
@@ -385,7 +396,7 @@ title: Home
       </div>
     </div>
 
-    <div class="n-sh">Certifications</div>
+    <div class="n-sh" id="certifications">Certifications</div>
     <div class="n-cert-grid">
       <a class="n-cert-card" href="https://www.credly.com/badges/d501857f-fe45-4ec9-8422-0419b95e7198/public_url" target="_blank" rel="noopener noreferrer"><span class="cert-icon">🏆</span><div><div class="cert-name">Astronomer Champions Program</div><div class="cert-org">Astronomer · Jan 2026</div><span class="cert-badge-link">View Credly badge →</span></div></a>
       <a class="n-cert-card" href="https://www.credly.com/badges/bc669172-3656-42b3-b37f-c629c067f44b/public_url" target="_blank" rel="noopener noreferrer"><span class="cert-icon">☁️</span><div><div class="cert-name">AWS Cloud Practitioner</div><div class="cert-org">Amazon Web Services · Jun 2025</div><span class="cert-badge-link">View Credly badge →</span></div></a>
@@ -400,7 +411,7 @@ title: Home
       <a class="n-cert-card" href="https://www.credly.com/badges/5c17125a-893b-4f07-aac0-27f61d7bd665/public_url" target="_blank" rel="noopener noreferrer"><span class="cert-icon">🐍</span><div><div class="cert-name">Python for Data Science</div><div class="cert-org">DataCamp</div><span class="cert-badge-link">View Credly badge →</span></div></a>
     </div>
 
-    <div class="n-sh">Featured Projects</div>
+    <div class="n-sh" id="projects">Featured Projects</div>
     <div class="n-proj-grid">
       <div class="n-pcard"><span class="n-ptag">NLP · Airflow 3</span><div class="n-ptitle">Article Insights NLP Pipeline</div><div class="n-pdesc">Airflow 3 NLP pipeline — keyword extraction, summarization, sentiment analysis, NER, readability.</div><div class="n-pstack">Airflow 3 · NLTK · TextBlob · Python</div><a class="n-plink" href="https://github.com/{{ site.author.github }}/article-insights-pipeline" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
       <div class="n-pcard"><span class="n-ptag">RAG · LangChain</span><div class="n-ptitle">Resume Analyser RAG</div><div class="n-pdesc">LangChain + FAISS RAG answering natural language questions about uploaded resumes.</div><div class="n-pstack">LangChain · FAISS · OpenAI · Python</div><a class="n-plink" href="https://github.com/{{ site.author.github }}/article-insights-pipeline/tree/main/rag_resume" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
@@ -408,50 +419,20 @@ title: Home
       <div class="n-pcard"><span class="n-ptag">Gen AI · OpenAI</span><div class="n-ptitle">OpenAI Sample Chatbot</div><div class="n-pdesc">Chatbot with prompt engineering and OpenAI API integration patterns.</div><div class="n-pstack">OpenAI API · Python · Prompt Engineering</div><a class="n-plink" href="https://github.com/{{ site.author.github }}/OpenAISampleProject" target="_blank" rel="noopener noreferrer">GitHub →</a></div>
     </div>
 
-    <div class="n-sh">Technical Writing</div>
+    <div class="n-sh" id="writing">Technical Writing</div>
     <div class="n-art-grid">
-      <div class="n-acard"><span class="n-atag">AI</span><div class="n-atitle">The 4 AI Concepts Every AI Developer Should Know</div><div class="n-apub">Stackademic · Medium</div><a class="n-alink" href="https://shrihegde.medium.com/the-4-ai-concepts-every-ai-developer-should-know-d116ca9575dd" target="_blank" rel="noopener noreferrer">Read →</a></div>
-      <div class="n-acard"><span class="n-atag">DevOps</span><div class="n-atitle">How Kubernetes Is Quietly Draining Your Cloud Budget</div><div class="n-apub">DevSecOps Community</div><a class="n-alink" href="https://medium.com/devsecops-community/the-hidden-tax-how-kubernetes-is-quietly-draining-your-cloud-budget-and-ways-to-stop-it-ff2afb311498" target="_blank" rel="noopener noreferrer">Read →</a></div>
-      <div class="n-acard"><span class="n-atag">Data Eng</span><div class="n-atitle">Linux 101 for Data Engineers</div><div class="n-apub">Medium · Jan 2026</div><a class="n-alink" href="https://medium.com/devsecops-community/linux-101-for-data-engineers-a-beginners-command-line-guide-110e397502bd" target="_blank" rel="noopener noreferrer">Read →</a></div>
-      <div class="n-acard"><span class="n-atag">Python</span><div class="n-atitle">Practical Uses of Python Lambda Functions</div><div class="n-apub">Python in Plain English · Jan 2026</div><a class="n-alink" href="https://medium.com/python-in-plain-english/practical-uses-of-python-lambda-functions-with-real-examples-855b476a627d" target="_blank" rel="noopener noreferrer">Read →</a></div>
-      <div class="n-acard"><span class="n-atag">Python</span><div class="n-atitle">10 Python Snippets That Make Coding Easier</div><div class="n-apub">Medium · Dec 2025</div><a class="n-alink" href="https://medium.com/python-in-plain-english/10-python-snippets-that-make-coding-easier-84db9154ef30" target="_blank" rel="noopener noreferrer">Read →</a></div>
+      <div class="n-acard"><span class="n-atag">RAG</span><div class="n-atitle">RAG Without Vectors: How LLMs Are Learning to Navigate Documents Like Humans</div><div class="n-apub">Data Engineering Byte</div><a class="n-alink" href="https://medium.com/@shrihegde/rag-without-vectors-how-llms-are-learning-to-navigate-documents-like-humans-03bbc7158113" target="_blank" rel="noopener noreferrer">Read →</a></div>
+      <div class="n-acard"><span class="n-atag">Agent Ops</span><div class="n-atitle">Before You Deploy an AI Agent, Read This</div><div class="n-apub">Data Engineering Byte</div><a class="n-alink" href="https://medium.com/@shrihegde/before-you-deploy-an-ai-agent-read-this-ac0223097a27" target="_blank" rel="noopener noreferrer">Read →</a></div>
     </div>
+    <a class="n-view-all" href="/writing">View all 10 articles →</a>
 
-    <div class="n-sh">Gallery &amp; Media</div>
-    <div class="n-gallery-grid">
-      <a class="n-gcard" href="https://sessionize.com/shrividya-hegde" target="_blank" rel="noopener noreferrer">
-        <div class="gcard-thumb gt-conf">🎤</div>
-        <div class="gcard-body"><div class="gcard-cat">Speaking</div><div class="gcard-title">Conference &amp; Talk History</div><div class="gcard-sub">Apache Airflow · Data Engineering · Gen AI · Women in Tech</div><span class="gcard-link">View on Sessionize →</span></div>
-      </a>
-      <a class="n-gcard" href="https://www.youtube.com/{{ site.author.youtube }}" target="_blank" rel="noopener noreferrer">
-        <div class="gcard-thumb gt-yt">▶️</div>
-        <div class="gcard-body"><div class="gcard-cat">YouTube</div><div class="gcard-title">Tutorial Videos</div><div class="gcard-sub">Airflow, Data Engineering, and AI/ML tutorials</div><span class="gcard-link">Watch →</span></div>
-      </a>
-      <a class="n-gcard" href="https://youtube.com/playlist?list=PLWBnUPKFNrLvN9gQPHKd4PjR-Ne5D3hAt&si=Sa0xO6YPfFXs9gH3" target="_blank" rel="noopener noreferrer">
-        <div class="gcard-thumb gt-yt">🎙️</div>
-        <div class="gcard-body"><div class="gcard-cat">Podcasts</div><div class="gcard-title">Featured Podcast Appearances</div><div class="gcard-sub">Podcasts and panel discussions featuring Shrividya</div><span class="gcard-link">Watch Playlist →</span></div>
-      </a>
-      <div class="n-gcard">
-        <div class="gcard-thumb gt-comm">👩‍💼</div>
-        <div class="gcard-body"><div class="gcard-cat">Community</div><div class="gcard-title">Women in Data™ NJ Events</div><div class="gcard-sub">Bootcamps, meetups &amp; community events · Mar 2025–present</div></div>
-      </div>
-      <div class="n-gcard">
-        <div class="gcard-thumb gcard-thumb--photo"><img src="/assets/images/gallery/airflow-nyc-speaking.png" alt="Shrividya presenting at Airflow NYC MeetUp June 2026"></div>
-        <div class="gcard-body"><div class="gcard-cat">Speaking · Jun 2026</div><div class="gcard-title">Airflow + AI: Orchestrating the Intelligent Stack</div><div class="gcard-sub">Airflow NYC MeetUp · "Six Ways to Put AI in Your DAG"</div></div>
-      </div>
-      <div class="n-gcard">
-        <div class="gcard-thumb gcard-thumb--photo"><img src="/assets/images/gallery/airflow-nyc-audience.png" alt="Full room at Airflow NYC MeetUp June 2026"></div>
-        <div class="gcard-body"><div class="gcard-cat">Speaking · Jun 2026</div><div class="gcard-title">Airflow NYC MeetUp</div><div class="gcard-sub">Full house for the Airflow + AI session · New York City</div></div>
-      </div>
-    </div>
-
-    <div class="n-sh">Community &amp; Leadership</div>
+    <div class="n-sh" id="community">Community &amp; Leadership</div>
     <div class="two-col">
       <div class="n-scard"><div class="n-sc-plat">👩‍💼 Women in Data™</div><div class="n-sc-handle">NJ Chapter Lead · Mar 2025–present</div><div class="n-sc-desc">Organizing events, fostering a local community of data professionals. Bootcamps: SQL, Python, PySpark, applied ML.</div></div>
       <div class="n-scard"><div class="n-sc-plat">📊 Data Engineering Byte</div><div class="n-sc-handle">Content Expert</div><div class="n-sc-desc">Expert content on Apache Airflow, modern data stack, and AI pipeline patterns for practitioners.</div></div>
     </div>
 
-    <div class="n-sh">Connect</div>
+    <div class="n-sh" id="connect">Connect</div>
     <div class="n-connect-grid">
       <div class="n-scard feat"><div class="n-sc-plat">💼 LinkedIn</div><div class="n-sc-handle">{{ site.author.name }}</div><div class="n-sc-desc">Career history, posts on Data Engineering & AI.</div><a class="n-sc-link" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" target="_blank" rel="noopener noreferrer">Connect →</a></div>
       <div class="n-scard"><div class="n-sc-plat">🐙 GitHub</div><div class="n-sc-handle">@{{ site.author.github }}</div><div class="n-sc-desc">16+ repos — Airflow, NLP, RAG, OSS contributions.</div><a class="n-sc-link" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer">View →</a></div>
@@ -587,6 +568,18 @@ setInterval(() => {
 }, 900);
 
 setTimeout(() => showStage(0), 500);
+
+// Auto-switch to normal view if coming from a sub-page
+if (new URLSearchParams(window.location.search).get('view') === 'normal') {
+  document.getElementById('view-airflow').style.display = 'none';
+  document.getElementById('view-normal').style.display = 'block';
+  const lbl = document.getElementById('toggle-label');
+  const btn = document.getElementById('electric-btn');
+  const backBtn = document.getElementById('back-btn');
+  if (lbl) lbl.textContent = '// normal profile view';
+  if (btn) btn.style.display = 'none';
+  if (backBtn) backBtn.style.display = '';
+}
 
 // Hide hint banner if previously dismissed
 if (localStorage.getItem('af_hint_dismissed')) {
