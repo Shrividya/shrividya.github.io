@@ -1,0 +1,98 @@
+---
+layout: null
+permalink: /projects/
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects — {{ site.author.name }}</title>
+  <meta name="description" content="AI, RAG, and Data Engineering projects by {{ site.author.name }}"/>
+  <link rel="stylesheet" href="/assets/css/style.css"/>
+  <script>
+    const _t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', _t);
+  </script>
+</head>
+<body>
+
+<div class="page-nav">
+  <a class="page-nav-back" href="/?view=normal">← Back to portfolio</a>
+  <span class="page-nav-title">🚀 Projects</span>
+  <button class="dark-toggle" style="margin-left:auto;" onclick="toggleDark()" id="dark-toggle">🌙</button>
+</div>
+
+<main class="page-main">
+  <div class="page-hero">
+    <div class="page-hero-title">Projects</div>
+    <div class="page-hero-sub">AI pipelines, RAG systems, and open-source contributions</div>
+  </div>
+
+  <div class="n-sh">AI &amp; RAG</div>
+  <div class="n-proj-grid">
+    <div class="n-pcard">
+      <span class="n-ptag">RAG · LangChain</span>
+      <div class="n-ptitle">Resume Analyser RAG</div>
+      <div class="n-pdesc">LangChain + FAISS RAG pipeline that answers natural language questions about uploaded resumes. Supports multi-document retrieval and prompt chaining for nuanced comparisons.</div>
+      <div class="n-pstack">LangChain · FAISS · OpenAI · Python</div>
+      <a class="n-plink" href="https://github.com/{{ site.author.github }}/article-insights-pipeline/tree/main/rag_resume" target="_blank" rel="noopener noreferrer">GitHub →</a>
+    </div>
+    <div class="n-pcard">
+      <span class="n-ptag">Gen AI · OpenAI</span>
+      <div class="n-ptitle">OpenAI Sample Chatbot</div>
+      <div class="n-pdesc">Chatbot with advanced prompt engineering and OpenAI API integration patterns. Demonstrates system message design, context management, and streaming responses.</div>
+      <div class="n-pstack">OpenAI API · Python · Prompt Engineering</div>
+      <a class="n-plink" href="https://github.com/{{ site.author.github }}/OpenAISampleProject" target="_blank" rel="noopener noreferrer">GitHub →</a>
+    </div>
+  </div>
+
+  <div class="n-sh">Data Engineering &amp; MLOps</div>
+  <div class="n-proj-grid">
+    <div class="n-pcard">
+      <span class="n-ptag">NLP · Airflow 3</span>
+      <div class="n-ptitle">Article Insights NLP Pipeline</div>
+      <div class="n-pdesc">Production-grade Airflow 3 NLP pipeline — keyword extraction, summarization, sentiment analysis, named entity recognition, and readability scoring across article corpora.</div>
+      <div class="n-pstack">Airflow 3 · NLTK · TextBlob · Python</div>
+      <a class="n-plink" href="https://github.com/{{ site.author.github }}/article-insights-pipeline" target="_blank" rel="noopener noreferrer">GitHub →</a>
+    </div>
+    <div class="n-pcard">
+      <span class="n-ptag">MLOps · Streamlit</span>
+      <div class="n-ptitle">Stock Sentiment Analyzer</div>
+      <div class="n-pdesc">Live stock + news sentiment dashboard with real-time price feeds, sentiment scoring, and trend visualization. Fully Dockerized with GitHub Actions CI/CD for automated deployments.</div>
+      <div class="n-pstack">Streamlit · TextBlob · yFinance · Docker · GH Actions</div>
+      <a class="n-plink" href="https://github.com/{{ site.author.github }}/SentimentAnalysis" target="_blank" rel="noopener noreferrer">GitHub →</a>
+    </div>
+  </div>
+
+  <div class="n-sh">Open Source</div>
+  <div class="n-proj-grid">
+    <div class="n-pcard">
+      <span class="n-ptag">OSS · Apache Airflow</span>
+      <div class="n-ptitle">Apache Airflow Core Contributions</div>
+      <div class="n-pdesc">7 merged PRs to the Apache Airflow core repository — code quality improvements, bug fixes, documentation enhancements, and provider package contributions for Airflow 3.</div>
+      <div class="n-pstack">Python · Apache Airflow · GitHub</div>
+      <a class="n-plink" href="https://github.com/apache/airflow/pulls?q=is%3Apr+author%3AShrividya+is%3Amerged" target="_blank" rel="noopener noreferrer">View PRs →</a>
+    </div>
+  </div>
+
+  <div style="margin-top:2rem;text-align:center;">
+    <a class="n-social-btn" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;">🐙 View all repos on GitHub</a>
+  </div>
+</main>
+
+<footer class="n-footer">⭐ From <a href="https://github.com/{{ site.author.github }}">{{ site.author.name }}</a> with ❤️ &nbsp;·&nbsp; {{ site.url | remove: 'https://' }}</footer>
+
+<script>
+function toggleDark() {
+  const curr = document.documentElement.getAttribute('data-theme');
+  const next = curr === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  document.getElementById('dark-toggle').textContent = next === 'dark' ? '🌙' : '☀️';
+}
+const _s = localStorage.getItem('theme');
+if (_s) { document.documentElement.setAttribute('data-theme', _s); document.getElementById('dark-toggle').textContent = _s === 'dark' ? '🌙' : '☀️'; }
+</script>
+</body>
+</html>

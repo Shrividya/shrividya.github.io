@@ -40,34 +40,44 @@ permalink: /gallery/
         <span class="gcard-link">View on Sessionize →</span>
       </div>
     </a>
+    {% for photo in site.data.gallery %}
     <div class="n-gcard">
-      <div class="gcard-thumb gcard-thumb--photo"><img src="/assets/images/gallery/airflow-nyc-speaking.png" alt="Shrividya presenting at Airflow NYC MeetUp June 2026"/></div>
+      <div class="gcard-thumb gcard-thumb--photo"><img src="/assets/images/gallery/{{ photo.file }}" alt="{{ photo.alt | default: photo.title }}"/></div>
       <div class="gcard-body">
-        <div class="gcard-cat">Speaking · Jun 2026</div>
-        <div class="gcard-title">Airflow + AI: Orchestrating the Intelligent Stack</div>
-        <div class="gcard-sub">Airflow NYC MeetUp · "Six Ways to Put AI in Your DAG"</div>
+        <div class="gcard-cat">{{ photo.cat }}</div>
+        <div class="gcard-title">{{ photo.title }}</div>
+        <div class="gcard-sub">{{ photo.sub }}</div>
       </div>
     </div>
-    <div class="n-gcard">
-      <div class="gcard-thumb gcard-thumb--photo"><img src="/assets/images/gallery/airflow-nyc-audience.png" alt="Full room at Airflow NYC MeetUp June 2026"/></div>
-      <div class="gcard-body">
-        <div class="gcard-cat">Speaking · Jun 2026</div>
-        <div class="gcard-title">Airflow NYC MeetUp — Full House</div>
-        <div class="gcard-sub">Packed room for the Airflow + AI session · New York City</div>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 
-  <div class="n-sh">Community Events</div>
+  <div class="n-sh">Community Events — Women in Data™ NJ</div>
   <div class="n-gallery-grid">
-    <div class="n-gcard">
-      <div class="gcard-thumb gt-comm">👩‍💼</div>
-      <div class="gcard-body">
-        <div class="gcard-cat">Community · Mar 2025–present</div>
-        <div class="gcard-title">Women in Data™ NJ Events</div>
-        <div class="gcard-sub">Bootcamps, meetups &amp; community events — SQL, Python, PySpark, applied ML</div>
-      </div>
-    </div>
+    <a class="n-gcard" href="https://womenindata.mn.co/events/meet-n-greet-parsippany-chapter-launch-party" target="_blank" rel="noopener noreferrer">
+      <div class="gcard-thumb gt-comm">🥂</div>
+      <div class="gcard-body"><div class="gcard-cat">Launch · Mar 2025</div><div class="gcard-title">Meet &amp; Greet — Chapter Launch Party</div><div class="gcard-sub">Parsippany NJ chapter kickoff &amp; networking</div><span class="gcard-link">View event →</span></div>
+    </a>
+    <a class="n-gcard" href="https://womenindata.mn.co/events/sql-%E2%86%92-orm-using-sql-alchemy" target="_blank" rel="noopener noreferrer">
+      <div class="gcard-thumb gt-conf">🐍</div>
+      <div class="gcard-body"><div class="gcard-cat">Workshop · SQL Series</div><div class="gcard-title">SQL → ORM Using SQLAlchemy</div><div class="gcard-sub">SQL-to-ORM patterns for Python pipelines</div><span class="gcard-link">View event →</span></div>
+    </a>
+    <a class="n-gcard" href="https://womenindata.mn.co/events/sql-%E2%86%92-pyspark-mapping-revision-session" target="_blank" rel="noopener noreferrer">
+      <div class="gcard-thumb gt-conf">⚡</div>
+      <div class="gcard-body"><div class="gcard-cat">Workshop · SQL Series</div><div class="gcard-title">SQL → PySpark Mapping Revision</div><div class="gcard-sub">SQL concepts mapped to PySpark equivalents</div><span class="gcard-link">View event →</span></div>
+    </a>
+    <a class="n-gcard" href="https://womenindata.mn.co/events/sql%E2%86%92-pandas-syntax-translation-for-data-practitioners-101503870" target="_blank" rel="noopener noreferrer">
+      <div class="gcard-thumb gt-conf">🐼</div>
+      <div class="gcard-body"><div class="gcard-cat">Workshop · SQL Series</div><div class="gcard-title">SQL → Pandas for Data Practitioners</div><div class="gcard-sub">SQL-to-Pandas syntax translation · 101 session</div><span class="gcard-link">View event →</span></div>
+    </a>
+    <a class="n-gcard" href="https://womenindata.mn.co/events/airflow-in-action-day-1" target="_blank" rel="noopener noreferrer">
+      <div class="gcard-thumb gt-conf">✈️</div>
+      <div class="gcard-body"><div class="gcard-cat">Bootcamp · Airflow Series</div><div class="gcard-title">Airflow in Action — Day 1</div><div class="gcard-sub">DAG anatomy, operators, scheduling &amp; first pipeline</div><span class="gcard-link">View event →</span></div>
+    </a>
+    <a class="n-gcard" href="https://womenindata.mn.co/events/airflow-in-action-day-2" target="_blank" rel="noopener noreferrer">
+      <div class="gcard-thumb gt-conf">✈️</div>
+      <div class="gcard-body"><div class="gcard-cat">Bootcamp · Airflow Series</div><div class="gcard-title">Airflow in Action — Day 2</div><div class="gcard-sub">Dynamic task mapping, XComs &amp; Airflow 3 features</div><span class="gcard-link">View event →</span></div>
+    </a>
   </div>
 
   <div class="n-sh">Videos &amp; Podcasts</div>

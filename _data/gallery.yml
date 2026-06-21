@@ -1,0 +1,19 @@
+# Gallery photos — drop image into assets/images/gallery/ then add an entry here.
+# Fields:
+#   file:  filename only (e.g. my-photo.jpg)
+#   title: shown as the card/caption heading — use the caption you gave the image
+#   cat:   small label shown above the title (e.g. "Speaking · Jun 2026")
+#   sub:   one-line subtitle shown below the title
+#   alt:   screen-reader alt text (optional — falls back to title)
+
+- file: airflow-nyc-speaking.png
+  title: "Airflow + AI: Orchestrating the Intelligent Stack"
+  cat: "Speaking · Jun 2026"
+  sub: "Airflow NYC MeetUp · New York City · Jun 2026"
+  alt: "Shrividya presenting at Airflow NYC MeetUp June 2026"
+
+- file: airflow-nyc-audience.png
+  title: "Airflow + AI: Orchestrating the Intelligent Stack"
+  cat: "Speaking · Jun 2026"
+  sub: "Airflow NYC MeetUp · New York City · Jun 2026"
+  alt: "Full house at Airflow NYC MeetUp June 2026"
