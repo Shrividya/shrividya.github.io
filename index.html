@@ -9,9 +9,10 @@ title: Home
   <button class="electric-btn" id="electric-btn" onclick="triggerNormal()">
     <span class="eb-bolt" id="eb-bolt">⚡</span>
     <span class="eb-text">New to Airflow? Click here for normal profile</span>
+    <span class="eb-short">Normal</span>
   </button>
-  <button class="back-btn" id="back-btn" onclick="switchTheme('airflow')" style="display:none;">← Back to DAG view</button>
-  <button class="audio-btn" id="audio-btn" onclick="toggleSummary()" title="Listen to profile summary">🎙 Long story short, click here to listen</button>
+  <button class="back-btn" id="back-btn" onclick="switchTheme('airflow')" style="display:none;">← DAG view</button>
+  <button class="audio-btn" id="audio-btn" onclick="toggleSummary()" title="Listen to profile summary"><span class="audio-icon" id="audio-icon">🎙</span><span class="audio-text"> Long story short, click here to listen</span></button>
   <a class="resume-dl-btn" href="/assets/resume.pdf" download="Shrividya_Hegde_Resume.pdf" title="Download Resume">📄 Resume</a>
   <button class="dark-toggle" id="dark-toggle" onclick="toggleDark()" title="Toggle light/dark mode">🌙</button>
 </div>
@@ -584,12 +585,19 @@ const profileSummary = "Hi There! I'm Shri, a Senior AI Data Engineer based in P
   "I'm currently open to new roles, speaking opportunities, mentoring, and collaboration. " +
   "Reach out on LinkedIn, or check out my projects on GitHub. Thanks for visiting!";
 
+function setAudioLabel(icon, text) {
+  const iconEl = document.getElementById('audio-icon');
+  const textEl = document.querySelector('#audio-btn .audio-text');
+  if (iconEl) iconEl.textContent = icon;
+  if (textEl) textEl.textContent = text;
+}
+
 function toggleSummary() {
   const btn = document.getElementById('audio-btn');
   if (isSpeaking) {
     window.speechSynthesis.cancel();
     isSpeaking = false;
-    btn.textContent = '🎙 Long story short, click here to listen';
+    setAudioLabel('🎙', ' Long story short, click here to listen');
     btn.classList.remove('audio-playing');
     playClick();
     return;
@@ -612,12 +620,12 @@ function toggleSummary() {
 
   utter.onstart = () => {
     isSpeaking = true;
-    btn.textContent = '🔊 Playing... click to stop';
+    setAudioLabel('🔊', ' Playing... click to stop');
     btn.classList.add('audio-playing');
   };
   utter.onend = utter.onerror = () => {
     isSpeaking = false;
-    btn.textContent = '🎙 Long story short, click here to listen';
+    setAudioLabel('🎙', ' Long story short, click here to listen');
     btn.classList.remove('audio-playing');
   };
 
