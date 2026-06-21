@@ -42,30 +42,23 @@ permalink: /gallery/
     .flip-card { perspective: 1100px; cursor: pointer; }
     .flip-card-inner {
       position: relative; width: 100%;
-      padding-top: 130%; /* 10:13 portrait ratio */
       transform-style: preserve-3d;
       transition: transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1);
     }
     .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
 
-    .flip-front, .flip-back {
-      position: absolute; inset: 0;
+    /* FRONT — natural height, no cropping */
+    .flip-front {
       border-radius: 6px; overflow: hidden;
       backface-visibility: hidden; -webkit-backface-visibility: hidden;
     }
+    .flip-front img { width: 100%; height: auto; display: block; }
 
-    /* FRONT — photo */
-    .flip-front { background: #111; }
-    .flip-front img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .flip-front-hint {
-      position: absolute; bottom: 0.6rem; right: 0.75rem;
-      font-family: 'Caveat', cursive; font-size: 0.8rem;
-      color: rgba(255,255,255,0.55); pointer-events: none;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-    }
-
-    /* BACK — handwritten paper */
+    /* BACK — absolute, covers the same area as front */
     .flip-back {
+      position: absolute; inset: 0;
+      border-radius: 6px; overflow: hidden;
+      backface-visibility: hidden; -webkit-backface-visibility: hidden;
       transform: rotateY(180deg);
       background: #fdf6e8;
       display: flex; flex-direction: column; justify-content: center;
@@ -102,10 +95,6 @@ permalink: /gallery/
       font-family: 'Caveat', cursive; font-size: 1.05rem;
       color: #5c4030; line-height: 1.6; position: relative; z-index: 1;
     }
-    .flip-back-hint {
-      font-family: 'Caveat', cursive; font-size: 0.8rem; color: #c4a882;
-      position: absolute; bottom: 0.65rem; right: 1rem; z-index: 1;
-    }
 
     @media (max-width: 600px) {
       .pg-grid { grid-template-columns: 1fr 1fr; gap: 1.1rem; }
@@ -136,13 +125,12 @@ permalink: /gallery/
       <div class="flip-card-inner">
         <div class="flip-front">
           <img src="/assets/images/gallery/{{ photo.file }}" alt="{{ photo.alt | default: photo.title }}">
-          <div class="flip-front-hint">tap ✦</div>
         </div>
         <div class="flip-back">
           <div class="flip-cat">{{ photo.cat }}</div>
           <div class="flip-title">{{ photo.title }}</div>
           <div class="flip-sub">{{ photo.sub }}</div>
-          <div class="flip-back-hint">tap to flip back ✦</div>
+
         </div>
       </div>
     </div>
