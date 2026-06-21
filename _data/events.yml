@@ -73,3 +73,22 @@
   description: "Talk on orchestrating AI workloads with Apache Airflow 3 — patterns for building, scheduling, and monitoring LLM and RAG pipelines in production."
   link: "https://sessionize.com/shrividya-hegde"
   tags: ["Airflow", "AI", "LLM", "Data Engineering", "Speaking"]
+
+- title: "SQL→ Pandas: Syntax Translation for Data Practitioners"
+  date: "2026-07-29"
+  type: "Speaking"
+  venue: "Virtual"
+  location: "NJ"
+  description: "This session would be a practical one. The speaker would share the screen and try small snippets of code in both tech stacks."
+  link: "https://womenindata.mn.co/events/sql%E2%86%92-pandas-syntax-translation-for-data-practitioners-101503870"
+  tags: ["SQL", "Python", "Data Engineering", "Speaking"]
+
+- title: "Future World Conversations"
+  date: "2026-07-03"
+  type: "Technical Session"
+  venue: "Online"
+  location: "Virtual"
+  description: "Airflow as an Orchestrator for Data and AI pipelines"
+  link: "https://luma.com/ktgequzw"
+  tags: ["AI", "Data Orchestration", "Data Engineering", "Speaking"]
+
