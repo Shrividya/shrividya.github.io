@@ -354,36 +354,6 @@ title: Home
       <img src="https://github-readme-streak-stats-xi-topaz.vercel.app?user={{ site.author.github }}&amp;theme=merko&amp;hide_border=true&amp;background=0d1117&amp;ring=abd200&amp;fire=abd200&amp;currStreakLabel=abd200" alt="GitHub streak" style="max-width:100%;"/>
     </div>
 
-    <div class="n-sh">Gallery</div>
-    <div class="gallery-carousel">
-      <div class="gc-slides" id="gc-slides">
-        {% for photo in site.data.gallery %}
-        <div class="gc-slide{% if forloop.first %} active{% endif %}">
-          <img src="/assets/images/gallery/{{ photo.file }}" alt="{{ photo.alt | default: photo.title }}">
-          <div class="gc-caption"><strong>{{ photo.title }}</strong><br>{{ photo.sub }}</div>
-        </div>
-        {% endfor %}
-        <div class="gc-slide">
-          <a class="gc-media-slide gt-conf" href="https://sessionize.com/shrividya-hegde" target="_blank" rel="noopener noreferrer">
-            <div class="gc-media-icon">🎤</div>
-            <div class="gc-media-title">Speaking Profile</div>
-            <div class="gc-media-link">View on Sessionize →</div>
-          </a>
-          <div class="gc-caption"><strong>Conference &amp; Talk History</strong><br>Apache Airflow · Data Engineering · Gen AI · Women in Tech</div>
-        </div>
-        <div class="gc-slide">
-          <a class="gc-media-slide gt-yt" href="https://www.youtube.com/{{ site.author.youtube }}" target="_blank" rel="noopener noreferrer">
-            <div class="gc-media-icon">▶️</div>
-            <div class="gc-media-title">YouTube Channel</div>
-            <div class="gc-media-link">Watch tutorials →</div>
-          </a>
-          <div class="gc-caption"><strong>Tutorial Videos</strong><br>Airflow, Data Engineering, and AI/ML</div>
-        </div>
-      </div>
-      <button class="gc-prev" onclick="gcPrev()" aria-label="Previous">‹</button>
-      <button class="gc-next" onclick="gcNext()" aria-label="Next">›</button>
-      <div class="gc-dots" id="gc-dots"></div>
-    </div>
   </div>
   <footer class="n-footer">⭐ From <a href="https://github.com/{{ site.author.github }}">{{ site.author.name }}</a> with ❤️ &nbsp;·&nbsp; {{ site.url | remove: 'https://' }}</footer>
 </div>
