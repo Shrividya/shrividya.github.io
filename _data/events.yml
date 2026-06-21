@@ -1,0 +1,75 @@
+# Events data — each entry needs a date in YYYY-MM-DD format.
+# JS on the events page compares each date against the visitor's current date
+# and automatically shows it under "Upcoming Sessions" or "Past Events".
+
+- title: "Meet & Greet — Parsippany Chapter Launch Party"
+  date: "2025-03-15"
+  type: "Community"
+  venue: "Women in Data™ NJ Chapter"
+  location: "Parsippany, NJ"
+  description: "Inaugural NJ chapter event — networking, introductions, and community kickoff for data professionals in the Parsippany area."
+  link: "https://womenindata.mn.co/events/meet-n-greet-parsippany-chapter-launch-party"
+  tags: ["Community", "Women in Data", "Networking"]
+
+- title: "SQL → ORM Using SQLAlchemy"
+  date: "2025-04-26"
+  type: "Workshop"
+  venue: "Women in Data™ NJ Chapter"
+  location: "Parsippany, NJ"
+  description: "Hands-on session bridging SQL knowledge to ORM patterns using SQLAlchemy — practical for data engineers working with Python-based pipelines."
+  link: "https://womenindata.mn.co/events/sql-%E2%86%92-orm-using-sql-alchemy"
+  tags: ["SQL", "Python", "SQLAlchemy", "Workshop"]
+
+- title: "SQL → PySpark Mapping Revision Session"
+  date: "2025-05-17"
+  type: "Workshop"
+  venue: "Women in Data™ NJ Chapter"
+  location: "Parsippany, NJ"
+  description: "Revision session mapping SQL concepts to PySpark equivalents — joins, aggregations, window functions, and transformations for big-data pipelines."
+  link: "https://womenindata.mn.co/events/sql-%E2%86%92-pyspark-mapping-revision-session"
+  tags: ["SQL", "PySpark", "Big Data", "Workshop"]
+
+- title: "SQL → Pandas Syntax Translation for Data Practitioners"
+  date: "2025-06-07"
+  type: "Workshop"
+  venue: "Women in Data™ NJ Chapter"
+  location: "Parsippany, NJ"
+  description: "101 session translating SQL syntax to Pandas — covering SELECT, WHERE, GROUP BY, and JOIN patterns for analysts and engineers switching to DataFrames."
+  link: "https://womenindata.mn.co/events/sql%E2%86%92-pandas-syntax-translation-for-data-practitioners-101503870"
+  tags: ["SQL", "Pandas", "Python", "Workshop"]
+
+- title: "Airflow in Action — Day 1"
+  date: "2025-10-04"
+  type: "Bootcamp"
+  venue: "Women in Data™ NJ Chapter"
+  location: "Parsippany, NJ"
+  description: "Day 1 of the Airflow bootcamp series — core concepts, DAG anatomy, operators, scheduling, and building your first production pipeline."
+  link: "https://womenindata.mn.co/events/airflow-in-action-day-1"
+  tags: ["Airflow", "Data Engineering", "Bootcamp"]
+
+- title: "Airflow in Action — Day 2"
+  date: "2025-10-18"
+  type: "Bootcamp"
+  venue: "Women in Data™ NJ Chapter"
+  location: "Parsippany, NJ"
+  description: "Day 2 — advanced patterns including dynamic task mapping, XComs, custom operators, hooks, and Airflow 3 features for real-world data engineering."
+  link: "https://womenindata.mn.co/events/airflow-in-action-day-2"
+  tags: ["Airflow", "Data Engineering", "Bootcamp"]
+
+- title: "Real-Time Stock Sentiment Analyser with Streamlit"
+  date: "2026-04-12"
+  type: "Workshop"
+  venue: "Women in Data™ Pro — Data Viz Club"
+  location: "Online"
+  description: "Hands-on session building a real-time stock sentiment dashboard using Streamlit, TextBlob, and yFinance — a practical introduction to MLOps and live data apps."
+  link: "https://womenindata.mn.co/"
+  tags: ["Streamlit", "AI", "Python", "MLOps"]
+
+- title: "Airflow + AI: Orchestrating the Intelligent Stack"
+  date: "2026-06-10"
+  type: "Speaking"
+  venue: "Airflow NYC MeetUp"
+  location: "New York City, NY"
+  description: "Talk on orchestrating AI workloads with Apache Airflow 3 — patterns for building, scheduling, and monitoring LLM and RAG pipelines in production."
+  link: "https://sessionize.com/shrividya-hegde"
+  tags: ["Airflow", "AI", "LLM", "Data Engineering", "Speaking"]

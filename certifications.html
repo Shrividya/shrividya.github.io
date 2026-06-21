@@ -8,7 +8,7 @@ permalink: /certifications/
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Certifications — {{ site.author.name }}</title>
-  <meta name="description" content="14 professional certifications in Apache Airflow, AWS, AI/ML, Data Engineering, and Python — {{ site.author.name }}"/>
+  <meta name="description" content="{{ site.data.certifications | size }} professional certifications in Apache Airflow, AWS, AI/ML, Data Engineering, and Python — {{ site.author.name }}"/>
   <link rel="stylesheet" href="/assets/css/style.css"/>
   <script>
     const _t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -26,37 +26,94 @@ permalink: /certifications/
 <main class="page-main">
   <div class="page-hero">
     <div class="page-hero-title">Certifications</div>
-    <div class="page-hero-sub">14 credentials across Apache Airflow, AWS, AI/ML, Data Engineering, and Python</div>
+    <div class="page-hero-sub">{{ site.data.certifications | size }} credentials across Apache Airflow, AWS, AI/ML, Data Engineering, and Python</div>
   </div>
 
+  {% assign af_certs = site.data.certifications | where: "category", "Apache Airflow & Astronomer" %}
+  {% if af_certs.size > 0 %}
   <div class="n-sh">Apache Airflow &amp; Astronomer</div>
   <div class="n-cert-grid">
-    <a class="n-cert-card" href="https://www.credly.com/badges/d501857f-fe45-4ec9-8422-0419b95e7198/public_url" target="_blank" rel="noopener noreferrer"><span class="cert-icon">🏆</span><div><div class="cert-name">Astronomer Champions Program</div><div class="cert-org">Astronomer · Jan 2026</div><span class="cert-badge-link">View Credly badge →</span></div></a>
-    <a class="n-cert-card" href="https://www.credly.com/badges/01db7078-9e2f-4809-8642-2561021bc25d/public_url" target="_blank" rel="noopener noreferrer"><span class="cert-icon">✈️</span><div><div class="cert-name">DAG Authoring — Airflow 3</div><div class="cert-org">Astronomer · Jun 2025</div><span class="cert-badge-link">View Credly badge →</span></div></a>
-    <a class="n-cert-card" href="https://www.credly.com/badges/4c23a3f2-a8de-46ac-8e48-abbc2858372a/public_url" target="_blank" rel="noopener noreferrer"><span class="cert-icon">✈️</span><div><div class="cert-name">Airflow 3 Fundamentals</div><div class="cert-org">Astronomer · Jun 2025</div><span class="cert-badge-link">View Credly badge →</span></div></a>
-    <a class="n-cert-card" href="https://www.credly.com/badges/8a8fa696-3e69-4136-b7f8-6ea45027f7d1/public_url" target="_blank" rel="noopener noreferrer"><span class="cert-icon">✈️</span><div><div class="cert-name">DAG Authoring — Airflow 2</div><div class="cert-org">Astronomer · May 2025</div><span class="cert-badge-link">View Credly badge →</span></div></a>
-    <a class="n-cert-card" href="https://www.credly.com/badges/b27bd5de-ad49-4c8b-a774-45f8941c641a/public_url" target="_blank" rel="noopener noreferrer"><span class="cert-icon">✈️</span><div><div class="cert-name">Airflow 2 Fundamentals</div><div class="cert-org">Astronomer · Mar 2025</div><span class="cert-badge-link">View Credly badge →</span></div></a>
+    {% for cert in af_certs %}
+    {% if cert.link %}<a class="n-cert-card" href="{{ cert.link }}" target="_blank" rel="noopener noreferrer">{% else %}<div class="n-cert-card">{% endif %}
+      <span class="cert-icon">{{ cert.icon }}</span>
+      <div>
+        <div class="cert-name">{{ cert.name }}</div>
+        <div class="cert-org">{{ cert.org }}{% if cert.date %} · {{ cert.date }}{% endif %}</div>
+        {% if cert.link %}<span class="cert-badge-link">{{ cert.link_label | default: "View credential →" }}</span>{% endif %}
+      </div>
+    {% if cert.link %}</a>{% else %}</div>{% endif %}
+    {% endfor %}
   </div>
+  {% endif %}
 
+  {% assign cloud_certs = site.data.certifications | where: "category", "Cloud & AI" %}
+  {% if cloud_certs.size > 0 %}
   <div class="n-sh">Cloud &amp; AI</div>
   <div class="n-cert-grid">
-    <a class="n-cert-card" href="https://www.credly.com/badges/bc669172-3656-42b3-b37f-c629c067f44b/public_url" target="_blank" rel="noopener noreferrer"><span class="cert-icon">☁️</span><div><div class="cert-name">AWS Cloud Practitioner</div><div class="cert-org">Amazon Web Services · Jun 2025</div><span class="cert-badge-link">View Credly badge →</span></div></a>
-    <a class="n-cert-card" href="https://credentials.databricks.com/f78b7b96-0086-46c1-ae82-40f8e2716ddd#acc.NSkgHiaW" target="_blank" rel="noopener noreferrer"><span class="cert-icon">🤖</span><div><div class="cert-name">Generative AI Fundamentals</div><div class="cert-org">Databricks · Mar 2025</div><span class="cert-badge-link">View credential →</span></div></a>
-    <a class="n-cert-card" href="https://www.datacamp.com/skill-verification/AIF0028501816329" target="_blank" rel="noopener noreferrer"><span class="cert-icon">🤖</span><div><div class="cert-name">AI Fundamentals</div><div class="cert-org">DataCamp · 2025</div><span class="cert-badge-link">View certificate →</span></div></a>
+    {% for cert in cloud_certs %}
+    {% if cert.link %}<a class="n-cert-card" href="{{ cert.link }}" target="_blank" rel="noopener noreferrer">{% else %}<div class="n-cert-card">{% endif %}
+      <span class="cert-icon">{{ cert.icon }}</span>
+      <div>
+        <div class="cert-name">{{ cert.name }}</div>
+        <div class="cert-org">{{ cert.org }}{% if cert.date %} · {{ cert.date }}{% endif %}</div>
+        {% if cert.link %}<span class="cert-badge-link">{{ cert.link_label | default: "View credential →" }}</span>{% endif %}
+      </div>
+    {% if cert.link %}</a>{% else %}</div>{% endif %}
+    {% endfor %}
   </div>
+  {% endif %}
 
+  {% assign de_certs = site.data.certifications | where: "category", "Data Engineering & Python" %}
+  {% if de_certs.size > 0 %}
   <div class="n-sh">Data Engineering &amp; Python</div>
   <div class="n-cert-grid">
-    <a class="n-cert-card" href="https://www.datacamp.com/certificate/DEA0019670170404" target="_blank" rel="noopener noreferrer"><span class="cert-icon">⚙️</span><div><div class="cert-name">Data Engineer Associate</div><div class="cert-org">DataCamp · Apr 2026</div><span class="cert-badge-link">View certificate →</span></div></a>
-    <a class="n-cert-card" href="https://www.datacamp.com/certificate/PDA0012877012439" target="_blank" rel="noopener noreferrer"><span class="cert-icon">🐍</span><div><div class="cert-name">Python Data Associate</div><div class="cert-org">DataCamp · May 2026</div><span class="cert-badge-link">View certificate →</span></div></a>
-    <a class="n-cert-card" href="https://www.credly.com/badges/5c17125a-893b-4f07-aac0-27f61d7bd665/public_url" target="_blank" rel="noopener noreferrer"><span class="cert-icon">🐍</span><div><div class="cert-name">Python for Data Science</div><div class="cert-org">DataCamp</div><span class="cert-badge-link">View Credly badge →</span></div></a>
+    {% for cert in de_certs %}
+    {% if cert.link %}<a class="n-cert-card" href="{{ cert.link }}" target="_blank" rel="noopener noreferrer">{% else %}<div class="n-cert-card">{% endif %}
+      <span class="cert-icon">{{ cert.icon }}</span>
+      <div>
+        <div class="cert-name">{{ cert.name }}</div>
+        <div class="cert-org">{{ cert.org }}{% if cert.date %} · {{ cert.date }}{% endif %}</div>
+        {% if cert.link %}<span class="cert-badge-link">{{ cert.link_label | default: "View credential →" }}</span>{% endif %}
+      </div>
+    {% if cert.link %}</a>{% else %}</div>{% endif %}
+    {% endfor %}
   </div>
+  {% endif %}
 
+  {% assign tq_certs = site.data.certifications | where: "category", "Testing & Quality" %}
+  {% if tq_certs.size > 0 %}
   <div class="n-sh">Testing &amp; Quality</div>
   <div class="n-cert-grid">
-    <a class="n-cert-card" href="https://www.hackerrank.com/certificates/b7425e2b3f66" target="_blank" rel="noopener noreferrer"><span class="cert-icon">💻</span><div><div class="cert-name">Problem Solving</div><div class="cert-org">HackerRank</div><span class="cert-badge-link">View certificate →</span></div></a>
-    <a class="n-cert-card" href="https://www.vskills.in/certification/37707-certified-selenium-professional-shrividya-hegde" target="_blank" rel="noopener noreferrer"><span class="cert-icon">🧪</span><div><div class="cert-name">Certified Selenium Professional</div><div class="cert-org">Vskills</div><span class="cert-badge-link">View certificate →</span></div></a>
+    {% for cert in tq_certs %}
+    {% if cert.link %}<a class="n-cert-card" href="{{ cert.link }}" target="_blank" rel="noopener noreferrer">{% else %}<div class="n-cert-card">{% endif %}
+      <span class="cert-icon">{{ cert.icon }}</span>
+      <div>
+        <div class="cert-name">{{ cert.name }}</div>
+        <div class="cert-org">{{ cert.org }}{% if cert.date %} · {{ cert.date }}{% endif %}</div>
+        {% if cert.link %}<span class="cert-badge-link">{{ cert.link_label | default: "View credential →" }}</span>{% endif %}
+      </div>
+    {% if cert.link %}</a>{% else %}</div>{% endif %}
+    {% endfor %}
   </div>
+  {% endif %}
+
+  {% if site.data.achievements.size > 0 %}
+  <div class="n-sh">Recognition &amp; Awards</div>
+  <div class="n-cert-grid">
+    {% for ach in site.data.achievements %}
+    <div class="n-cert-card">
+      <span class="cert-icon">{{ ach.icon }}</span>
+      <div>
+        <div class="cert-name">{{ ach.title }}</div>
+        <div class="cert-org">{{ ach.org }}{% if ach.date %} · {{ ach.date }}{% endif %}</div>
+        {% if ach.description %}<div class="cert-org" style="margin-top:0.2rem;font-size:0.7rem;color:var(--text-muted);">{{ ach.description }}</div>{% endif %}
+        {% if ach.link %}<a class="cert-badge-link" href="{{ ach.link }}" target="_blank" rel="noopener noreferrer">View →</a>{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
 </main>
 
 <footer class="n-footer">⭐ From <a href="https://github.com/{{ site.author.github }}">{{ site.author.name }}</a> with ❤️ &nbsp;·&nbsp; {{ site.url | remove: 'https://' }}</footer>

@@ -1132,3 +1132,48 @@ a.n-gcard { text-decoration: none; }
 .wr-link { font-family: var(--mono); font-size: 0.62rem; font-weight: 600; color: var(--accent-n); text-decoration: none; margin-top: 0.4rem; align-self: flex-start; transition: opacity 0.15s; }
 .wr-link:hover { opacity: 0.75; }
 
+/* ══════════════════════════════════════
+   EVENTS PAGE
+══════════════════════════════════════ */
+.ev-card-top {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.15rem;
+}
+.ev-date-badge {
+  font-family: var(--mono); font-size: 0.62rem; font-weight: 600;
+  background: var(--success-bg); color: var(--success);
+  border: 1px solid var(--success); border-radius: 3px;
+  padding: 0.1rem 0.45rem; white-space: nowrap; flex-shrink: 0;
+}
+.ev-date-past {
+  background: var(--bg-elevated); color: var(--text-dim);
+  border-color: var(--border);
+}
+.ev-upcoming { border-left: 3px solid var(--success) !important; }
+.ev-past { border-left: 3px solid var(--border-lit) !important; opacity: 0.9; }
+.ev-tags {
+  display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.15rem;
+}
+.ev-tag {
+  font-family: var(--mono); font-size: 0.53rem;
+  color: var(--text-dim); background: var(--bg-elevated);
+  border: 1px solid var(--border); border-radius: 3px;
+  padding: 0.05rem 0.32rem;
+}
+.ev-count {
+  font-family: var(--mono); font-size: 0.56rem; font-weight: 700;
+  padding: 0.07rem 0.5rem; border-radius: 10px; border: 1px solid;
+  vertical-align: middle; margin-left: 0.35rem;
+}
+.ev-count-upcoming { background: var(--success-bg); color: var(--success); border-color: var(--success); }
+.ev-count-past     { background: var(--bg-elevated); color: var(--text-dim); border-color: var(--border); }
+.ev-empty {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 0.55rem; padding: 2.25rem 1.5rem; text-align: center;
+  background: var(--bg-card); border: 1px dashed var(--border-lit);
+  border-radius: var(--radius-lg); color: var(--text-muted); font-size: 0.82rem;
+  margin-top: 0.65rem;
+}
+.ev-empty-icon { font-size: 1.6rem; }
+.ev-empty-sub { font-size: 0.7rem; color: var(--text-dim); line-height: 1.6; }
+

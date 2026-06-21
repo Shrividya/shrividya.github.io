@@ -1,0 +1,172 @@
+---
+layout: null
+permalink: /events/
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sessions &amp; Events — {{ site.author.name }}</title>
+  <meta name="description" content="Upcoming and past speaking sessions, workshops, bootcamps, and community events by {{ site.author.name }}"/>
+  <link rel="stylesheet" href="/assets/css/style.css"/>
+  <script>
+    const _t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', _t);
+  </script>
+</head>
+<body>
+
+<div class="page-nav">
+  <a class="page-nav-back" href="/?view=normal">← Back to portfolio</a>
+  <span class="page-nav-title">🗓 Sessions &amp; Events</span>
+  <button class="dark-toggle" style="margin-left:auto;" onclick="toggleDark()" id="dark-toggle">🌙</button>
+</div>
+
+<main class="page-main">
+  <div class="page-hero">
+    <div class="page-hero-title">Sessions &amp; Events</div>
+    <div class="page-hero-sub">Speaking engagements, workshops, bootcamps, and community events</div>
+  </div>
+
+  <!-- UPCOMING SESSIONS -->
+  <div class="n-sh" style="margin-top:1.5rem;">
+    Upcoming Sessions
+    <span class="ev-count ev-count-upcoming" id="upcoming-count" style="display:none;"></span>
+  </div>
+  <div class="n-proj-grid" id="upcoming-list"></div>
+  <div class="ev-empty" id="upcoming-empty" style="display:none;">
+    <span class="ev-empty-icon">🗓</span>
+    <span>No upcoming sessions scheduled yet.</span>
+    <span class="ev-empty-sub">
+      Check back soon, or follow on
+      <a href="https://sessionize.com/shrividya-hegde" target="_blank" rel="noopener noreferrer">Sessionize</a>
+      for the latest talk proposals and accepted sessions.
+    </span>
+  </div>
+
+  <!-- PAST EVENTS -->
+  <div class="n-sh" style="margin-top:2.5rem;">
+    Past Events
+    <span class="ev-count ev-count-past" id="past-count" style="display:none;"></span>
+  </div>
+  <div class="n-proj-grid" id="past-list"></div>
+
+  <div style="text-align:center;margin-top:2.5rem;">
+    <a class="n-plink" href="https://sessionize.com/shrividya-hegde" target="_blank" rel="noopener noreferrer">
+      🎤 Full speaking history on Sessionize →
+    </a>
+  </div>
+</main>
+
+<footer class="n-footer">⭐ From <a href="https://github.com/{{ site.author.github }}">{{ site.author.name }}</a> with ❤️ &nbsp;·&nbsp; {{ site.url | remove: 'https://' }}</footer>
+
+<!-- Hidden event data pool populated by Jekyll -->
+<div id="events-pool" style="display:none;" aria-hidden="true">
+  {% for event in site.data.events %}
+  <div class="ev-tpl"
+       data-date="{{ event.date }}"
+       data-type="{{ event.type | escape }}"
+       data-title="{{ event.title | escape }}"
+       data-venue="{{ event.venue | escape }}"
+       data-location="{{ event.location | escape }}"
+       data-description="{{ event.description | escape }}"
+       data-link="{{ event.link }}"
+       data-tags="{{ event.tags | join: '|' | escape }}">
+  </div>
+  {% endfor %}
+</div>
+
+<script>
+function toggleDark() {
+  const curr = document.documentElement.getAttribute('data-theme');
+  const next = curr === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  document.getElementById('dark-toggle').textContent = next === 'dark' ? '🌙' : '☀️';
+}
+(function() {
+  const s = localStorage.getItem('theme');
+  if (s) {
+    document.documentElement.setAttribute('data-theme', s);
+    document.getElementById('dark-toggle').textContent = s === 'dark' ? '🌙' : '☀️';
+  }
+})();
+
+const TYPE_COLORS = {
+  Speaking:   { bg: 'var(--accent-af-bg)', color: 'var(--accent-af)', border: 'var(--accent-af)' },
+  Workshop:   { bg: 'var(--accent-n-bg)',  color: 'var(--accent-n)',  border: 'var(--accent-n)'  },
+  Bootcamp:   { bg: 'var(--purple-bg)',    color: 'var(--purple)',    border: 'var(--purple)'    },
+  Community:  { bg: 'var(--success-bg)',   color: 'var(--success)',   border: 'var(--success)'   },
+  Conference: { bg: 'var(--amber-bg)',     color: 'var(--amber)',     border: 'var(--amber)'     },
+  Meetup:     { bg: 'var(--accent-af-bg)', color: 'var(--accent-af)', border: 'var(--accent-af)' },
+};
+
+function fmtDate(iso) {
+  const d = new Date(iso + 'T00:00:00');
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
+function buildCard(tpl, isPast) {
+  const { date, type, title, venue, location, description, link, tags: rawTags } = tpl.dataset;
+  const tags = rawTags ? rawTags.split('|').filter(Boolean) : [];
+  const tc = TYPE_COLORS[type] || TYPE_COLORS.Workshop;
+
+  const card = document.createElement('div');
+  card.className = 'n-pcard ev-card ' + (isPast ? 'ev-past' : 'ev-upcoming');
+
+  const typeTag = `<span class="n-ptag" style="background:${tc.bg};color:${tc.color};border-color:${tc.border};">${type}</span>`;
+  const dateBadge = `<span class="ev-date-badge${isPast ? ' ev-date-past' : ''}">${fmtDate(date)}</span>`;
+  const tagsHtml = tags.length
+    ? `<div class="ev-tags">${tags.map(t => `<span class="ev-tag">${t}</span>`).join('')}</div>`
+    : '';
+  const linkHtml = link
+    ? `<a class="n-plink" href="${link}" target="_blank" rel="noopener noreferrer">${isPast ? 'View recap →' : 'Learn more →'}</a>`
+    : '';
+
+  card.innerHTML = `
+    <div class="ev-card-top">${typeTag}${dateBadge}</div>
+    <div class="n-ptitle">${title}</div>
+    <div class="n-pstack">📍 ${venue} · ${location}</div>
+    <div class="n-pdesc">${description}</div>
+    ${tagsHtml}
+    ${linkHtml}
+  `;
+  return card;
+}
+
+(function initEvents() {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const templates = Array.from(document.querySelectorAll('.ev-tpl'));
+  const upcoming = templates.filter(t => new Date(t.dataset.date + 'T00:00:00') >= today);
+  const past     = templates.filter(t => new Date(t.dataset.date + 'T00:00:00') < today);
+
+  upcoming.sort((a, b) => new Date(a.dataset.date) - new Date(b.dataset.date));
+  past.sort((a, b) => new Date(b.dataset.date) - new Date(a.dataset.date));
+
+  const upcomingList  = document.getElementById('upcoming-list');
+  const pastList      = document.getElementById('past-list');
+  const upcomingEmpty = document.getElementById('upcoming-empty');
+  const upcomingCount = document.getElementById('upcoming-count');
+  const pastCount     = document.getElementById('past-count');
+
+  upcoming.forEach(t => upcomingList.appendChild(buildCard(t, false)));
+  past.forEach(t => pastList.appendChild(buildCard(t, true)));
+
+  if (upcoming.length === 0) {
+    upcomingEmpty.style.display = 'flex';
+  } else {
+    upcomingCount.textContent = upcoming.length;
+    upcomingCount.style.display = 'inline';
+  }
+
+  if (past.length > 0) {
+    pastCount.textContent = past.length;
+    pastCount.style.display = 'inline';
+  }
+})();
+</script>
+</body>
+</html>
