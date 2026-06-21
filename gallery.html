@@ -8,116 +8,151 @@ permalink: /gallery/
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gallery — {{ site.author.name }}</title>
-  <meta name="description" content="Gallery of talks, conference appearances, community events, and media featuring {{ site.author.name }}."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="/assets/css/style.css"/>
   <script>
     const _t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     document.documentElement.setAttribute('data-theme', _t);
   </script>
+  <style>
+    .pg-nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; gap: 1rem; padding: 0.6rem 1.4rem;
+      background: var(--bg); border-bottom: 1px solid var(--border);
+    }
+    .pg-nav-back { font-family: var(--mono); font-size: 0.65rem; font-weight: 600; color: var(--accent-n); text-decoration: none; transition: opacity 0.15s; }
+    .pg-nav-back:hover { opacity: 0.7; }
+    .pg-nav-title { font-family: var(--mono); font-size: 0.65rem; color: var(--text-muted); }
+
+    .pg-main { max-width: 960px; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+    .pg-intro { text-align: center; margin-bottom: 2rem; }
+    .pg-intro-title { font-family: 'Caveat', cursive; font-size: 2rem; color: var(--heading); }
+    .pg-intro-sub { font-family: 'Caveat', cursive; font-size: 1.1rem; color: var(--text-muted); margin-top: 0.25rem; }
+
+    /* ── GRID ── */
+    .pg-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.75rem;
+    }
+
+    /* ── FLIP CARD ── */
+    .flip-card { perspective: 1100px; cursor: pointer; }
+    .flip-card-inner {
+      position: relative; width: 100%;
+      padding-top: 130%; /* 10:13 portrait ratio */
+      transform-style: preserve-3d;
+      transition: transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
+    .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+
+    .flip-front, .flip-back {
+      position: absolute; inset: 0;
+      border-radius: 6px; overflow: hidden;
+      backface-visibility: hidden; -webkit-backface-visibility: hidden;
+    }
+
+    /* FRONT — photo */
+    .flip-front { background: #111; }
+    .flip-front img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .flip-front-hint {
+      position: absolute; bottom: 0.6rem; right: 0.75rem;
+      font-family: 'Caveat', cursive; font-size: 0.8rem;
+      color: rgba(255,255,255,0.55); pointer-events: none;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    }
+
+    /* BACK — handwritten paper */
+    .flip-back {
+      transform: rotateY(180deg);
+      background: #fdf6e8;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 1.4rem 1.4rem 2rem;
+      box-shadow: inset 0 0 40px rgba(180,140,80,0.08);
+    }
+    /* ruled lines */
+    .flip-back::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        transparent 0px, transparent 29px,
+        rgba(100,140,200,0.18) 29px, rgba(100,140,200,0.18) 30px
+      );
+      top: 44px; border-radius: 6px; pointer-events: none;
+    }
+    /* red margin line */
+    .flip-back::after {
+      content: '';
+      position: absolute; top: 0; bottom: 0; left: 2.4rem;
+      width: 1px; background: rgba(220,80,80,0.3); pointer-events: none;
+    }
+    .flip-cat {
+      font-family: 'Caveat', cursive; font-size: 0.95rem;
+      color: #a0835a; position: relative; z-index: 1;
+      margin-bottom: 0.35rem;
+    }
+    .flip-title {
+      font-family: 'Caveat', cursive; font-size: 1.45rem; font-weight: 700;
+      color: #2a1a0e; line-height: 1.35; position: relative; z-index: 1;
+      margin-bottom: 0.5rem;
+    }
+    .flip-sub {
+      font-family: 'Caveat', cursive; font-size: 1.05rem;
+      color: #5c4030; line-height: 1.6; position: relative; z-index: 1;
+    }
+    .flip-back-hint {
+      font-family: 'Caveat', cursive; font-size: 0.8rem; color: #c4a882;
+      position: absolute; bottom: 0.65rem; right: 1rem; z-index: 1;
+    }
+
+    @media (max-width: 600px) {
+      .pg-grid { grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+      .flip-title { font-size: 1.15rem; }
+      .flip-sub { font-size: 0.88rem; }
+    }
+    @media (max-width: 380px) {
+      .pg-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="page-nav">
-  <a class="page-nav-back" href="/?view=normal">← Back to portfolio</a>
-  <span class="page-nav-title">🖼️ Gallery &amp; Media</span>
-  <button class="dark-toggle" style="margin-left:auto;" onclick="toggleDark()" id="dark-toggle">🌙</button>
+<div class="pg-nav">
+  <a class="pg-nav-back" href="/?view=normal">← Portfolio</a>
+  <span class="pg-nav-title">🖼️ Gallery</span>
 </div>
 
-<main class="page-main">
-  <div class="page-hero">
-    <div class="page-hero-title">Gallery &amp; Media</div>
-    <div class="page-hero-sub">Conference talks, community events, and featured media appearances</div>
+<div class="pg-main">
+  <div class="pg-intro">
+    <div class="pg-intro-title">Memories</div>
+    <div class="pg-intro-sub">tap a photo to flip it ✦</div>
   </div>
 
-  <div class="n-sh">Speaking &amp; Talks</div>
-  <div class="n-gallery-grid">
-    <a class="n-gcard" href="https://sessionize.com/shrividya-hegde" target="_blank" rel="noopener noreferrer">
-      <div class="gcard-thumb gt-conf">🎤</div>
-      <div class="gcard-body">
-        <div class="gcard-cat">Speaking Profile</div>
-        <div class="gcard-title">Conference &amp; Talk History</div>
-        <div class="gcard-sub">Apache Airflow · Data Engineering · Gen AI · Women in Tech</div>
-        <span class="gcard-link">View on Sessionize →</span>
-      </div>
-    </a>
+  <div class="pg-grid">
     {% for photo in site.data.gallery %}
-    <div class="n-gcard">
-      <div class="gcard-thumb gcard-thumb--photo"><img src="/assets/images/gallery/{{ photo.file }}" alt="{{ photo.alt | default: photo.title }}"/></div>
-      <div class="gcard-body">
-        <div class="gcard-cat">{{ photo.cat }}</div>
-        <div class="gcard-title">{{ photo.title }}</div>
-        <div class="gcard-sub">{{ photo.sub }}</div>
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
+        <div class="flip-front">
+          <img src="/assets/images/gallery/{{ photo.file }}" alt="{{ photo.alt | default: photo.title }}">
+          <div class="flip-front-hint">tap ✦</div>
+        </div>
+        <div class="flip-back">
+          <div class="flip-cat">{{ photo.cat }}</div>
+          <div class="flip-title">{{ photo.title }}</div>
+          <div class="flip-sub">{{ photo.sub }}</div>
+          <div class="flip-back-hint">tap to flip back ✦</div>
+        </div>
       </div>
     </div>
     {% endfor %}
   </div>
-
-  <div class="n-sh">Community Events — Women in Data™ NJ</div>
-  <div class="n-gallery-grid">
-    <a class="n-gcard" href="https://womenindata.mn.co/events/meet-n-greet-parsippany-chapter-launch-party" target="_blank" rel="noopener noreferrer">
-      <div class="gcard-thumb gt-comm">🥂</div>
-      <div class="gcard-body"><div class="gcard-cat">Launch · Mar 2025</div><div class="gcard-title">Meet &amp; Greet — Chapter Launch Party</div><div class="gcard-sub">Parsippany NJ chapter kickoff &amp; networking</div><span class="gcard-link">View event →</span></div>
-    </a>
-    <a class="n-gcard" href="https://womenindata.mn.co/events/sql-%E2%86%92-orm-using-sql-alchemy" target="_blank" rel="noopener noreferrer">
-      <div class="gcard-thumb gt-conf">🐍</div>
-      <div class="gcard-body"><div class="gcard-cat">Workshop · SQL Series</div><div class="gcard-title">SQL → ORM Using SQLAlchemy</div><div class="gcard-sub">SQL-to-ORM patterns for Python pipelines</div><span class="gcard-link">View event →</span></div>
-    </a>
-    <a class="n-gcard" href="https://womenindata.mn.co/events/sql-%E2%86%92-pyspark-mapping-revision-session" target="_blank" rel="noopener noreferrer">
-      <div class="gcard-thumb gt-conf">⚡</div>
-      <div class="gcard-body"><div class="gcard-cat">Workshop · SQL Series</div><div class="gcard-title">SQL → PySpark Mapping Revision</div><div class="gcard-sub">SQL concepts mapped to PySpark equivalents</div><span class="gcard-link">View event →</span></div>
-    </a>
-    <a class="n-gcard" href="https://womenindata.mn.co/events/sql%E2%86%92-pandas-syntax-translation-for-data-practitioners-101503870" target="_blank" rel="noopener noreferrer">
-      <div class="gcard-thumb gt-conf">🐼</div>
-      <div class="gcard-body"><div class="gcard-cat">Workshop · SQL Series</div><div class="gcard-title">SQL → Pandas for Data Practitioners</div><div class="gcard-sub">SQL-to-Pandas syntax translation · 101 session</div><span class="gcard-link">View event →</span></div>
-    </a>
-    <a class="n-gcard" href="https://womenindata.mn.co/events/airflow-in-action-day-1" target="_blank" rel="noopener noreferrer">
-      <div class="gcard-thumb gt-conf">✈️</div>
-      <div class="gcard-body"><div class="gcard-cat">Bootcamp · Airflow Series</div><div class="gcard-title">Airflow in Action — Day 1</div><div class="gcard-sub">DAG anatomy, operators, scheduling &amp; first pipeline</div><span class="gcard-link">View event →</span></div>
-    </a>
-    <a class="n-gcard" href="https://womenindata.mn.co/events/airflow-in-action-day-2" target="_blank" rel="noopener noreferrer">
-      <div class="gcard-thumb gt-conf">✈️</div>
-      <div class="gcard-body"><div class="gcard-cat">Bootcamp · Airflow Series</div><div class="gcard-title">Airflow in Action — Day 2</div><div class="gcard-sub">Dynamic task mapping, XComs &amp; Airflow 3 features</div><span class="gcard-link">View event →</span></div>
-    </a>
-  </div>
-
-  <div class="n-sh">Videos &amp; Podcasts</div>
-  <div class="n-gallery-grid">
-    <a class="n-gcard" href="https://www.youtube.com/{{ site.author.youtube }}" target="_blank" rel="noopener noreferrer">
-      <div class="gcard-thumb gt-yt">▶️</div>
-      <div class="gcard-body">
-        <div class="gcard-cat">YouTube</div>
-        <div class="gcard-title">Tutorial Videos</div>
-        <div class="gcard-sub">Airflow, Data Engineering, and AI/ML tutorials</div>
-        <span class="gcard-link">Watch →</span>
-      </div>
-    </a>
-    <a class="n-gcard" href="https://youtube.com/playlist?list=PLWBnUPKFNrLvN9gQPHKd4PjR-Ne5D3hAt&si=Sa0xO6YPfFXs9gH3" target="_blank" rel="noopener noreferrer">
-      <div class="gcard-thumb gt-yt">🎙️</div>
-      <div class="gcard-body">
-        <div class="gcard-cat">Podcasts</div>
-        <div class="gcard-title">Featured Podcast Appearances</div>
-        <div class="gcard-sub">Panel discussions and podcast episodes featuring Shrividya</div>
-        <span class="gcard-link">Watch Playlist →</span>
-      </div>
-    </a>
-  </div>
-</main>
-
-<footer class="n-footer">⭐ From <a href="https://github.com/{{ site.author.github }}">{{ site.author.name }}</a> with ❤️ &nbsp;·&nbsp; {{ site.url | remove: 'https://' }}</footer>
+</div>
 
 <script>
-function toggleDark() {
-  const curr = document.documentElement.getAttribute('data-theme');
-  const next = curr === 'dark' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', next);
-  localStorage.setItem('theme', next);
-  document.getElementById('dark-toggle').textContent = next === 'dark' ? '🌙' : '☀️';
-}
-const _savedTheme = localStorage.getItem('theme');
-if (_savedTheme) {
-  document.documentElement.setAttribute('data-theme', _savedTheme);
-  document.getElementById('dark-toggle').textContent = _savedTheme === 'dark' ? '🌙' : '☀️';
-}
+const _s = localStorage.getItem('theme');
+if (_s) document.documentElement.setAttribute('data-theme', _s);
 </script>
 </body>
 </html>
