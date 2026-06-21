@@ -1,0 +1,35 @@
+# Achievements & Awards — add new entries here; certifications.html shows them automatically.
+# Fields: title, org, date (optional), icon, category, description, image (optional, filename in assets/images/gallery/), link (optional)
+# Categories: "Recognition" | "Work" | "Community"
+
+- title: "Airflow Champion"
+  org: "Astronomer"
+  date: "Jan 2026"
+  icon: "🏆"
+  category: "Recognition"
+  description: "Recognized by Astronomer as an Apache Airflow Champion — top-tier community contributor for OSS contributions and community education."
+  link: "https://www.credly.com/badges/d501857f-fe45-4ec9-8422-0419b95e7198/public_url"
+
+- title: "On-the-Spot Award"
+  org: "Astronomer"
+  date: "2024"
+  icon: "🏅"
+  category: "Work"
+  description: "On-the-spot recognition award at Astronomer."
+  image: "On-the-spot-award.jpeg"
+
+- title: "Top 5 Champions of Q2"
+  org: "Astronomer"
+  date: "2024"
+  icon: "🥇"
+  category: "Work"
+  description: "Recognised as one of the top 5 Champions of Q2 at Astronomer."
+  image: "Top5-champions-of-Q2.png"
+
+- title: "TCS Star Award"
+  org: "Tata Consultancy Services"
+  date: "2018"
+  icon: "⭐"
+  category: "Work"
+  description: "TCS Star Award for outstanding performance and contribution."
+  image: "tcs-star-award.jpeg"

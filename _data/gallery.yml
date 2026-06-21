@@ -1,11 +1,3 @@
-# Gallery photos — drop image into assets/images/gallery/ then add an entry here.
-# Fields:
-#   file:  filename only (e.g. my-photo.jpg)
-#   title: shown as the card/caption heading — use the caption you gave the image
-#   cat:   small label shown above the title (e.g. "Speaking · Jun 2026")
-#   sub:   one-line subtitle shown below the title
-#   alt:   screen-reader alt text (optional — falls back to title)
-
 - file: airflow-nyc-speaking.png
   title: "Airflow + AI: Orchestrating the Intelligent Stack"
   cat: "Speaking · Jun 2026"
@@ -17,3 +9,63 @@
   cat: "Speaking · Jun 2026"
   sub: "Airflow NYC MeetUp · New York City · Jun 2026"
   alt: "Full house at Airflow NYC MeetUp June 2026"
+
+- file: WiD-session-for-Data-Viz-club.png
+  title: "WiD Data Viz Club:Real time stock sentiment analyser with streamlit"
+  cat: "Hands-on session · April 2026"
+  sub: "Women in Data Pro events"
+  alt: "Pro member events for Data Visualization club in WiD"
+
+- file: 1778804945245.jpeg
+  title: "The DataFlow cast by Kenten Danas"
+  cat: "Podcast appearance"
+  sub: "Getting into DE"
+  alt: "The DataFlow cast by Kenten Danas"
+
+- file: Airflow+dbt session .png
+  title: "Session at dbt community channel"
+  cat: "Technical session + Demo"
+  sub: "women in data @ dbt labs"
+  alt: "Session at dbt community channel"
+
+- file: On-the-spot-award.jpeg
+  title: "On the Spot award won at TCS"
+  cat: "Awards"
+  sub: "On the spot awards"
+  alt: "On the Spot award won at TCS"
+
+- file: tcs-star-award.jpeg
+  title: "Star of the Month award at TCS"
+  cat: "Awards"
+  sub: "Star of the Month"
+  alt: "Star of the Month award at TCS"
+
+- file: Top5-champions-of-Q2.png
+  title: "One of the top 5 Airflow Champions in Q2 "
+  cat: "Community Recognition"
+  sub: "Community Recognition @Airflow"
+  alt: "One of the top 5 Airflow Champions in Q2"
+
+- file: airflow-day-2-workshop.jpeg
+  title: "2 day workshop at Data Engineering Club"
+  cat: "WiD Pro events"
+  sub: "Tech session + Workshop for Airflow"
+  alt: "2 day workshop at Data Engineering Club"
+
+- file: parsippany-lead.jpeg
+  title: "2 day workshop at Data Engineering Club"
+  cat: "WiD Pro events"
+  sub: "Tech session + Workshop for Airflow"
+  alt: "2 day workshop at Data Engineering Club"
+
+- file: sql-to-alchemy-session.jpeg
+  title: "SQL to Alchemy practical session"
+  cat: "WiD Community Chapter events"
+  sub: "Tech session"
+  alt: "SQL to Alchemy practical session"
+
+- file: sql+pyspark_session.jpeg
+  title: "SQL to PySpark practical session"
+  cat: "WiD Community Chapter events"
+  sub: "Tech session"
+  alt: "SQL to PySpark practical session"
