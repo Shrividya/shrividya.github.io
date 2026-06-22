@@ -1,8 +1,3 @@
-# Articles data — add new entries here to have them appear on writing.html and the index preview.
-# The first 6 entries (by order) appear in the index.html stage 4 preview.
-# Fields: title, tag, category, publication, description, link
-# Categories: "AI & Agents" | "Apache Airflow" | "DevOps & Infrastructure" | "Python"
-
 - title: "RAG Without Vectors: How LLMs Are Learning to Navigate Documents Like Humans"
   tag: "RAG"
   category: "AI & Agents"
