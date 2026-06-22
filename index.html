@@ -227,11 +227,15 @@ title: Home
           <div class="scard feat"><div class="sc-plat">👩‍💼 Women in Data™</div><div class="sc-handle">NJ Chapter Lead · Mar 2025–present</div><div class="sc-desc">Organizing events, fostering local data community. Bootcamps: SQL, Python, PySpark, applied ML.</div></div>
           <div class="scard feat"><div class="sc-plat">📊 Data Engineering Byte</div><div class="sc-handle">Content Expert</div><div class="sc-desc">Expert content on Apache Airflow, modern data stack, and AI pipeline patterns.</div></div>
         </div>
-        <div class="sh">Technical Writing — Medium</div>
+        <div class="sh">Technical Writing — Medium &amp; Substack</div>
         <div class="art-grid">
           {% for article in site.data.articles limit:6 %}
           <div class="acard"><span class="atag">{{ article.tag }}</span><div class="atitle">{{ article.title }}</div><div class="apub">{{ article.publication | split: " · " | first }}</div><a class="alink" href="{{ article.link }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
           {% endfor %}
+        </div>
+        <div style="margin-top:1rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <a class="n-social-btn" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;">✍️ More on Medium</a>
+          <a class="n-social-btn" href="https://substack.com/{{ site.author.substack }}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;">More on Substack</a>
         </div>
         <div class="sh">Find Me Online</div>
         <div class="serve-grid">
