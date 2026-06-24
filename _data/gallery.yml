@@ -69,3 +69,9 @@
   cat: "WiD Community Chapter events"
   sub: "Tech session"
   alt: "SQL to PySpark practical session"
+
+- file: GlobalTechCommunityAwardNomination.jpeg
+  title: "Women in Tech Community awards Nomination"
+  cat: "Women Tech Network Global Awards"
+  sub : "Recognition"
+  alt: "award nomination WIT"
