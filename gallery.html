@@ -53,6 +53,17 @@ permalink: /gallery/
       backface-visibility: hidden; -webkit-backface-visibility: hidden;
     }
     .flip-front img { width: 100%; height: auto; display: block; }
+    .flip-front video { width: 100%; height: auto; display: block; }
+
+    /* YouTube thumbnail wrapper */
+    .flip-thumb { position: relative; width: 100%; }
+    .flip-thumb img { width: 100%; height: auto; display: block; }
+    .flip-play {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(0,0,0,0.25);
+    }
+    .flip-play svg { width: 52px; height: 52px; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5)); }
 
     /* BACK — absolute, covers the same area as front */
     .flip-back {
@@ -95,6 +106,12 @@ permalink: /gallery/
       font-family: 'Caveat', cursive; font-size: 1.05rem;
       color: #5c4030; line-height: 1.6; position: relative; z-index: 1;
     }
+    .flip-watch {
+      font-family: 'Caveat', cursive; font-size: 1rem; font-weight: 700;
+      color: #c0392b; text-decoration: none; position: relative; z-index: 1;
+      margin-top: 0.75rem; display: inline-block;
+    }
+    .flip-watch:hover { opacity: 0.75; }
 
     @media (max-width: 600px) {
       .pg-grid { grid-template-columns: 1fr 1fr; gap: 1.1rem; }
@@ -124,13 +141,29 @@ permalink: /gallery/
     <div class="flip-card" onclick="this.classList.toggle('flipped')">
       <div class="flip-card-inner">
         <div class="flip-front">
-          <img src="/assets/images/gallery/{{ photo.file }}" alt="{{ photo.alt | default: photo.title }}">
+          {% if photo.type == 'video' %}
+            <video src="/assets/videos/gallery/{{ photo.file }}" autoplay muted loop playsinline></video>
+          {% elsif photo.type == 'embed' %}
+            <div class="flip-thumb">
+              <img src="https://img.youtube.com/vi/{{ photo.youtube }}/hqdefault.jpg" alt="{{ photo.alt | default: photo.title }}">
+              <div class="flip-play">
+                <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.8 0 34 0 34 0S12.2 0 7.5 1.7a8.5 8.5 0 0 0-6 6C0 12.4 0 24 0 24s0 11.6 1.5 16.3a8.5 8.5 0 0 0 6 6C12.2 48 34 48 34 48s21.8 0 26.5-1.7a8.5 8.5 0 0 0 6-6C68 35.6 68 24 68 24s0-11.6-1.5-16.3z" fill="#ff0000"/>
+                  <path d="M27 34l18-10-18-10v20z" fill="#fff"/>
+                </svg>
+              </div>
+            </div>
+          {% else %}
+            <img src="/assets/images/gallery/{{ photo.file }}" alt="{{ photo.alt | default: photo.title }}">
+          {% endif %}
         </div>
         <div class="flip-back">
           <div class="flip-cat">{{ photo.cat }}</div>
           <div class="flip-title">{{ photo.title }}</div>
           <div class="flip-sub">{{ photo.sub }}</div>
-
+          {% if photo.type == 'embed' %}
+            <a class="flip-watch" href="https://www.youtube.com/watch?v={{ photo.youtube }}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Watch on YouTube ↗</a>
+          {% endif %}
         </div>
       </div>
     </div>
