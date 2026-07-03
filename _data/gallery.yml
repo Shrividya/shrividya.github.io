@@ -82,3 +82,15 @@
   cat: "Speaking · Jun 2026"
   sub: "Podcast · New York"
   alt: "The DataFlow Cast"
+
+- file: Future World Alliance.png
+  title: "Future World Alliance Event Poster"
+  cat: "Technical session"
+  sub: "Airflow session"
+  alt: "Session on using Airflow for AI and Data workloads"
+
+- file: Future World Conversations.png
+  title: "Future World Conversations Session"
+  cat: "Technical session"
+  sub: "Airflow session"
+  alt: "Session on using Airflow for AI and Data workloads"
