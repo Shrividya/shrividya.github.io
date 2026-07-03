@@ -76,13 +76,6 @@
   sub : "Recognition"
   alt: "award nomination WIT"
 
-- file: SQL, DAG Recovery, and Idempotency Outlast Any Tool.mp4
-  type: video
-  title: "My Talk Highlight"
-  cat: "Speaking · Jun 2026"
-  sub: "Podcast · New York"
-  alt: "The DataFlow Cast"
-
 - file: Future World Alliance.png
   title: "Future World Alliance Event Poster"
   cat: "Technical session"
@@ -94,3 +87,11 @@
   cat: "Technical session"
   sub: "Airflow session"
   alt: "Session on using Airflow for AI and Data workloads"
+
+- file: SQL, DAG Recovery, and Idempotency Outlast Any Tool.mp4
+  type: video
+  title: "My Talk Highlight"
+  cat: "Speaking · Jun 2026"
+  sub: "Podcast · New York"
+  alt: "The DataFlow Cast"
+
