@@ -5,20 +5,20 @@ title: Home
 
 <!-- THEME TOGGLE BAR -->
 <div class="toggle-bar">
-  <span class="toggle-label" id="toggle-label">// shrividya_career_pipeline &nbsp;·&nbsp; DAG view</span>
-  <button class="electric-btn" id="electric-btn" onclick="triggerNormal()">
+  <span class="toggle-label" id="toggle-label">// normal profile view</span>
+  <button class="electric-btn" id="electric-btn" onclick="triggerNormal()" style="display:none;">
     <span class="eb-bolt" id="eb-bolt">⚡</span>
     <span class="eb-text">New to Airflow? Click here for normal profile</span>
     <span class="eb-short">Normal</span>
   </button>
-  <button class="back-btn" id="back-btn" onclick="switchTheme('airflow')" style="display:none;">← DAG view</button>
+  <button class="back-btn" id="back-btn" onclick="switchTheme('airflow')">Curious? Try the Airflow-themed view →</button>
   <button class="audio-btn" id="audio-btn" onclick="toggleSummary()" title="Listen to profile summary"><span class="audio-icon" id="audio-icon">🎙</span><span class="audio-text"> Long story short, click here to listen</span></button>
   <a class="resume-dl-btn" href="/assets/resume.pdf" download="Shrividya_Hegde_Resume.pdf" title="Download Resume">📄 Resume</a>
   <button class="dark-toggle" id="dark-toggle" onclick="toggleDark()" title="Toggle light/dark mode">🌙</button>
 </div>
 
 <!-- ==================== AIRFLOW VIEW ==================== -->
-<div id="view-airflow">
+<div id="view-airflow" style="display:none">
   <div class="af-hint-banner" id="af-hint-banner">
     <span>👋 New here? This portfolio is styled like <strong style="color:#b8a8f8;">Apache Airflow</strong> — a popular data orchestration tool. Not your thing?</span>
     <button class="af-hint-btn" onclick="triggerNormal()">⚡ Switch to normal profile →</button>
@@ -301,7 +301,7 @@ title: Home
 </div>
 
 <!-- ==================== NORMAL VIEW ==================== -->
-<div id="view-normal" style="display:none">
+<div id="view-normal">
 
   <!-- In-page sticky navigation -->
   <nav class="n-topnav">
@@ -691,17 +691,12 @@ setInterval(() => {
 
 setTimeout(() => showStage(0), 500);
 
-// Auto-switch to normal view if coming from a sub-page
-if (new URLSearchParams(window.location.search).get('view') === 'normal') {
-  document.getElementById('view-airflow').style.display = 'none';
-  document.getElementById('view-normal').style.display = 'block';
-  const lbl = document.getElementById('toggle-label');
-  const btn = document.getElementById('electric-btn');
-  const backBtn = document.getElementById('back-btn');
-  if (lbl) lbl.textContent = '// normal profile view';
-  if (btn) btn.style.display = 'none';
-  if (backBtn) backBtn.style.display = '';
-  setTimeout(initNormalAnimations, 300);
+// Normal profile is the default landing view; init its animations
+setTimeout(initNormalAnimations, 300);
+
+// Airflow-themed view is opt-in — switch to it if explicitly requested
+if (new URLSearchParams(window.location.search).get('view') === 'airflow') {
+  switchTheme('airflow');
 }
 
 // Hide hint banner if previously dismissed
