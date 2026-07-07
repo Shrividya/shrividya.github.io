@@ -84,7 +84,7 @@
 
 - file: Future World Conversations.png
   title: "Future World Conversations Session"
-  cat: "Technical session"
+  cat: "Technical demo"
   sub: "Airflow session"
   alt: "Session on using Airflow for AI and Data workloads"
 
