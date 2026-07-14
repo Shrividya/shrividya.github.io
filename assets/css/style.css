@@ -1284,13 +1284,18 @@ a.n-gcard { text-decoration: none; }
 .n-section-cta {
   font-family: var(--mono);
   font-size: 0.64rem;
+  font-weight: 700;
   color: var(--accent-n);
+  background: var(--accent-n-bg);
+  border: 1px solid var(--accent-n);
+  border-radius: 20px;
+  padding: 0.3rem 0.7rem;
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
-  transition: opacity 0.15s;
+  transition: opacity 0.15s, transform 0.15s;
 }
-.n-section-cta:hover { opacity: 0.75; }
+.n-section-cta:hover { opacity: 0.8; transform: translateX(2px); }
 .n-section-footer { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1rem; }
 
 /* ══════════════════════════════════════
