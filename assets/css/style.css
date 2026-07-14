@@ -1513,3 +1513,29 @@ a.n-gcard { text-decoration: none; }
 }
 .n-skill-xp-fill.n-xp-ready { width: var(--xp, 80%); }
 
+/* Level-up flash on XP bar completion */
+@keyframes nLevelFlash {
+  0%   { transform: scale(1); box-shadow: 0 0 0 0 rgba(0,137,123,0.5); }
+  40%  { transform: scale(1.22); box-shadow: 0 0 0 6px rgba(0,137,123,0.18); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0,137,123,0); }
+}
+.n-skill-lvl.n-levelup { animation: nLevelFlash 0.6s ease-out; }
+
+/* Hero tagline typewriter */
+.n-title-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: -0.15em;
+  background: var(--accent-n);
+  animation: nCursorBlink 0.9s step-end infinite;
+}
+@keyframes nCursorBlink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+/* 3D tilt-on-hover for cards */
+.n-tilt {
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+  will-change: transform;
+}
+
