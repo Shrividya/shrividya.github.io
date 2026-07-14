@@ -325,7 +325,7 @@ title: Home
       SH
     </div>
     <div class="n-name">{{ site.author.name }}</div>
-    <div class="n-title">Senior AI Data Engineer · Apache Airflow Champion · OSS Contributor</div>
+    <div class="n-title" id="n-title-type" data-roles="Senior AI Data Engineer|Apache Airflow Champion|OSS Contributor|RAG &amp; GenAI Builder"><span id="n-title-text"></span><span class="n-title-cursor"></span></div>
     <div class="n-location">📍 Parsippany, NJ 🇺🇸 &nbsp;·&nbsp; Relocated from Bengaluru, IN (Nov 2024)</div>
     <div class="n-views">
       <span>👁 GitHub profile:</span>
@@ -451,7 +451,7 @@ title: Home
       </div>
       <div class="n-proj-grid">
         {% for project in site.data.projects limit:3 %}
-        <div class="n-pcard">
+        <div class="n-pcard n-tilt">
           <span class="n-ptag">{{ project.tag }}</span>
           <div class="n-ptitle">{{ project.title }}</div>
           <div class="n-pdesc">{{ project.description | truncate: 130 }}</div>
@@ -470,7 +470,7 @@ title: Home
       </div>
       <div class="n-art-grid">
         {% for article in site.data.articles limit:4 %}
-        <div class="n-acard">
+        <div class="n-acard n-tilt">
           <span class="n-atag">{{ article.tag }}</span>
           <div class="n-atitle">{{ article.title }}</div>
           <div class="n-apub">{{ article.publication | split: " · " | first }}</div>
@@ -491,7 +491,7 @@ title: Home
         <a class="n-section-cta" href="/community/">More <span>→</span></a>
       </div>
       <div class="n-comm-grid">
-        <div class="n-comm-card n-comm-feat n-reveal n-stagger-1">
+        <div class="n-comm-card n-comm-feat n-reveal n-stagger-1 n-tilt">
           <div class="n-comm-icon">👩‍💼</div>
           <div class="n-comm-body">
             <div class="n-comm-title">Women in Data™ — NJ Chapter Lead</div>
@@ -500,7 +500,7 @@ title: Home
             <a class="n-comm-link" href="/community/">Learn More →</a>
           </div>
         </div>
-        <div class="n-comm-card n-reveal n-stagger-2">
+        <div class="n-comm-card n-reveal n-stagger-2 n-tilt">
           <div class="n-comm-icon">🔧</div>
           <div class="n-comm-body">
             <div class="n-comm-title">Apache Airflow OSS Contributor</div>
@@ -509,7 +509,7 @@ title: Home
             <a class="n-comm-link" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer">GitHub →</a>
           </div>
         </div>
-        <div class="n-comm-card n-reveal n-stagger-3">
+        <div class="n-comm-card n-reveal n-stagger-3 n-tilt">
           <div class="n-comm-icon">🎤</div>
           <div class="n-comm-body">
             <div class="n-comm-title">Conference Speaker</div>
@@ -550,14 +550,14 @@ title: Home
         <span class="otag ot-green">🌐 Women in Data</span>
       </div>
       <div class="n-connect-grid">
-        <div class="n-scard feat"><div class="n-sc-plat">💼 LinkedIn</div><div class="n-sc-handle">{{ site.author.name }}</div><div class="n-sc-desc">Career history, posts on Data Engineering &amp; AI.</div><a class="n-sc-link" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" target="_blank" rel="noopener noreferrer">Connect →</a></div>
-        <div class="n-scard"><div class="n-sc-plat">🐙 GitHub</div><div class="n-sc-handle">@{{ site.author.github }}</div><div class="n-sc-desc">16+ repos — Airflow, NLP, RAG, OSS contributions.</div><a class="n-sc-link" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer">View →</a></div>
-        <div class="n-scard"><div class="n-sc-plat">📧 Email</div><div class="n-sc-handle">{{ site.author.email }}</div><div class="n-sc-desc">Roles, collaboration, speaking, mentoring.</div><a class="n-sc-link" href="mailto:{{ site.author.email }}">Email →</a></div>
-        <div class="n-scard feat"><div class="n-sc-plat">📅 Calendly</div><div class="n-sc-handle">Book a meeting</div><div class="n-sc-desc">1:1s, mentorship, collaboration, or just a chat.</div><a class="n-sc-link" href="https://calendly.com/shrividyahegde222" target="_blank" rel="noopener noreferrer">Book time →</a></div>
-        <div class="n-scard"><div class="n-sc-plat">✍️ Medium</div><div class="n-sc-handle">{{ site.author.medium }}</div><div class="n-sc-desc">6 articles on AI, Data Engineering, Python.</div><a class="n-sc-link" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
-        <div class="n-scard"><div class="n-sc-plat"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:4px;" fill="#FF6719"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg> Substack</div><div class="n-sc-handle">{{ site.author.substack }}</div><div class="n-sc-desc">Newsletter — GenAI, Airflow, modern data stack.</div><a class="n-sc-link" href="https://substack.com/{{ site.author.substack }}" target="_blank" rel="noopener noreferrer">Subscribe →</a></div>
-        <div class="n-scard"><div class="n-sc-plat">🧑‍💻 dev.to</div><div class="n-sc-handle">@{{ site.author.devto }}</div><div class="n-sc-desc">Technical posts on Data Engineering, Airflow, and AI.</div><a class="n-sc-link" href="https://dev.to/{{ site.author.devto }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
-        <div class="n-scard"><div class="n-sc-plat">▶️ YouTube</div><div class="n-sc-handle">{{ site.author.youtube }}</div><div class="n-sc-desc">Tutorials on Airflow, Data Engineering, AI/ML.</div><a class="n-sc-link" href="https://www.youtube.com/{{ site.author.youtube }}" target="_blank" rel="noopener noreferrer">Watch →</a></div>
+        <div class="n-scard feat n-tilt"><div class="n-sc-plat">💼 LinkedIn</div><div class="n-sc-handle">{{ site.author.name }}</div><div class="n-sc-desc">Career history, posts on Data Engineering &amp; AI.</div><a class="n-sc-link" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" target="_blank" rel="noopener noreferrer">Connect →</a></div>
+        <div class="n-scard n-tilt"><div class="n-sc-plat">🐙 GitHub</div><div class="n-sc-handle">@{{ site.author.github }}</div><div class="n-sc-desc">16+ repos — Airflow, NLP, RAG, OSS contributions.</div><a class="n-sc-link" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer">View →</a></div>
+        <div class="n-scard n-tilt"><div class="n-sc-plat">📧 Email</div><div class="n-sc-handle">{{ site.author.email }}</div><div class="n-sc-desc">Roles, collaboration, speaking, mentoring.</div><a class="n-sc-link" href="mailto:{{ site.author.email }}">Email →</a></div>
+        <div class="n-scard feat n-tilt"><div class="n-sc-plat">📅 Calendly</div><div class="n-sc-handle">Book a meeting</div><div class="n-sc-desc">1:1s, mentorship, collaboration, or just a chat.</div><a class="n-sc-link" href="https://calendly.com/shrividyahegde222" target="_blank" rel="noopener noreferrer">Book time →</a></div>
+        <div class="n-scard n-tilt"><div class="n-sc-plat">✍️ Medium</div><div class="n-sc-handle">{{ site.author.medium }}</div><div class="n-sc-desc">6 articles on AI, Data Engineering, Python.</div><a class="n-sc-link" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
+        <div class="n-scard n-tilt"><div class="n-sc-plat"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:4px;" fill="#FF6719"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg> Substack</div><div class="n-sc-handle">{{ site.author.substack }}</div><div class="n-sc-desc">Newsletter — GenAI, Airflow, modern data stack.</div><a class="n-sc-link" href="https://substack.com/{{ site.author.substack }}" target="_blank" rel="noopener noreferrer">Subscribe →</a></div>
+        <div class="n-scard n-tilt"><div class="n-sc-plat">🧑‍💻 dev.to</div><div class="n-sc-handle">@{{ site.author.devto }}</div><div class="n-sc-desc">Technical posts on Data Engineering, Airflow, and AI.</div><a class="n-sc-link" href="https://dev.to/{{ site.author.devto }}" target="_blank" rel="noopener noreferrer">Read →</a></div>
+        <div class="n-scard n-tilt"><div class="n-sc-plat">▶️ YouTube</div><div class="n-sc-handle">{{ site.author.youtube }}</div><div class="n-sc-desc">Tutorials on Airflow, Data Engineering, AI/ML.</div><a class="n-sc-link" href="https://www.youtube.com/{{ site.author.youtube }}" target="_blank" rel="noopener noreferrer">Watch →</a></div>
       </div>
     </section>
 
@@ -899,12 +899,22 @@ function initNormalAnimations() {
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
   document.querySelectorAll('#view-normal .n-reveal').forEach(el => revealObs.observe(el));
 
-  // 3. XP bars — fill when card enters viewport
+  // 3. XP bars — fill when card enters viewport, then flash the level badge
   const xpObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('n-xp-ready'), 280);
-        xpObs.unobserve(e.target);
+        const fill = e.target;
+        const lvl = fill.closest('.n-skill-group')?.querySelector('.n-skill-lvl');
+        fill.addEventListener('transitionend', function onDone(ev) {
+          if (ev.propertyName !== 'width') return;
+          fill.removeEventListener('transitionend', onDone);
+          if (lvl) {
+            lvl.classList.add('n-levelup');
+            setTimeout(() => lvl.classList.remove('n-levelup'), 650);
+          }
+        });
+        setTimeout(() => fill.classList.add('n-xp-ready'), 280);
+        xpObs.unobserve(fill);
       }
     });
   }, { threshold: 0.2 });
@@ -927,5 +937,46 @@ function initNormalAnimations() {
       b.style.transform = 'scale(1)';
     }, 650 + i * 110);
   });
+
+  // 6. Card tilt-on-hover (subtle 3D perspective)
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReducedMotion && window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('#view-normal .n-tilt').forEach(card => {
+      const maxTilt = 6;
+      card.addEventListener('mousemove', ev => {
+        const r = card.getBoundingClientRect();
+        const px = (ev.clientX - r.left) / r.width;
+        const py = (ev.clientY - r.top) / r.height;
+        const rotX = (0.5 - py) * maxTilt * 2;
+        const rotY = (px - 0.5) * maxTilt * 2;
+        card.style.transform = `perspective(600px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(0)`;
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    });
+  }
+
+  // 7. Hero tagline — cycling typewriter effect
+  const titleText = document.getElementById('n-title-text');
+  const titleWrap = document.getElementById('n-title-type');
+  if (titleText && titleWrap && !prefersReducedMotion) {
+    const roles = (titleWrap.dataset.roles || '').split('|').filter(Boolean);
+    let ri = 0, ci = 0, deleting = false;
+    (function tick() {
+      const word = roles[ri];
+      if (!deleting) {
+        ci++;
+        titleText.textContent = word.slice(0, ci);
+        if (ci === word.length) { deleting = true; setTimeout(tick, 1600); return; }
+        setTimeout(tick, 55);
+      } else {
+        ci--;
+        titleText.textContent = word.slice(0, ci);
+        if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; setTimeout(tick, 300); return; }
+        setTimeout(tick, 30);
+      }
+    })();
+  } else if (titleText && titleWrap) {
+    titleText.textContent = (titleWrap.dataset.roles || '').split('|')[0] || '';
+  }
 }
 </script>
