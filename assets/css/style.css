@@ -1131,6 +1131,12 @@ a.n-gcard { text-decoration: none; }
 }
 .wr-card:hover { border-color: var(--accent-n); transform: translateY(-2px); }
 .wr-tag { display: inline-block; font-family: var(--mono); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; background: var(--accent-n-dim, rgba(0,137,123,0.12)); color: var(--accent-n); padding: 0.15rem 0.5rem; border-radius: 3px; margin-bottom: 0.15rem; }
+
+/* Editor/writer role tags on writing page */
+.wr-roles { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1rem 1.1rem; }
+.wr-role-label { font-family: var(--mono); font-size: 0.7rem; font-weight: 700; color: var(--heading); margin-bottom: 0.5rem; }
+.wr-role-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.wr-role-tags .wr-tag { margin-bottom: 0; }
 .wr-title { font-size: 0.85rem; font-weight: 600; color: var(--heading); line-height: 1.45; }
 .wr-pub { font-family: var(--mono); font-size: 0.6rem; color: var(--text-muted); }
 .wr-desc { font-size: 0.72rem; color: var(--text-muted); line-height: 1.55; flex: 1; }
