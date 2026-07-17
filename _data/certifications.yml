@@ -82,6 +82,14 @@
   link: "https://www.datacamp.com/certificate/PDA0012877012439"
   link_label: "View certificate →"
 
+- name: "AI Engineer for Developers Associate"
+  icon : "🤖"
+  org: "DataCamp"
+  date: "Jul 2026"
+  category: "AI Engineering"
+  link: "https://www.datacamp.com/certificate/AIEDA0017657684666"
+  link_label: "View certificate →"
+
 - name: "Python for Data Science"
   icon: "🐍"
   org: "DataCamp"
