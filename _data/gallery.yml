@@ -46,6 +46,20 @@
   sub: "Community Recognition @Airflow"
   alt: "One of the top 5 Airflow Champions in Q2"
 
+- file: Quarterly champions recognition_second_time.png
+  type: image
+  title: "Top 5 champions recognition_2nd time"
+  cat: "Recogition"
+  sub: "apache airflow championship"
+  alt: "Got recognised as the top 5 champion for the 2nd time"
+
+- file: Champion of the Quarter.png
+  type: image
+  title: "Champion of the Quarter recognition_2nd time"
+  cat: "Recogition"
+  sub: "Apache Airflow championship"
+  alt: "Recognised as the Champion of the Quarter"
+
 - file: airflow-day-2-workshop.jpeg
   title: "2 day workshop at Data Engineering Club"
   cat: "WiD Pro events"
@@ -94,4 +108,11 @@
   cat: "Speaking · Jun 2026"
   sub: "Podcast · New York"
   alt: "The DataFlow Cast"
+
+- type: embed
+  youtube: "NfNPsRJaH2o"
+  title: "Data Engineering and Standing Out in the AI Era with Shri Hegde"
+  cat: "Podcast appearance"
+  sub: "Ediso Conversations"
+  alt: "Podcast appearance on Ediso Conversations: Data Engineering and Standing Out in the AI Era with Shri Hegde"
 
