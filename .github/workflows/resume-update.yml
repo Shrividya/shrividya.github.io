@@ -1,0 +1,96 @@
+name: Resume auto-update
+
+# Watches the data files that feed the resume. On a matching push to main,
+# regenerates assets/resume.pdf from resume/resume.md and opens a PR. The
+# merge job targets the `resume-approval` GitHub Environment, so it pauses
+# for manual sign-off (configure required reviewers on that Environment in
+# Settings -> Environments) before the new resume replaces the old one.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "_data/certifications.yml"
+      - "_data/projects.yml"
+      - "_data/achievements.yml"
+      - "index.html"
+      - "resume/resume.md"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.diff.outputs.changed }}
+      branch: ${{ steps.diff.outputs.branch }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install system libraries for WeasyPrint
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 \
+            libffi-dev shared-mime-info fonts-dejavu-core
+
+      - name: Install Python dependencies
+        run: pip install markdown weasyprint pyyaml
+
+      - name: Regenerate resume.md data sections
+        run: python3 scripts/build_resume.py
+
+      - name: Render resume.md to assets/resume.pdf
+        run: python3 scripts/render_resume.py
+
+      - name: Check for changes
+        id: diff
+        run: |
+          if git diff --quiet -- resume/resume.md assets/resume.pdf; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "branch=resume-update-${{ github.run_id }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open pull request
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "${{ steps.diff.outputs.branch }}"
+          git add resume/resume.md assets/resume.pdf
+          git commit -m "Auto-update resume.pdf from site data changes"
+          git push origin "${{ steps.diff.outputs.branch }}"
+          gh pr create \
+            --title "Auto-update resume.pdf" \
+            --body "Triggered by a change to resume-relevant site data (certifications, projects, achievements, or index.html). Generated from resume/resume.md via scripts/build_resume.py + scripts/render_resume.py. Requires approval on the resume-approval environment before it merges." \
+            --base main \
+            --head "${{ steps.diff.outputs.branch }}"
+
+  await-approval:
+    needs: build
+    if: needs.build.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    environment: resume-approval
+    steps:
+      - run: echo "Approved — proceeding to merge the resume update."
+
+  merge:
+    needs: [build, await-approval]
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ needs.build.outputs.branch }}
+        run: |
+          gh pr merge "$BRANCH" --repo "${{ github.repository }}" --merge --delete-branch
