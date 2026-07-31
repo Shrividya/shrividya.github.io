@@ -28,11 +28,34 @@
   sub: "women in data @ dbt labs"
   alt: "Session at dbt community channel"
 
-- file: On-the-spot-award.jpeg
-  title: "On the Spot award won at TCS"
+- type: group
+  title: "TCS Gems Awards"
   cat: "Awards"
-  sub: "On the spot awards"
-  alt: "On the Spot award won at TCS"
+  sub: "6 awards · 2014–2019"
+  covers:
+    - On-the-spot-award.jpeg
+    - la2.png
+    - special-initiative-award.png
+  alt: "TCS Gems awards collection"
+  items:
+    - title: "On the Spot Award"
+      sub: "TCS Gems · 21 Mar 2018"
+      file: On-the-spot-award.jpeg
+    - title: "On the Spot Award"
+      sub: "TCS Gems · 19 May 2015"
+      file: On_The_Spot_Award_19th_may.png
+    - title: "Learning Achievement Award"
+      sub: "TCS Gems · 09 Oct 2018"
+      file: la1.png
+    - title: "Learning Achievement Award"
+      sub: "TCS Gems · 04 Jan 2019"
+      file: la2.png
+    - title: "Learning Achievement Award"
+      sub: "TCS Gems · 14 Aug 2019"
+      file: la3.png
+    - title: "Special Initiative Award"
+      sub: "TCS Gems · 19 Dec 2014"
+      file: special-initiative-award.png
 
 - file: tcs-star-award.jpeg
   title: "Star of the Month award at TCS"
@@ -40,25 +63,25 @@
   sub: "Star of the Month"
   alt: "Star of the Month award at TCS"
 
-- file: Top5-champions-of-Q2.png
-  title: "One of the top 5 Airflow Champions in Q2 "
+- type: group
+  title: "Apache Airflow Champion"
   cat: "Community Recognition"
-  sub: "Community Recognition @Airflow"
-  alt: "One of the top 5 Airflow Champions in Q2"
-
-- file: Quarterly champions recognition_second_time.png
-  type: image
-  title: "Top 5 champions recognition_2nd time"
-  cat: "Recogition"
-  sub: "apache airflow championship"
-  alt: "Got recognised as the top 5 champion for the 2nd time"
-
-- file: Champion of the Quarter.png
-  type: image
-  title: "Champion of the Quarter recognition_2nd time"
-  cat: "Recogition"
-  sub: "Apache Airflow championship"
-  alt: "Recognised as the Champion of the Quarter"
+  sub: "3 recognitions"
+  covers:
+    - Top5-champions-of-Q2.png
+    - Quarterly champions recognition_second_time.png
+    - Champion of the Quarter.png
+  alt: "Apache Airflow community champion recognitions"
+  items:
+    - title: "Top 5 Airflow Champions"
+      sub: "Q2 recognition"
+      file: Top5-champions-of-Q2.png
+    - title: "Top 5 Champions"
+      sub: "Recognised for the 2nd time"
+      file: Quarterly champions recognition_second_time.png
+    - title: "Champion of the Quarter"
+      sub: "Recognised for the 2nd time"
+      file: Champion of the Quarter.png
 
 - file: airflow-day-2-workshop.jpeg
   title: "2 day workshop at Data Engineering Club"

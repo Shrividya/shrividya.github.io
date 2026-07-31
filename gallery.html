@@ -26,100 +26,212 @@ permalink: /gallery/
     .pg-nav-back:hover { opacity: 0.7; }
     .pg-nav-title { font-family: var(--mono); font-size: 0.65rem; color: var(--text-muted); }
 
-    .pg-main { max-width: 960px; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
-    .pg-intro { text-align: center; margin-bottom: 2rem; }
+    .pg-main { max-width: 1200px; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+    .pg-intro { text-align: center; margin-bottom: 1rem; }
     .pg-intro-title { font-family: 'Caveat', cursive; font-size: 2rem; color: var(--heading); }
     .pg-intro-sub { font-family: 'Caveat', cursive; font-size: 1.1rem; color: var(--text-muted); margin-top: 0.25rem; }
 
-    /* ── GRID ── */
+    /* ── FLOATING GRID ── */
     .pg-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1.75rem;
+      display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start;
+      gap: 2.4rem 2rem; padding: 2.5rem 0.5rem;
+      transition: filter 0.4s ease, opacity 0.4s ease;
+    }
+    .pg-grid.dim { filter: blur(3px) brightness(0.55); opacity: 0.85; pointer-events: none; }
+
+    .pg-tile {
+      width: clamp(160px, 22vw, 260px);
+      cursor: pointer; position: relative;
     }
 
-    /* ── FLIP CARD ── */
-    .flip-card { perspective: 1100px; cursor: pointer; }
-    .flip-card-inner {
-      position: relative; width: 100%;
-      transform-style: preserve-3d;
-      transition: transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1);
+    /* fixed, static crop — the tile itself never moves; only the image inside drifts/zooms */
+    .pg-tile-frame {
+      position: relative; width: 100%; aspect-ratio: 4 / 3;
+      overflow: hidden; border-radius: 8px;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.28);
     }
-    .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
-
-    /* FRONT — natural height, no cropping */
-    .flip-front {
-      border-radius: 6px; overflow: hidden;
-      backface-visibility: hidden; -webkit-backface-visibility: hidden;
+    .pg-tile-frame img, .pg-tile-frame video {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; display: block;
     }
-    .flip-front img { width: 100%; height: auto; display: block; }
-    .flip-front video { width: 100%; height: auto; display: block; }
 
-    /* YouTube thumbnail wrapper */
-    .flip-thumb { position: relative; width: 100%; }
-    .flip-thumb img { width: 100%; height: auto; display: block; }
-    .flip-play {
-      position: absolute; inset: 0;
+    /* Ken Burns — slow zoom + pan on the image itself, tile stays put */
+    .pg-kb { animation: kb-a 28s ease-in-out infinite alternate; transform-origin: 50% 50%; will-change: transform; }
+    @keyframes kb-a { 0% { transform: scale(1) translate(0,0); } 100% { transform: scale(1.14) translate(-2.5%,-1.5%); } }
+    @keyframes kb-b { 0% { transform: scale(1.05) translate(1.5%,1%); } 100% { transform: scale(1.16) translate(-1.5%,-2%); } }
+    @keyframes kb-c { 0% { transform: scale(1) translate(-1%,1.5%); } 100% { transform: scale(1.15) translate(2%,-1%); } }
+    @keyframes kb-d { 0% { transform: scale(1.04) translate(-1.5%,-1%); } 100% { transform: scale(1.17) translate(1.5%,2%); } }
+
+    .pg-grid .pg-tile:nth-child(4n+1) .pg-kb { animation-name: kb-a; animation-duration: 26s; }
+    .pg-grid .pg-tile:nth-child(4n+2) .pg-kb { animation-name: kb-b; animation-duration: 32s; }
+    .pg-grid .pg-tile:nth-child(4n+3) .pg-kb { animation-name: kb-c; animation-duration: 24s; }
+    .pg-grid .pg-tile:nth-child(4n+4) .pg-kb { animation-name: kb-d; animation-duration: 30s; }
+    .pg-tile:hover .pg-kb { animation-play-state: paused; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pg-kb { animation: none !important; }
+    }
+
+    /* YouTube thumbnail wrapper (grid tile) */
+    .pg-thumbwrap { position: relative; width: 100%; height: 100%; }
+    .pg-play {
+      position: absolute; inset: 0; border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
-      background: rgba(0,0,0,0.25);
+      background: rgba(0,0,0,0.25); color: #fff; font-size: 2.2rem;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
     }
-    .flip-play svg { width: 52px; height: 52px; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5)); }
 
-    /* BACK — absolute, covers the same area as front */
-    .flip-back {
-      position: absolute; inset: 0;
-      border-radius: 6px; overflow: hidden;
+    /* Stacked group tile */
+    .pg-stack { position: relative; width: 100%; padding-top: 70%; }
+    .pg-stack img {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      object-fit: cover; border-radius: 6px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+      border: 3px solid var(--bg, #fff);
+    }
+    .pg-stack img:nth-child(1) { transform: rotate(-6deg) translate(-4%, 2%); z-index: 1; }
+    .pg-stack img:nth-child(2) { transform: rotate(4deg) translate(3%, -1%); z-index: 2; }
+    .pg-stack img:nth-child(3) { transform: rotate(0deg); z-index: 3; }
+    .pg-badge {
+      position: absolute; top: -0.5rem; right: -0.5rem; z-index: 4;
+      background: var(--accent-n, #c0392b); color: #fff;
+      font-family: var(--mono); font-size: 0.7rem; font-weight: 700;
+      width: 2.1rem; height: 2.1rem; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .pg-tile-label {
+      text-align: center; font-family: 'Caveat', cursive; font-size: 1.1rem;
+      color: var(--text-muted); margin-top: 0.6rem;
+    }
+
+    @media (max-width: 380px) {
+      .pg-grid { gap: 1.6rem 1.2rem; }
+    }
+
+    /* ── MODAL ── */
+    .pg-modal { position: fixed; inset: 0; z-index: 1000; display: none; }
+    .pg-modal.open { display: block; }
+    .pg-modal-backdrop {
+      position: absolute; inset: 0; background: rgba(0,0,0,0.78);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      opacity: 0; transition: opacity 0.4s ease;
+    }
+    .pg-modal.open .pg-modal-backdrop { opacity: 1; }
+
+    .pg-modal-card {
+      position: fixed; border-radius: 10px; overflow: hidden;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.55);
+      perspective: 1800px;
+      transition: top 0.5s cubic-bezier(0.2,0.8,0.2,1), left 0.5s cubic-bezier(0.2,0.8,0.2,1),
+                  width 0.5s cubic-bezier(0.2,0.8,0.2,1), height 0.5s cubic-bezier(0.2,0.8,0.2,1);
+    }
+    .pg-modal-inner {
+      width: 100%; height: 100%; position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.4,0.2,0.2,1);
+    }
+    .pg-modal-card.flipped .pg-modal-inner { transform: rotateY(180deg); }
+
+    .pg-modal-front, .pg-modal-back {
+      position: absolute; inset: 0; border-radius: 10px; overflow: hidden;
       backface-visibility: hidden; -webkit-backface-visibility: hidden;
+    }
+    .pg-modal-front { background: #111; display: flex; align-items: center; justify-content: center; }
+    .pg-modal-front img, .pg-modal-front video { width: 100%; height: 100%; object-fit: contain; display: block; background: #111; }
+    .pg-embed-wrap { width: 100%; height: 100%; }
+    .pg-embed-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+    .pg-info-btn {
+      position: absolute; top: 0.6rem; right: 0.6rem; z-index: 2;
+      width: 2rem; height: 2rem; border-radius: 50%; border: none;
+      background: rgba(0,0,0,0.55); color: #fff; font-size: 1rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pg-info-btn:hover { background: rgba(0,0,0,0.75); }
+
+    .pg-modal-back {
       transform: rotateY(180deg);
       background: #fdf6e8;
       display: flex; flex-direction: column; justify-content: center;
-      padding: 1.4rem 1.4rem 2rem;
+      padding: 1.6rem 1.8rem 2rem; cursor: pointer;
       box-shadow: inset 0 0 40px rgba(180,140,80,0.08);
     }
-    /* ruled lines */
-    .flip-back::before {
-      content: '';
-      position: absolute; inset: 0;
+    .pg-modal-back::before {
+      content: ''; position: absolute; inset: 0;
       background: repeating-linear-gradient(
         transparent 0px, transparent 29px,
         rgba(100,140,200,0.18) 29px, rgba(100,140,200,0.18) 30px
       );
-      top: 44px; border-radius: 6px; pointer-events: none;
+      top: 50px; border-radius: 10px; pointer-events: none;
     }
-    /* red margin line */
-    .flip-back::after {
-      content: '';
-      position: absolute; top: 0; bottom: 0; left: 2.4rem;
+    .pg-modal-back::after {
+      content: ''; position: absolute; top: 0; bottom: 0; left: 2.6rem;
       width: 1px; background: rgba(220,80,80,0.3); pointer-events: none;
     }
-    .flip-cat {
-      font-family: 'Caveat', cursive; font-size: 0.95rem;
-      color: #a0835a; position: relative; z-index: 1;
-      margin-bottom: 0.35rem;
-    }
-    .flip-title {
-      font-family: 'Caveat', cursive; font-size: 1.45rem; font-weight: 700;
-      color: #2a1a0e; line-height: 1.35; position: relative; z-index: 1;
-      margin-bottom: 0.5rem;
-    }
-    .flip-sub {
+    .pg-cat {
       font-family: 'Caveat', cursive; font-size: 1.05rem;
-      color: #5c4030; line-height: 1.6; position: relative; z-index: 1;
+      color: #a0835a; position: relative; z-index: 1; margin-bottom: 0.4rem;
     }
-    .flip-watch {
-      font-family: 'Caveat', cursive; font-size: 1rem; font-weight: 700;
+    .pg-title {
+      font-family: 'Caveat', cursive; font-size: 1.7rem; font-weight: 700;
+      color: #2a1a0e; line-height: 1.3; position: relative; z-index: 1; margin-bottom: 0.5rem;
+    }
+    .pg-sub {
+      font-family: 'Caveat', cursive; font-size: 1.2rem;
+      color: #5c4030; line-height: 1.5; position: relative; z-index: 1;
+    }
+    .pg-group-name {
+      font-family: 'Caveat', cursive; font-size: 1rem; font-style: italic;
+      color: #8a6a4a; position: relative; z-index: 1; margin-top: 0.6rem;
+    }
+    .pg-watch {
+      font-family: 'Caveat', cursive; font-size: 1.1rem; font-weight: 700;
       color: #c0392b; text-decoration: none; position: relative; z-index: 1;
       margin-top: 0.75rem; display: inline-block;
     }
-    .flip-watch:hover { opacity: 0.75; }
+    .pg-watch:hover { opacity: 0.75; }
 
-    @media (max-width: 600px) {
-      .pg-grid { grid-template-columns: 1fr 1fr; gap: 1.1rem; }
-      .flip-title { font-size: 1.15rem; }
-      .flip-sub { font-size: 0.88rem; }
+    .pg-modal-close {
+      position: fixed; top: 1.2rem; right: 1.4rem; z-index: 1002;
+      width: 2.6rem; height: 2.6rem; border-radius: 50%; border: none;
+      background: rgba(255,255,255,0.12); color: #fff; font-size: 1.2rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      backdrop-filter: blur(4px);
     }
-    @media (max-width: 380px) {
-      .pg-grid { grid-template-columns: 1fr; }
+    .pg-modal-close:hover { background: rgba(255,255,255,0.25); }
+
+    .pg-modal-nav {
+      position: fixed; top: 50%; transform: translateY(-50%); z-index: 1002;
+      width: 2.8rem; height: 2.8rem; border-radius: 50%; border: none;
+      background: rgba(255,255,255,0.12); color: #fff; font-size: 1.5rem; cursor: pointer;
+      align-items: center; justify-content: center; backdrop-filter: blur(4px);
+      display: none;
+    }
+    .pg-modal-nav:hover { background: rgba(255,255,255,0.25); }
+    #pgPrev { left: 1.4rem; }
+    #pgNext { right: 1.4rem; }
+
+    .pg-modal-counter {
+      position: fixed; bottom: 5.6rem; left: 50%; transform: translateX(-50%); z-index: 1002;
+      font-family: var(--mono); font-size: 0.7rem; color: rgba(255,255,255,0.8);
+      background: rgba(0,0,0,0.4); padding: 0.25rem 0.7rem; border-radius: 999px;
+    }
+    .pg-modal-thumbs {
+      position: fixed; bottom: 1.4rem; left: 50%; transform: translateX(-50%); z-index: 1002;
+      display: flex; gap: 0.5rem; max-width: 90vw; overflow-x: auto; padding: 0.3rem;
+    }
+    .pg-thumb {
+      width: 3.2rem; height: 3.2rem; border-radius: 6px; overflow: hidden; cursor: pointer;
+      flex: none; opacity: 0.55; border: 2px solid transparent; transition: opacity 0.2s, border-color 0.2s;
+    }
+    .pg-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .pg-thumb.active { opacity: 1; border-color: var(--accent-n, #c0392b); }
+
+    @media (max-width: 640px) {
+      .pg-modal-nav { width: 2.3rem; height: 2.3rem; font-size: 1.2rem; }
+      .pg-title { font-size: 1.35rem; }
+      .pg-sub { font-size: 1rem; }
     }
   </style>
 </head>
@@ -133,45 +245,251 @@ permalink: /gallery/
 <div class="pg-main">
   <div class="pg-intro">
     <div class="pg-intro-title">Memories</div>
-    <div class="pg-intro-sub">tap a photo to flip it ✦</div>
+    <div class="pg-intro-sub">tap a photo to bring it forward, tap again to flip ✦</div>
   </div>
 
-  <div class="pg-grid">
+  <div class="pg-grid" id="pgGrid">
     {% for photo in site.data.gallery %}
-    <div class="flip-card" onclick="this.classList.toggle('flipped')">
-      <div class="flip-card-inner">
-        <div class="flip-front">
-          {% if photo.type == 'video' %}
-            <video src="/assets/videos/gallery/{{ photo.file }}" autoplay muted loop playsinline></video>
-          {% elsif photo.type == 'embed' %}
-            <div class="flip-thumb">
-              <img src="https://img.youtube.com/vi/{{ photo.youtube }}/hqdefault.jpg" alt="{{ photo.alt | default: photo.title }}">
-              <div class="flip-play">
-                <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.8 0 34 0 34 0S12.2 0 7.5 1.7a8.5 8.5 0 0 0-6 6C0 12.4 0 24 0 24s0 11.6 1.5 16.3a8.5 8.5 0 0 0 6 6C12.2 48 34 48 34 48s21.8 0 26.5-1.7a8.5 8.5 0 0 0 6-6C68 35.6 68 24 68 24s0-11.6-1.5-16.3z" fill="#ff0000"/>
-                  <path d="M27 34l18-10-18-10v20z" fill="#fff"/>
-                </svg>
-              </div>
-            </div>
-          {% else %}
-            <img src="/assets/images/gallery/{{ photo.file }}" alt="{{ photo.alt | default: photo.title }}">
-          {% endif %}
+    <div class="pg-tile" onclick="openModal({{ forloop.index0 }}, this)">
+      {% if photo.type == 'group' %}
+        <div class="pg-stack">
+          {% for cover in photo.covers %}
+            <img src="/assets/images/gallery/{{ cover }}" alt="{{ photo.alt | default: photo.title }}">
+          {% endfor %}
+          <div class="pg-badge">×{{ photo.items.size }}</div>
         </div>
-        <div class="flip-back">
-          <div class="flip-cat">{{ photo.cat }}</div>
-          <div class="flip-title">{{ photo.title }}</div>
-          <div class="flip-sub">{{ photo.sub }}</div>
-          {% if photo.type == 'embed' %}
-            <a class="flip-watch" href="https://www.youtube.com/watch?v={{ photo.youtube }}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Watch on YouTube ↗</a>
-          {% endif %}
+        <div class="pg-tile-label">{{ photo.title }}</div>
+      {% elsif photo.type == 'video' %}
+        <div class="pg-tile-frame">
+          <video src="/assets/videos/gallery/{{ photo.file }}" autoplay muted loop playsinline></video>
         </div>
-      </div>
+      {% elsif photo.type == 'embed' %}
+        <div class="pg-tile-frame">
+          <div class="pg-thumbwrap">
+            <img class="pg-kb" src="https://img.youtube.com/vi/{{ photo.youtube }}/hqdefault.jpg" alt="{{ photo.alt | default: photo.title }}">
+            <div class="pg-play">▶</div>
+          </div>
+        </div>
+      {% else %}
+        <div class="pg-tile-frame">
+          <img class="pg-kb" src="/assets/images/gallery/{{ photo.file }}" alt="{{ photo.alt | default: photo.title }}">
+        </div>
+      {% endif %}
     </div>
     {% endfor %}
   </div>
 </div>
 
+<div class="pg-modal" id="pgModal">
+  <div class="pg-modal-backdrop" onclick="closeModal()"></div>
+  <button class="pg-modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+  <button class="pg-modal-nav" id="pgPrev" onclick="prevItem(event)" aria-label="Previous">‹</button>
+  <button class="pg-modal-nav" id="pgNext" onclick="nextItem(event)" aria-label="Next">›</button>
+  <div class="pg-modal-card" id="pgCard">
+    <div class="pg-modal-inner" id="pgCardInner">
+      <div class="pg-modal-front" id="pgFront"></div>
+      <div class="pg-modal-back" id="pgBack"></div>
+    </div>
+  </div>
+  <div class="pg-modal-counter" id="pgCounter"></div>
+  <div class="pg-modal-thumbs" id="pgThumbs"></div>
+</div>
+
 <script>
+const GALLERY = {{ site.data.gallery | jsonify }};
+const IMG_BASE = '/assets/images/gallery/';
+const VID_BASE = '/assets/videos/gallery/';
+
+let curIndex = 0, curItem = 0, flipped = false;
+
+const modal = document.getElementById('pgModal');
+const grid = document.getElementById('pgGrid');
+const card = document.getElementById('pgCard');
+const front = document.getElementById('pgFront');
+const back = document.getElementById('pgBack');
+const thumbsEl = document.getElementById('pgThumbs');
+const counterEl = document.getElementById('pgCounter');
+const prevBtn = document.getElementById('pgPrev');
+const nextBtn = document.getElementById('pgNext');
+
+// Best-effort: skip a black/blank opening frame and loop from just past it instead
+// of frame 0. Native `loop` stays on the <video> as the guaranteed fallback in
+// case a clip's metadata can't be seeked reliably (e.g. moov atom at the end
+// of the file), so playback never breaks — this only ever improves on it.
+function setupLoopingVideo(video, offset) {
+  if (!video) return;
+  offset = offset || 1;
+  const rewind = () => {
+    try {
+      if (!isFinite(video.duration) || video.duration <= 0) return;
+      if (!video.seekable || !video.seekable.length) return;
+      video.currentTime = Math.min(offset, video.duration / 2);
+    } catch (e) { /* leave native loop to handle it */ }
+  };
+  video.addEventListener('loadedmetadata', rewind);
+  video.addEventListener('timeupdate', () => {
+    if (isFinite(video.duration) && video.currentTime >= video.duration - 0.15) rewind();
+  });
+}
+
+document.querySelectorAll('.pg-tile-frame video').forEach((v) => setupLoopingVideo(v));
+
+function backHTML(photo, title, sub, groupNote) {
+  return '<div class="pg-cat">' + photo.cat + '</div>' +
+    '<div class="pg-title">' + title + '</div>' +
+    '<div class="pg-sub">' + sub + '</div>' +
+    (groupNote ? '<div class="pg-group-name">' + groupNote + '</div>' : '');
+}
+
+function toggleFlip() {
+  flipped = !flipped;
+  card.classList.toggle('flipped', flipped);
+}
+
+function renderCard() {
+  const photo = GALLERY[curIndex];
+  front.innerHTML = '';
+  back.innerHTML = '';
+  thumbsEl.innerHTML = '';
+  counterEl.textContent = '';
+  prevBtn.style.display = 'none';
+  nextBtn.style.display = 'none';
+  front.onclick = toggleFlip;
+  back.onclick = toggleFlip;
+
+  if (photo.type === 'group') {
+    const it = photo.items[curItem];
+    const file = it.file || photo.covers[curItem % photo.covers.length];
+    front.innerHTML = '<img src="' + IMG_BASE + file + '" alt="' + it.title + '">';
+    back.innerHTML = backHTML(photo, it.title, it.sub, 'from “' + photo.title + '”');
+    counterEl.textContent = (curItem + 1) + ' / ' + photo.items.length;
+    prevBtn.style.display = 'flex';
+    nextBtn.style.display = 'flex';
+    photo.items.forEach((gi, idx) => {
+      const th = document.createElement('div');
+      th.className = 'pg-thumb' + (idx === curItem ? ' active' : '');
+      const tf = gi.file || photo.covers[idx % photo.covers.length];
+      th.innerHTML = '<img src="' + IMG_BASE + tf + '" alt="' + gi.title + '">';
+      th.onclick = (e) => {
+        e.stopPropagation();
+        curItem = idx; flipped = false;
+        card.classList.remove('flipped');
+        renderCard();
+        positionCenteredWhenReady(photo);
+      };
+      thumbsEl.appendChild(th);
+    });
+  } else if (photo.type === 'video') {
+    front.innerHTML = '<video src="' + VID_BASE + photo.file + '" autoplay muted loop playsinline controls></video>';
+    setupLoopingVideo(front.querySelector('video'));
+    back.innerHTML = backHTML(photo, photo.title, photo.sub);
+  } else if (photo.type === 'embed') {
+    front.innerHTML = '<div class="pg-embed-wrap"><iframe src="https://www.youtube.com/embed/' + photo.youtube + '?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>' +
+      '<button class="pg-info-btn" aria-label="Show info">ⓘ</button>';
+    back.innerHTML = backHTML(photo, photo.title, photo.sub) +
+      '<a class="pg-watch" href="https://www.youtube.com/watch?v=' + photo.youtube + '" target="_blank" rel="noopener">Watch on YouTube ↗</a>';
+    front.onclick = null;
+    front.querySelector('.pg-info-btn').onclick = (e) => { e.stopPropagation(); toggleFlip(); };
+  } else {
+    front.innerHTML = '<img src="' + IMG_BASE + photo.file + '" alt="' + (photo.alt || photo.title) + '">';
+    back.innerHTML = backHTML(photo, photo.title, photo.sub);
+  }
+}
+
+function positionCentered(photo) {
+  const vw = window.innerWidth, vh = window.innerHeight;
+  const hasThumbs = photo.type === 'group';
+  const maxW = Math.min(vw * 0.88, 900);
+  const maxH = vh * (hasThumbs ? 0.6 : 0.8);
+
+  let ratio = 4 / 3;
+  const img = front.querySelector('img');
+  if (img && img.naturalWidth) ratio = img.naturalWidth / img.naturalHeight;
+  else if (photo.type === 'video' || photo.type === 'embed') ratio = 16 / 9;
+
+  let w = maxW, h = w / ratio;
+  if (h > maxH) { h = maxH; w = h * ratio; }
+  if (w > maxW) { w = maxW; h = w / ratio; }
+
+  card.style.width = w + 'px';
+  card.style.height = h + 'px';
+  card.style.left = ((vw - w) / 2) + 'px';
+  card.style.top = ((vh - h) / 2 - (hasThumbs ? 28 : 0)) + 'px';
+}
+
+function positionCenteredWhenReady(photo) {
+  const img = front.querySelector('img');
+  if (img && !(img.complete && img.naturalWidth)) {
+    img.onload = () => positionCentered(photo);
+  }
+  positionCentered(photo);
+}
+
+function openModal(i, originEl) {
+  curIndex = i; curItem = 0; flipped = false;
+  const photo = GALLERY[i];
+  const rect = originEl.getBoundingClientRect();
+
+  renderCard();
+  modal.classList.add('open');
+  grid.classList.add('dim');
+  document.body.style.overflow = 'hidden';
+  card.classList.remove('flipped');
+
+  card.style.transition = 'none';
+  card.style.left = rect.left + 'px';
+  card.style.top = rect.top + 'px';
+  card.style.width = rect.width + 'px';
+  card.style.height = rect.height + 'px';
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      card.style.transition = '';
+      positionCenteredWhenReady(photo);
+    });
+  });
+}
+
+function closeModal() {
+  modal.classList.remove('open');
+  grid.classList.remove('dim');
+  document.body.style.overflow = '';
+  card.classList.remove('flipped');
+  front.innerHTML = '';
+  back.innerHTML = '';
+}
+
+function prevItem(e) {
+  e.stopPropagation();
+  const photo = GALLERY[curIndex];
+  curItem = (curItem - 1 + photo.items.length) % photo.items.length;
+  flipped = false;
+  card.classList.remove('flipped');
+  renderCard();
+  positionCenteredWhenReady(photo);
+}
+
+function nextItem(e) {
+  e.stopPropagation();
+  const photo = GALLERY[curIndex];
+  curItem = (curItem + 1) % photo.items.length;
+  flipped = false;
+  card.classList.remove('flipped');
+  renderCard();
+  positionCenteredWhenReady(photo);
+}
+
+document.addEventListener('keydown', (e) => {
+  if (!modal.classList.contains('open')) return;
+  if (e.key === 'Escape') closeModal();
+  if (e.key === 'ArrowLeft' && GALLERY[curIndex].type === 'group') prevItem(e);
+  if (e.key === 'ArrowRight' && GALLERY[curIndex].type === 'group') nextItem(e);
+});
+
+window.addEventListener('resize', () => {
+  if (modal.classList.contains('open')) positionCentered(GALLERY[curIndex]);
+});
+
 const _s = localStorage.getItem('theme');
 if (_s) document.documentElement.setAttribute('data-theme', _s);
 </script>
