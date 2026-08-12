@@ -39,7 +39,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
             libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 \
-            libffi-dev shared-mime-info fonts-dejavu-core
+            libffi-dev shared-mime-types fonts-dejavu-core
 
       - name: Install Python dependencies
         run: pip install markdown weasyprint pyyaml
@@ -70,10 +70,11 @@ jobs:
           git checkout -b "${{ steps.diff.outputs.branch }}"
           git add resume/resume.md assets/resume.pdf
           git commit -m "Auto-update resume.pdf from site data changes"
-          git push origin "${{ steps.diff.outputs.branch }}"
+          git fetch origin "${{ steps.diff.outputs.branch }}" 2>/dev/null || true
+          git push origin "${{ steps.diff.outputs.branch }}" --force
           gh pr create \
             --title "Auto-update resume.pdf" \
-            --body "Triggered by a change to resume-relevant site data (certifications, projects, achievements, or index.html). Generated from resume/resume.md via scripts/build_resume.py + scripts/render_resume.py. Requires approval on the resume-approval environment before it merges." \
+            --body "Triggered by a change to resume-relevant site data (certifications, projects, achievements, or index.html). Generated from resume/resume.md via scripts/build_resume.py + scripts/render_resume.py." \
             --base main \
             --head "${{ steps.diff.outputs.branch }}"
 
