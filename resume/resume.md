@@ -41,6 +41,7 @@ Apache Airflow · RAG · LangChain · Python · Kubernetes · GCP / AWS / Azure 
 <!-- AUTO:CERTIFICATIONS:START -->
 **Apache Airflow & Astronomer**
 
+- AI Orchestration with Apache Airflow — Astronomer (2026)
 - Astronomer Champions Program — Astronomer (Jan 2026)
 - DAG Authoring — Airflow 3 — Astronomer (Jun 2025)
 - Airflow 3 Fundamentals — Astronomer (Jun 2025)

@@ -2,6 +2,14 @@
 # Fields: name, icon, org, date (optional), category, link (optional), link_label (optional)
 # Categories: "Apache Airflow & Astronomer" | "Cloud & AI" | "Data Engineering & Python" | "Testing & Quality"
 
+- name: "AI Orchestration with Apache Airflow"
+  icon: "✈️"
+  org: "Astronomer"
+  date: "2026"
+  category: "Apache Airflow & Astronomer"
+  link: "https://www.credly.com/badges/e1f0fd08-00ac-4b55-ac69-f7f833058bc0/public_url"
+  link_label: "View Credly badge →"
+
 - name: "Astronomer Champions Program"
   icon: "🏆"
   org: "Astronomer"
