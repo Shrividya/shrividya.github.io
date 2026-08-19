@@ -41,6 +41,7 @@ def render_projects(items):
     lines = []
     for p in items:
         lines.append(f"**{p['title']}** *({p['tag']})*")
+        lines.append("")
         lines.append(f"- {p['description']}")
         lines.append(f"- Stack: {p['stack']}")
         lines.append("")

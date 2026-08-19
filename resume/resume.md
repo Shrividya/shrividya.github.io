@@ -14,18 +14,23 @@ Senior AI Data Engineer with 10+ years of experience across data engineering, AI
 
 ## Experience
 
-**Astronomer** — Senior Software Engineer, Data Observability
+### Astronomer — Senior Software Engineer, Observability
 *Mar 2022 – Nov 2025 · Bengaluru → Parsippany, NJ*
-- Built production Airflow DAGs across GCP, Azure, and AWS — 30% throughput improvement
-- Deployed RAG pipeline with LangChain + ChromaDB, boosting developer productivity 40%
+
+- Sole engineer owning quality & release reliability for Astro Observe; fully owned Airflow 3 regression testing end-to-end, partnering with the Astro Build and Run teams on Airflow 3 adoption
+- Developed Airflow DAGs to trigger the release-gating process; set up release gating & sign-off process for the Observability team, driving process improvements and transparency across teams
+- Rebuilt the QA automation framework into the Astro release pipeline and built an LLM-powered test log summarizer to speed up debugging
+- Designed cloud-native Airflow pipeline frameworks (throughput ↑ 30%) and RAG pipelines with LangChain + ChromaDB (developer productivity ↑ 40%)
 - 7 PRs merged to Apache Airflow OSS; awarded Airflow Champion by Astronomer (Jan 2026)
 
-**Commonwealth Bank of Australia** — Senior Test Automation Engineer
+### Commonwealth Bank of Australia — Senior Test Automation Engineer
 *May 2021 – Feb 2022 · Sydney, AU*
+
 - 95% test coverage for Core Payments microservices; awarded Best Partner
 
-**Tata Consultancy Services** — IT Analyst / Software Engineer
+### Tata Consultancy Services — IT Analyst / Software Engineer
 *Jun 2014 – Apr 2020 · Bengaluru & Sydney*
+
 - 6 years across Banking & Finance — 50% effort reduction via framework optimization; 5x internal awards
 
 ---
@@ -74,22 +79,27 @@ Apache Airflow · RAG · LangChain · Python · Kubernetes · GCP / AWS / Azure 
 
 <!-- AUTO:PROJECTS:START -->
 **Resume Analyser RAG** *(RAG · LangChain)*
+
 - LangChain + FAISS RAG pipeline that answers natural language questions about uploaded resumes. Supports multi-document retrieval and prompt chaining for nuanced comparisons.
 - Stack: LangChain · FAISS · OpenAI · Python
 
 **OpenAI Sample Chatbot** *(Gen AI · OpenAI)*
+
 - Chatbot with advanced prompt engineering and OpenAI API integration patterns. Demonstrates system message design, context management, and streaming responses.
 - Stack: OpenAI API · Python · Prompt Engineering
 
 **Article Insights NLP Pipeline** *(NLP · Airflow 3)*
+
 - Production-grade Airflow 3 NLP pipeline — keyword extraction, summarization, sentiment analysis, named entity recognition, and readability scoring across article corpora.
 - Stack: Airflow 3 · NLTK · TextBlob · Python
 
 **Stock Sentiment Analyzer** *(MLOps · Streamlit)*
+
 - Live stock + news sentiment dashboard with real-time price feeds, sentiment scoring, and trend visualization. Fully Dockerized with GitHub Actions CI/CD for automated deployments.
 - Stack: Streamlit · TextBlob · yFinance · Docker · GH Actions
 
 **Apache Airflow Core Contributions** *(OSS · Apache Airflow)*
+
 - 7 merged PRs to the Apache Airflow core repository — code quality improvements, bug fixes, documentation enhancements, and provider package contributions for Airflow 3.
 - Stack: Python · Apache Airflow · GitHub
 <!-- AUTO:PROJECTS:END -->
