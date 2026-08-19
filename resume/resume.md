@@ -28,6 +28,13 @@ Senior AI Data Engineer with 10+ years of experience across data engineering, AI
 
 - 95% test coverage for Core Payments microservices; awarded Best Partner
 
+### KPMG India — Consultant, Automation Specialist
+*May 2020 – May 2021 · Bengaluru, India*
+
+- Built automation frameworks across 4+ delivery teams — manual QA effort ↓ 25%; delivered SAP S/4 HANA automation PoC using BrowserStack + Appium
+- Engaged on client account Shell India Pvt Ltd — developed cloud automation for Azure infrastructure using Terraform; managed multiple stakeholders and provided SME support for test automation across Shell
+- Assisted and took over Data Anonymization and ADF pipeline configuration for Power BI dashboards, and developed internal utilities as NuGet packages and JAR files with CI/CD on Azure DevOps
+
 ### Tata Consultancy Services — IT Analyst / Software Engineer
 *Jun 2014 – Apr 2020 · Bengaluru & Sydney*
 
@@ -37,7 +44,7 @@ Senior AI Data Engineer with 10+ years of experience across data engineering, AI
 
 ## Skills
 
-Apache Airflow · RAG · LangChain · Python · Kubernetes · GCP / AWS / Azure · dbt · Snowflake · Java · Selenium · SQL · CI/CD
+Apache Airflow · RAG · LangChain · Python · Kubernetes · GCP / AWS / Azure · Terraform · Azure DevOps · dbt · Snowflake · Java · Selenium · SQL · CI/CD
 
 ---
 
