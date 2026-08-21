@@ -40,6 +40,13 @@
   description: "A hands-on take on LangChain's latest agent primitives — when they shine, when they over-engineer, and how to wire them into real data pipelines."
   link: "https://shrividyahegde.substack.com/p/langchains-deep-agents-are-actually"
 
+- title: "Sentiment Analysis from Bag of Words"
+  tag: "NLP"
+  category: "AI & Agents"
+  publication: "Shrividya Hegde's Substack"
+  description: "A grounded walkthrough of classic bag-of-words sentiment analysis — how it works, where it breaks down, and why it's still a useful baseline before reaching for embeddings or LLMs."
+  link: "https://packtbusinessintelligencepro.substack.com/p/sentiment-analysis-from-bag-of-words?r=8lnyd"
+
 - title: "The 4 AI Concepts Every AI Developer Should Know"
   tag: "AI"
   category: "AI & Agents"
