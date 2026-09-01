@@ -125,6 +125,30 @@
   sub: "Airflow session"
   alt: "Session on using Airflow for AI and Data workloads"
 
+- type: group
+  title: "Apache Airflow Summit 2026"
+  cat: "Speaker and Volunteering"
+  sub: "Community events"
+  covers:
+    - 1000262718.jpg
+    - Airflow summit.jpg
+    - 1000262706.jpg
+    - 1000262696.jpg
+  alt: "Apache Airflow summit pics 2026"
+  items:
+    - title: "Packt subscription giveaway"
+      sub: "Community"
+      file: 1000262718.jpg
+    - title: "Airflow Summit 2026"
+      sub: "Speaker and Volunteer"
+      file: Airflow summit.jpg
+    - title: "With Software Guru and volunteers"
+      sub: "Team work"
+      file: 1000262706.jpg
+    - title: "With Databricks team at the booth"
+      sub: "Booth visits"
+      file: 1000262696.jpg
+
 - file: SQL, DAG Recovery, and Idempotency Outlast Any Tool.mp4
   type: video
   title: "My Talk Highlight"
