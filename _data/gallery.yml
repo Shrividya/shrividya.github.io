@@ -148,6 +148,9 @@
     - title: "With Databricks team at the booth"
       sub: "Booth visits"
       file: 1000262696.jpg
+    - title: "Speaker session"
+      sub: "My talk"
+      file: 1000262993.jpg
 
 - file: SQL, DAG Recovery, and Idempotency Outlast Any Tool.mp4
   type: video
