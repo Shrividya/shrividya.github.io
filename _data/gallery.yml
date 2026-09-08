@@ -125,6 +125,12 @@
   sub: "Airflow session"
   alt: "Session on using Airflow for AI and Data workloads"
 
+- file: 1000264377.jpg
+  title: "Airflow Summit Speaker"
+  cat: "Speaker"
+  sub: "Airflow Summit"
+  alt: "Session on Orchestrating and Testing RAG Pipelines using Airflow"
+
 - type: group
   title: "Apache Airflow Summit 2026"
   cat: "Speaker and Volunteering"
