@@ -28,6 +28,18 @@
   sub: "women in data @ dbt labs"
   alt: "Session at dbt community channel"
 
+- file: Wid_hackathon_judge.png
+  title: "Participated in Datathon as a Judge"
+  cat: "Hackathon Judging"
+  sub: "Judge for hackathon in WiD"
+  alt: "Linkedin announcement post"
+
+- file: BTD_hackathon.png
+  title: "Participated in Beyond the DAG as a Judge"
+  cat: "Hackathon Judging @ Astronomer"
+  sub: "Judge for hackathon in Astronomer"
+  alt: "Events page"
+
 - type: group
   title: "TCS Gems Awards"
   cat: "Awards"
