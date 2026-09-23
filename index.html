@@ -53,7 +53,7 @@ title: Home
       <div class="dag-meta-item">Last Run: <span>2025-11-01 ✓ success</span></div>
       <div class="dag-meta-item">Location: <span>Atlanta, GA 🇺🇸 (since Sep 2026)</span></div>
       <div class="dag-meta-item">Tags: <span>data-engineering, ai, airflow, career</span></div>
-      <div class="dag-meta-item">GitHub profile views: <span><img src="https://komarev.com/ghpvc/?username=Shrividya" alt="github profile views" style="vertical-align:middle;"/></span></div>
+      <div class="dag-meta-item">GitHub profile views: <span><img src="https://komarev.com/ghpvc/?username=Shrividya" alt="github profile views" loading="lazy" style="vertical-align:middle;"/></span></div>
       <div class="dag-meta-item">Resume: <span><a class="dag-resume-link" href="/assets/resume.pdf" download="Shrividya_Hegde_Resume.pdf">📄 Download PDF</a></span></div>
     </div>
   </div>
@@ -293,7 +293,7 @@ title: Home
           {% for photo in site.data.gallery %}
           {% if photo.type == nil %}
           <div class="gcard">
-            <div class="gcard-thumb gcard-thumb--photo"><img src="/assets/images/gallery/{{ photo.file }}" alt="{{ photo.alt | default: photo.title }}"></div>
+            <div class="gcard-thumb gcard-thumb--photo"><img src="/assets/images/gallery/{{ photo.file }}" alt="{{ photo.alt | default: photo.title }}" loading="lazy"></div>
             <div class="gcard-body"><div class="gcard-cat">{{ photo.cat }}</div><div class="gcard-title">{{ photo.title }}</div><div class="gcard-sub">{{ photo.sub }}</div></div>
           </div>
           {% endif %}
@@ -330,7 +330,7 @@ title: Home
   <!-- Hero -->
   <div class="n-hero" id="ns-about">
     <div class="n-avatar">
-      <img src="https://github.com/{{ site.author.github }}.png" alt="{{ site.author.name }}" onerror="this.style.display='none'"/>
+      <img src="https://github.com/{{ site.author.github }}.png" alt="{{ site.author.name }}" width="96" height="96" onerror="this.style.display='none'"/>
       SH
     </div>
     <h1 class="n-name">{{ site.author.name }}</h1>
@@ -644,11 +644,11 @@ title: Home
       </div>
       <div class="gh-panel">
         <div class="gh-stats">
-          <img src="https://github-readme-stats-gilt-nine-51.vercel.app/api?username={{ site.author.github }}&amp;show_icons=true&amp;theme=merko&amp;hide_border=true&amp;bg_color=0d1117&amp;title_color=abd200&amp;icon_color=abd200&amp;text_color=ffffff&amp;count_private=true&amp;include_all_commits=true" alt="GitHub stats"/>
-          <img src="https://github-readme-stats-gilt-nine-51.vercel.app/api/top-langs?username={{ site.author.github }}&amp;layout=compact&amp;theme=merko&amp;hide_border=true&amp;bg_color=0d1117&amp;title_color=abd200&amp;text_color=ffffff" alt="Top languages"/>
+          <img src="https://github-readme-stats-gilt-nine-51.vercel.app/api?username={{ site.author.github }}&amp;show_icons=true&amp;theme=merko&amp;hide_border=true&amp;bg_color=0d1117&amp;title_color=abd200&amp;icon_color=abd200&amp;text_color=ffffff&amp;count_private=true&amp;include_all_commits=true" alt="GitHub stats" width="467" height="195" loading="lazy"/>
+          <img src="https://github-readme-stats-gilt-nine-51.vercel.app/api/top-langs?username={{ site.author.github }}&amp;layout=compact&amp;theme=merko&amp;hide_border=true&amp;bg_color=0d1117&amp;title_color=abd200&amp;text_color=ffffff" alt="Top languages" width="300" height="165" loading="lazy"/>
         </div>
         <div style="text-align:center;margin-top:0.75rem;">
-          <img src="https://streak-stats.demolab.com?user={{ site.author.github }}&amp;theme=merko&amp;hide_border=true&amp;background=0d1117&amp;ring=abd200&amp;fire=abd200&amp;currStreakLabel=abd200" alt="GitHub streak" style="max-width:100%;"/>
+          <img src="https://streak-stats.demolab.com?user={{ site.author.github }}&amp;theme=merko&amp;hide_border=true&amp;background=0d1117&amp;ring=abd200&amp;fire=abd200&amp;currStreakLabel=abd200" alt="GitHub streak" width="495" height="195" loading="lazy" style="max-width:100%;"/>
         </div>
       </div>
     </section>
@@ -700,7 +700,7 @@ title: Home
   <div class="cert-modal-inner" onclick="event.stopPropagation()">
     <button class="cert-modal-close" onclick="closeCertModal()" aria-label="Close">✕</button>
     <div class="cert-modal-label">ISRO — Master Control Facility, Hassan · Jun 2014</div>
-    <img src="/assets/images/gallery/isro-mcf-internship-2014.png" alt="ISRO MCF Internship Certificate 2014">
+    <img src="/assets/images/gallery/isro-mcf-internship-2014.png" alt="ISRO MCF Internship Certificate 2014" loading="lazy">
     <div class="cert-modal-sub">Automatic Weather Storage Analysis &amp; Display System</div>
   </div>
 </div>
@@ -981,7 +981,7 @@ function initNormalAnimations() {
   if (_nAnimInited) return;
   _nAnimInited = true;
 
-  // 1. Stats bar — count up when scrolled into view
+  // Stats bar — count up when scrolled into view
   const statsBar = document.getElementById('n-stats-bar');
   if (statsBar) {
     const cObs = new IntersectionObserver(entries => {
@@ -1009,7 +1009,7 @@ function initNormalAnimations() {
     cObs.observe(statsBar);
   }
 
-  // 2. Scroll-reveal for pre-tagged .n-reveal elements
+  // Scroll-reveal for pre-tagged .n-reveal elements
   const revealObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('n-visible'); revealObs.unobserve(e.target); }
@@ -1017,7 +1017,7 @@ function initNormalAnimations() {
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
   document.querySelectorAll('#view-normal .n-reveal').forEach(el => revealObs.observe(el));
 
-  // 4. Auto-stagger Liquid-rendered cards (projects, articles, connect)
+  // Auto-stagger Liquid-rendered cards (projects, articles, connect)
   [['#ns-projects .n-pcard', 1], ['#ns-writing .n-acard', 1], ['#ns-connect .n-scard', 1]].forEach(([sel]) => {
     document.querySelectorAll(sel).forEach((card, i) => {
       card.classList.add('n-reveal', 'n-stagger-' + Math.min(i + 1, 6));
@@ -1025,7 +1025,7 @@ function initNormalAnimations() {
     });
   });
 
-  // 5. Hero badges — spring pop-in with stagger
+  // Hero badges — spring pop-in with stagger
   document.querySelectorAll('#ns-about .n-badge').forEach((b, i) => {
     b.style.cssText = 'opacity:0;transform:scale(0.5);display:inline-block;';
     setTimeout(() => {
@@ -1035,7 +1035,7 @@ function initNormalAnimations() {
     }, 650 + i * 110);
   });
 
-  // 6. Card tilt-on-hover (subtle 3D perspective)
+  // Card tilt-on-hover (subtle 3D perspective)
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!prefersReducedMotion && window.matchMedia('(hover: hover)').matches) {
     document.querySelectorAll('#view-normal .n-tilt').forEach(card => {
@@ -1052,7 +1052,7 @@ function initNormalAnimations() {
     });
   }
 
-  // 7. Hero tagline — cycling typewriter effect
+  // Hero tagline — cycling typewriter effect
   const titleText = document.getElementById('n-title-text');
   const titleWrap = document.getElementById('n-title-type');
   if (titleText && titleWrap && !prefersReducedMotion) {
@@ -1076,7 +1076,7 @@ function initNormalAnimations() {
     titleText.textContent = (titleWrap.dataset.roles || '').split('|')[0] || '';
   }
 
-  // 8. Scrollspy — highlight the nav link for the section currently in view
+  // Scrollspy — highlight the nav link for the section currently in view
   const navLinks = document.querySelectorAll('#view-normal .n-topnav-link');
   const navMap = {};
   navLinks.forEach(a => { navMap[a.getAttribute('href').slice(1)] = a; });
@@ -1094,7 +1094,7 @@ function initNormalAnimations() {
     if (el) spyObs.observe(el);
   });
 
-  // 9. Scroll progress bar
+  // Scroll progress bar
   const progressBar = document.getElementById('n-progress-bar');
   if (progressBar) {
     const updateProgress = () => {

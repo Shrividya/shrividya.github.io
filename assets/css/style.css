@@ -155,7 +155,6 @@ a:hover { opacity: 0.75; }
 
 .eb-bolt { font-size: 0.9rem; line-height: 1; transition: transform 0.1s; }
 .eb-short { display: none; }
-.audio-text { /* visible on desktop, hidden on mobile */ }
 .audio-icon { display: inline; }
 
 .electric-btn.strike {
@@ -347,7 +346,6 @@ a:hover { opacity: 0.75; }
     display: none;
   }
 
-  /* Toggle bar: keep single line by hiding label and shortening buttons */
   .toggle-bar {
     gap: 0.35rem;
     padding: 0 0.85rem;
@@ -355,7 +353,6 @@ a:hover { opacity: 0.75; }
   .toggle-label { display: none; }
   .eb-text { display: none; }
   .eb-short { display: inline; }
-  /* Disable animation ::after which conflicts when adding text content */
   .electric-btn::after { content: none !important; animation: none; }
   .audio-text { display: none; }
 }
@@ -835,7 +832,6 @@ a.cert-card:hover, a.n-cert-card:hover { opacity: 1; }
    RESPONSIVE
 ══════════════════════════════════════ */
 @media (max-width: 640px) {
-  /* Sidebar: body is column on mobile, sidebar must be full-width (was incorrectly 130px) */
   .af-sidebar { width: 100%; }
   .af-nav { display: none; }
   .two-col { grid-template-columns: 1fr; }
@@ -872,14 +868,10 @@ a.cert-card:hover, a.n-cert-card:hover { opacity: 1; }
   .gc-caption { padding: 0.45rem 2.8rem; font-size: 0.66rem; }
   .gc-prev, .gc-next { top: 80px; width: 1.6rem; height: 1.6rem; font-size: 1rem; }
 
-  /* Don't stack two sticky bars on mobile — the utility bar scrolls away,
-     the in-page nav (or hint banner) takes over the top of the viewport */
   .toggle-bar { position: static; }
   .n-topnav { top: 0; }
   .af-hint-banner { top: 0; }
 
-  /* Router links stack one-per-line on narrow screens — the "·" separators
-     only make sense inline, so hide them rather than let them trail */
   .n-router-sep { display: none; }
   .n-router a { display: block; }
 }

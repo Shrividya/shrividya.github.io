@@ -45,7 +45,6 @@ permalink: /gallery/
       cursor: pointer; position: relative;
     }
 
-    /* fixed, static crop — the tile itself never moves; only the image inside drifts/zooms */
     .pg-tile-frame {
       position: relative; width: 100%; aspect-ratio: 4 / 3;
       overflow: hidden; border-radius: 8px;
@@ -56,7 +55,6 @@ permalink: /gallery/
       object-fit: cover; display: block;
     }
 
-    /* Ken Burns — slow zoom + pan on the image itself, tile stays put */
     .pg-kb { animation: kb-a 28s ease-in-out infinite alternate; transform-origin: 50% 50%; will-change: transform; }
     @keyframes kb-a { 0% { transform: scale(1) translate(0,0); } 100% { transform: scale(1.14) translate(-2.5%,-1.5%); } }
     @keyframes kb-b { 0% { transform: scale(1.05) translate(1.5%,1%); } 100% { transform: scale(1.16) translate(-1.5%,-2%); } }
@@ -255,7 +253,7 @@ permalink: /gallery/
       {% if photo.type == 'group' %}
         <div class="pg-stack">
           {% for cover in photo.covers %}
-            <img src="/assets/images/gallery/{{ cover }}" alt="{{ photo.alt | default: photo.title }}">
+            <img src="/assets/images/gallery/{{ cover }}" alt="{{ photo.alt | default: photo.title }}" loading="lazy">
           {% endfor %}
           <div class="pg-badge">×{{ photo.items.size }}</div>
         </div>
@@ -267,13 +265,13 @@ permalink: /gallery/
       {% elsif photo.type == 'embed' %}
         <div class="pg-tile-frame">
           <div class="pg-thumbwrap">
-            <img class="pg-kb" src="https://img.youtube.com/vi/{{ photo.youtube }}/hqdefault.jpg" alt="{{ photo.alt | default: photo.title }}">
+            <img class="pg-kb" src="https://img.youtube.com/vi/{{ photo.youtube }}/hqdefault.jpg" alt="{{ photo.alt | default: photo.title }}" loading="lazy">
             <div class="pg-play">▶</div>
           </div>
         </div>
       {% else %}
         <div class="pg-tile-frame">
-          <img class="pg-kb" src="/assets/images/gallery/{{ photo.file }}" alt="{{ photo.alt | default: photo.title }}">
+          <img class="pg-kb" src="/assets/images/gallery/{{ photo.file }}" alt="{{ photo.alt | default: photo.title }}" loading="lazy">
         </div>
       {% endif %}
     </div>
@@ -370,7 +368,7 @@ function renderCard() {
       const th = document.createElement('div');
       th.className = 'pg-thumb' + (idx === curItem ? ' active' : '');
       const tf = gi.file || photo.covers[idx % photo.covers.length];
-      th.innerHTML = '<img src="' + IMG_BASE + tf + '" alt="' + gi.title + '">';
+      th.innerHTML = '<img src="' + IMG_BASE + tf + '" alt="' + gi.title + '" loading="lazy">';
       th.onclick = (e) => {
         e.stopPropagation();
         curItem = idx; flipped = false;
