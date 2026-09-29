@@ -1,0 +1,135 @@
+---
+layout: null
+permalink: /services/
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services & Freelance — {{ site.author.name }}</title>
+  <meta name="description" content="Freelance data & AI engineering, Apache Airflow consulting, 1:1 mentorship, and technical writing collaborations with {{ site.author.name }}."/>
+  <link rel="stylesheet" href="/assets/css/style.css"/>
+  <script>
+    const _t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', _t);
+  </script>
+</head>
+<body>
+
+<div class="page-nav">
+  <a class="page-nav-back" href="/?view=normal">← Back to portfolio</a>
+  <span class="page-nav-title">💼 Services</span>
+  <button class="dark-toggle" style="margin-left:auto;" onclick="toggleDark()" id="dark-toggle">🌙</button>
+</div>
+
+<main class="page-main">
+  <div class="page-hero">
+    <h1 class="page-hero-title">Work With Me</h1>
+    <div class="page-hero-sub">Freelance data &amp; AI engineering, Apache Airflow consulting, mentorship, and technical writing collaborations</div>
+  </div>
+
+  <div class="n-scard feat" style="margin-top:0.5rem;padding:1.25rem 1.5rem;text-align:center;">
+    <div class="n-sc-plat" style="font-size:1rem;">💼 Open for freelance &amp; collaboration work</div>
+    <div class="n-sc-desc" style="font-size:0.8rem;margin-top:0.5rem;line-height:1.65;max-width:62ch;margin-left:auto;margin-right:auto;">
+      10+ years in data engineering, AI/ML, and Apache Airflow. Currently freelancing full-time — available for project-based engineering work, consulting, mentorship, and content collaborations.
+    </div>
+    <div style="display:flex;gap:0.7rem;justify-content:center;flex-wrap:wrap;margin-top:0.9rem;">
+      <a class="n-cta-primary" href="https://topmate.io/shrividya_hegde" target="_blank" rel="noopener noreferrer">📅 Book on Topmate</a>
+      <a class="n-cta-secondary" href="mailto:{{ site.author.email }}?subject=Freelance%20project%20inquiry">📧 Email About a Project</a>
+    </div>
+  </div>
+
+  <div class="n-sh" style="margin-top:1.75rem;">How I Can Help</div>
+  <div class="wr-grid" style="margin-top:0.7rem;">
+    <div class="wr-card">
+      <span class="wr-tag">Freelance</span>
+      <div class="wr-title">💻 Data &amp; AI Engineering</div>
+      <div class="wr-desc">Design and build production-grade Apache Airflow pipelines, ETL/ELT systems, and RAG / GenAI applications. Available for project-based or ongoing freelance engagements.</div>
+      <a class="wr-link" href="mailto:{{ site.author.email }}?subject=Freelance%20Data%20%26%20AI%20Engineering%20project">Start a project →</a>
+    </div>
+    <div class="wr-card">
+      <span class="wr-tag">Consulting</span>
+      <div class="wr-title">🔍 Airflow &amp; DAG Review</div>
+      <div class="wr-desc">Pipeline audits, performance tuning, and Airflow 3 migration guidance — drawing on hands-on experience owning Airflow regression testing and release gating at Astronomer.</div>
+      <a class="wr-link" href="https://topmate.io/shrividya_hegde" target="_blank" rel="noopener noreferrer">Book a review →</a>
+    </div>
+    <div class="wr-card">
+      <span class="wr-tag">Mentorship</span>
+      <div class="wr-title">🧑‍🏫 1:1 Career &amp; Technical Mentorship</div>
+      <div class="wr-desc">Career pivots into data, interview prep, and technical guidance on data engineering &amp; AI — 5.0★ across 10 ratings and 20 bookings on Topmate. Also an Expert Mentor at Ediso.</div>
+      <a class="wr-link" href="https://topmate.io/shrividya_hegde" target="_blank" rel="noopener noreferrer">Book a session →</a>
+    </div>
+    <div class="wr-card">
+      <span class="wr-tag">Writing</span>
+      <div class="wr-title">✍️ Technical Writing &amp; Collaboration</div>
+      <div class="wr-desc">Guest posts, sponsored articles, and co-authoring across the publications I write and edit for — including Python in Plain English, AI in Plain English, and Data Engineering Byte.</div>
+      <a class="wr-link" href="mailto:{{ site.author.email }}?subject=Writing%20collaboration">Pitch a collaboration →</a>
+    </div>
+    <div class="wr-card">
+      <span class="wr-tag">Speaking</span>
+      <div class="wr-title">🎤 Conference &amp; Meetup Talks</div>
+      <div class="wr-desc">Sessions on Apache Airflow, data orchestration, GenAI pipelines, and women in tech — available for conferences, meetups, and podcasts.</div>
+      <a class="wr-link" href="https://sessionize.com/shrividya-hegde" target="_blank" rel="noopener noreferrer">View speaker profile →</a>
+    </div>
+    <div class="wr-card">
+      <span class="wr-tag">Women in Data</span>
+      <div class="wr-title">👩‍💼 Community Workshops</div>
+      <div class="wr-desc">Bootcamps and workshops on SQL, Python, PySpark, and applied ML — organized through the Women in Data™ NJ chapter.</div>
+      <a class="wr-link" href="/community/">Learn more →</a>
+    </div>
+  </div>
+
+  <div class="n-sh" style="margin-top:1.75rem;">What Mentees Say</div>
+  <div class="n-testi-grid" style="margin-top:0.7rem;">
+    <div class="n-testi-card">
+      <div class="n-testi-stars">★★★★★</div>
+      <div class="n-testi-quote">I had an amazing session with Shrividya. She has a phenomenal grasp of AI, Data Engineering, and Airflow — sharp, technical, and actionable insights tailored exactly to my career goals. I left with clear direction, expert guidance and renewed motivation. Highly recommend booking a session with her!</div>
+      <div class="n-testi-foot"><span class="n-testi-name">Madhu Kandhipati</span><span class="n-testi-tag">AI &amp; data engineering guidance</span></div>
+    </div>
+    <div class="n-testi-card">
+      <div class="n-testi-stars">★★★★★</div>
+      <div class="n-testi-quote">Insightful and clear guidance, practical advice, and genuine encouragement. Truly grateful for the valuable mentorship!</div>
+      <div class="n-testi-foot"><span class="n-testi-name">Supriya Kamatagi</span><span class="n-testi-tag">Mentorship session</span></div>
+    </div>
+    <div class="n-testi-card">
+      <div class="n-testi-stars">★★★★★</div>
+      <div class="n-testi-quote">It was lovely chatting with Shrividya. She was very informative and understanding. A great resource for those looking to pivot into data!</div>
+      <div class="n-testi-foot"><span class="n-testi-name">Artesia Kabore</span><span class="n-testi-tag">Career pivot into data</span></div>
+    </div>
+  </div>
+
+  <div class="n-sh">Open For</div>
+  <div class="n-open-row" style="margin-top:0.7rem;">
+    <span class="n-badge nb-green" style="border-radius:4px;">💻 Freelance — Available</span>
+    <span class="n-badge nb-blue" style="border-radius:4px;">🤝 Collaboration</span>
+    <span class="n-badge nb-purple" style="border-radius:4px;">🎤 Speaking</span>
+    <span class="n-badge nb-teal" style="border-radius:4px;">🧑‍🏫 Mentoring</span>
+    <span class="n-badge nb-amber" style="border-radius:4px;">📝 Technical Writing</span>
+  </div>
+
+  <div class="n-scard feat" style="margin-top:1.75rem;padding:1.25rem 1.5rem;text-align:center;">
+    <div class="n-sc-plat" style="font-size:0.95rem;">Ready to work together?</div>
+    <div class="n-sc-desc" style="font-size:0.78rem;margin-top:0.4rem;">Tell me about your project, team, or question — I typically respond within a day or two.</div>
+    <div style="display:flex;gap:0.7rem;justify-content:center;flex-wrap:wrap;margin-top:0.85rem;">
+      <a class="n-cta-primary" href="https://topmate.io/shrividya_hegde" target="_blank" rel="noopener noreferrer">📅 Book on Topmate</a>
+      <a class="n-cta-secondary" href="mailto:{{ site.author.email }}">📧 Email Me</a>
+    </div>
+  </div>
+</main>
+
+<footer class="n-footer">⭐ From <a href="https://github.com/{{ site.author.github }}">{{ site.author.name }}</a> with ❤️ &nbsp;·&nbsp; {{ site.url | remove: 'https://' }}</footer>
+
+<script>
+function toggleDark() {
+  const curr = document.documentElement.getAttribute('data-theme');
+  const next = curr === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  document.getElementById('dark-toggle').textContent = next === 'dark' ? '🌙' : '☀️';
+}
+const _s = localStorage.getItem('theme');
+if (_s) { document.documentElement.setAttribute('data-theme', _s); document.getElementById('dark-toggle').textContent = _s === 'dark' ? '🌙' : '☀️'; }
+</script>
+</body>
+</html>
