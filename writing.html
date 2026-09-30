@@ -1,19 +1,39 @@
 ---
 layout: null
 permalink: /writing/
+title: "Articles on Apache Airflow, RAG, AI Agents & Data Engineering"
+description: "Technical articles by Shrividya Hegde on Apache Airflow, RAG, AI agents, Kubernetes cost and data engineering, published on Medium and Substack."
 ---
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Technical Writing — {{ site.author.name }}</title>
-  <meta name="description" content="Articles on AI, Data Engineering, Apache Airflow, Python, and more by {{ site.author.name }}."/>
+  {% seo %}
   <link rel="stylesheet" href="/assets/css/style.css"/>
   <script>
     const _t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     document.documentElement.setAttribute('data-theme', _t);
   </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+  {% for a in site.data.articles %}
+  {"@type": "ListItem", "position": {{ forloop.index }}, "item": {
+    "@type": "Article",
+    "headline": {{ a.title | jsonify }},
+    "description": {{ a.description | jsonify }},
+    "url": {{ a.link | jsonify }},
+    "author": {"@type": "Person", "name": "{{ site.author.name }}", "url": "{{ site.url }}"},
+    "publisher": {"@type": "Organization", "name": {{ a.publication | jsonify }}}
+  }}{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+  ]
+}
+</script>
 </head>
 <body>
 

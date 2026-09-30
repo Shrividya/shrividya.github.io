@@ -1,19 +1,42 @@
 ---
 layout: null
 permalink: /events/
+title: "Speaking Sessions, Workshops & Events on Apache Airflow and AI"
+description: "Upcoming and past talks, workshops and bootcamps by Shrividya Hegde on Apache Airflow, RAG pipelines, SQL, PySpark and data engineering — Airflow Summit, Airflow NYC Meetup, Women in Data NJ."
 ---
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sessions &amp; Events — {{ site.author.name }}</title>
-  <meta name="description" content="Upcoming and past speaking sessions, workshops, bootcamps, and community events by {{ site.author.name }}"/>
+  {% seo %}
   <link rel="stylesheet" href="/assets/css/style.css"/>
   <script>
     const _t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     document.documentElement.setAttribute('data-theme', _t);
   </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+  {% for event in site.data.events %}
+  {
+    "@type": "Event",
+    "name": {{ event.title | jsonify }},
+    "startDate": "{{ event.date }}",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "{% if event.location == 'Online' or event.location == 'Virtual' or event.venue == 'Virtual' %}https://schema.org/OnlineEventAttendanceMode{% else %}https://schema.org/OfflineEventAttendanceMode{% endif %}",
+    "description": {{ event.description | jsonify }},
+    "location": {"@type": "Place", "name": {{ event.venue | jsonify }}, "address": {{ event.location | jsonify }}},
+    "url": {{ event.link | jsonify }},
+    "performer": {"@type": "Person", "name": "{{ site.author.name }}", "url": "{{ site.url }}"},
+    "organizer": {"@type": "Organization", "name": {{ event.venue | jsonify }}}
+  }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+  ]
+}
+</script>
 </head>
 <body>
 

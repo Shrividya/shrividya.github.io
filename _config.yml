@@ -1,5 +1,5 @@
 title: "Shrividya Hegde"
-tagline: "Senior AI Data Engineer | Apache Airflow Champion"
+tagline: "Senior AI Data Engineer | Apache Airflow Champion | RAG & LLM Pipelines"
 description: >
   Senior AI Data Engineer with 10+ years of experience in data engineering,
   AI/ML, Apache Airflow, and test automation. Airflow Champion, OSS contributor,
@@ -40,4 +40,14 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
-image: /assets/images/preview.png
+image: https://github.com/Shrividya.png
+lang: en_US
+logo: https://github.com/Shrividya.png
+social:
+  name: "Shrividya Hegde"
+  links:
+    - https://www.linkedin.com/in/shrividya-hegde-shri-91562365/
+    - https://github.com/Shrividya
+    - https://medium.com/@shrihegde
+    - https://www.youtube.com/@shrividyahegde
+    - https://dev.to/shrividya_hegde
