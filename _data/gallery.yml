@@ -143,6 +143,12 @@
   sub: "Airflow Summit"
   alt: "Session on Orchestrating and Testing RAG Pipelines using Airflow"
 
+- file: Airflow Summit Reconnect.png
+  title: "Online Airflow Summit - Reconnect"
+  cat: "Speaker"
+  sub: "Online Airflow Summit"
+  alt: "Session on self healing pipelines"
+
 - type: group
   title: "Apache Airflow Summit 2026"
   cat: "Speaker and Volunteering"

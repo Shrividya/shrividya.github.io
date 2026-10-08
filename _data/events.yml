@@ -100,3 +100,12 @@
   description: "This session presents a reference DAG architecture for production-grade RAG ingestion built on Airflow 3,"
   link: "https://airflowsummit.org/tickets/"
   tags: ["AI", "Data Orchestration", "Data Engineering", "Speaking"]
+
+- title: "Self-Healing Airflow: Pipelines That Fix Themselves"
+  date: "2026-11-05"
+  type: "Airflow Summit Online Reconnect 2026"
+  venue: "Online"
+  location: "Online"
+  description: "This session is about how to make the datapipelines heal themselves instead of alerting immediately on failures, thus creating meaningful alerts"
+  link: "https://airflowsummit.org/onlinereconnect/"
+  tags: ["AI", "Data Orchestration", "Data Engineering", "Speaking"]
