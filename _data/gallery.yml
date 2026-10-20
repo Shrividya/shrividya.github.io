@@ -104,8 +104,14 @@
 - file: parsippany-lead.jpeg
   title: "Became the Chapter Lead for Parsippany NJ Chapter"
   cat: "WiD Pro"
-  sub: "Leadershipe"
+  sub: "Leadership"
   alt: "Became the Chapter Lead for Parsippany NJ Chapter"
+
+- file: 1791297961419.jpeg
+  title: "Became the Chapter Director for Women in Big Data Atlanta Chapter"
+  cat: "WiBD Atlanta"
+  sub: "Leadership"
+  alt: "Became the Chapter Director for Women in Big Data Atlanta Chapter"
 
 - file: sql-to-alchemy-session.jpeg
   title: "SQL to Alchemy practical session"
@@ -149,6 +155,11 @@
   sub: "Online Airflow Summit"
   alt: "Session on self healing pipelines"
 
+- file: ediso.jpeg
+  title: "Founding Expert Spotlight by Ediso"
+  cat: "Mentoring"
+  sub: "Expert recognition"
+
 - type: group
   title: "Apache Airflow Summit 2026"
   cat: "Speaker and Volunteering"
@@ -187,3 +198,8 @@
   sub: "Ediso Conversations"
   alt: "Podcast appearance on Ediso Conversations: Data Engineering and Standing Out in the AI Era with Shri Hegde"
 
+- type: embed
+  youtube: "msgNRIEDBnU"
+  title: "Orchestrating and Testing RAG Pipelines with Airflow - Airflow Summit 2026"
+  cat: "Airflow Summit 2026"
+  sub: "Talk at Airflow Summit"
