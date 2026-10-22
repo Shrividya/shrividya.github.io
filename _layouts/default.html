@@ -8,24 +8,52 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "{{ site.author.name }}",
-    "jobTitle": "{{ site.author.title }}",
-    "description": "{{ site.description | strip_newlines }}",
-    "url": "{{ site.url }}",
-    "image": "https://github.com/{{ site.author.github }}.png",
-    "email": "{{ site.author.email }}",
-    "sameAs": [
-      "https://www.linkedin.com/in/{{ site.author.linkedin }}/",
-      "https://github.com/{{ site.author.github }}",
-      "https://medium.com/{{ site.author.medium }}",
-      "https://substack.com/{{ site.author.substack }}",
-      "https://www.youtube.com/{{ site.author.youtube }}",
-      "https://dev.to/{{ site.author.devto }}"
-    ],
-    "knowsAbout": ["Apache Airflow","Data Engineering","Generative AI","RAG","LLMs","Python","Kubernetes","dbt","Snowflake","LangChain","MLOps"],
-    "worksFor": {"@type": "Organization","name": "{{ site.author.company }}"},
-    "award": ["Astronomer Champion for Apache Airflow","6x Apache Airflow Certified","AWS Certified Cloud Practitioner"]
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "{{ site.url }}/#person",
+        "name": "{{ site.author.name }}",
+        "jobTitle": "{{ site.author.title }}",
+        "description": "{{ site.description | strip_newlines }}",
+        "url": "{{ site.url }}/",
+        "image": "https://github.com/{{ site.author.github }}.png",
+        "email": "{{ site.author.email }}",
+        "address": {"@type": "PostalAddress", "addressLocality": "Atlanta", "addressRegion": "GA", "addressCountry": "US"},
+        "sameAs": [
+          "https://www.linkedin.com/in/{{ site.author.linkedin }}/",
+          "https://github.com/{{ site.author.github }}",
+          "https://medium.com/{{ site.author.medium }}",
+          "https://substack.com/{{ site.author.substack }}",
+          "https://www.youtube.com/{{ site.author.youtube }}",
+          "https://dev.to/{{ site.author.devto }}"
+        ],
+        "knowsAbout": ["Apache Airflow","Data Engineering","Generative AI","RAG","LLMs","Python","Kubernetes","dbt","Snowflake","LangChain","MLOps"],
+        "worksFor": {"@type": "Organization","name": "{{ site.author.company }}"},
+        "memberOf": {"@type": "Organization", "name": "Women in Data"},
+        "award": ["Astronomer Champion for Apache Airflow","6x Apache Airflow Certified","AWS Certified Cloud Practitioner"],
+        "makesOffer": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Freelance Data & AI Engineering", "serviceType": "Apache Airflow pipelines, ETL/ELT, RAG and generative AI applications", "url": "{{ site.url }}/services/"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Apache Airflow Consulting", "serviceType": "DAG reviews, pipeline audits, performance tuning and Airflow 3 migration guidance", "url": "{{ site.url }}/services/"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "1:1 Career & Technical Mentorship", "serviceType": "Mentorship in data engineering and AI", "url": "{{ site.url }}/services/"}}
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "{{ site.url }}/#website",
+        "url": "{{ site.url }}/",
+        "name": "{{ site.title }}",
+        "inLanguage": "en-US",
+        "publisher": {"@id": "{{ site.url }}/#person"}
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "{{ site.url }}/#profilepage",
+        "url": "{{ site.url }}/",
+        "name": "{{ site.title }} | {{ site.author.title }}",
+        "isPartOf": {"@id": "{{ site.url }}/#website"},
+        "mainEntity": {"@id": "{{ site.url }}/#person"}
+      }
+    ]
   }
   </script>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">

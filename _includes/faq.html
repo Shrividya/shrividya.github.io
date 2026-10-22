@@ -1,0 +1,20 @@
+<div class="n-sh" style="margin-top:1.75rem;">Frequently Asked Questions</div>
+<div class="faq-list" style="margin-top:0.7rem;">
+  {% for item in site.data.faq %}
+  <details class="n-scard" style="padding:0.9rem 1.25rem;margin-bottom:0.6rem;">
+    <summary class="n-sc-plat" style="cursor:pointer;font-size:0.9rem;">{{ item.q }}</summary>
+    <div class="n-sc-desc" style="font-size:0.8rem;margin-top:0.5rem;line-height:1.65;">{{ item.a }}</div>
+  </details>
+  {% endfor %}
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+  {% for item in site.data.faq %}
+    {"@type": "Question", "name": {{ item.q | jsonify }}, "acceptedAnswer": {"@type": "Answer", "text": {{ item.a | jsonify }}}}{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+  ]
+}
+</script>

@@ -1,0 +1,32 @@
+---
+permalink: /llms.txt
+sitemap: false
+---
+# {{ site.author.name }}
+
+> {{ site.author.title }} with 10+ years of experience in data engineering, AI/ML and test automation. Astronomer Champion for Apache Airflow, open-source contributor, builder of RAG and LLM pipelines, and NJ chapter lead for Women in Data. Based in {{ site.author.location }}. Available for freelance work, Airflow consulting, mentorship and writing collaborations.
+
+## Key pages
+- [Home / profile]({{ site.url }}/): Overview, experience, skills and featured work
+- [Services]({{ site.url }}/services/): Freelance data and AI engineering, Airflow consulting, mentorship, speaking
+- [Experience]({{ site.url }}/experience/): Career history
+- [Projects]({{ site.url }}/projects/): RAG, Airflow, LLM tooling and data engineering projects
+- [Writing]({{ site.url }}/writing/): Articles on Apache Airflow, RAG, AI agents and data engineering
+- [Events]({{ site.url }}/events/): Talks, workshops and bootcamps
+- [Certifications]({{ site.url }}/certifications/): Apache Airflow, AWS and data engineering certifications
+- [Community]({{ site.url }}/community/): Women in Data NJ and open-source community work
+- [Connect]({{ site.url }}/connect/): Contact and booking
+- [Resume (PDF)]({{ site.url }}/assets/resume.pdf)
+
+## Contact and profiles
+- Email: {{ site.author.email }}
+- Book a meeting: https://topmate.io/shrividya_hegde
+- LinkedIn: https://www.linkedin.com/in/{{ site.author.linkedin }}/
+- GitHub: https://github.com/{{ site.author.github }}
+- Medium: https://medium.com/{{ site.author.medium }}
+- YouTube: https://www.youtube.com/{{ site.author.youtube }}
+
+## FAQ
+{% for item in site.data.faq %}
+**{{ item.q }}** {{ item.a }}
+{% endfor %}

@@ -1,7 +1,7 @@
 # Shrividya Hegde
 
 Senior AI Data Engineer | Apache Airflow Champion
-Parsippany, NJ, USA · shrividyahegde222@gmail.com
+Atlanta, GA, USA · shrividyahegde222@gmail.com
 linkedin.com/in/shrividya-hegde-shri-91562365 · github.com/Shrividya · medium.com/@shrihegde
 
 ---

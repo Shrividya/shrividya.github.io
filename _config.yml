@@ -37,10 +37,14 @@ plugins:
 
 exclude:
   - README.md
+  - resume/
+  - scripts/
+  - state/
+  - supabase/
   - Gemfile
   - Gemfile.lock
 
-image: https://github.com/Shrividya.png
+image: /assets/images/og-card.png
 lang: en_US
 logo: https://github.com/Shrividya.png
 social:
@@ -51,3 +55,9 @@ social:
     - https://medium.com/@shrihegde
     - https://www.youtube.com/@shrividyahegde
     - https://dev.to/shrividya_hegde
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/og-card.png

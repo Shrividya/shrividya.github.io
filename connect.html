@@ -10,6 +10,7 @@ description: "Book a meeting, connect on LinkedIn or get in touch with Shrividya
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   {% seo %}
+  {% include page-schema.html %}
   <link rel="stylesheet" href="/assets/css/style.css"/>
   <script>
     const _t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -121,6 +122,7 @@ description: "Book a meeting, connect on LinkedIn or get in touch with Shrividya
     <span class="n-badge nb-teal" style="border-radius:4px;">🧑‍🏫 Mentoring</span>
     <span class="n-badge nb-amber" style="border-radius:4px;">📝 Technical Writing</span>
   </div>
+  {% include faq.html %}
 </main>
 
 <footer class="n-footer">⭐ From <a href="https://github.com/{{ site.author.github }}">{{ site.author.name }}</a> with ❤️ &nbsp;·&nbsp; {{ site.url | remove: 'https://' }}</footer>
