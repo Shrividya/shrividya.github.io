@@ -203,3 +203,10 @@
   title: "Orchestrating and Testing RAG Pipelines with Airflow - Airflow Summit 2026"
   cat: "Airflow Summit 2026"
   sub: "Talk at Airflow Summit"
+
+- type: embed
+  youtube: "7ScrLuttmgY"
+  title: "Airflow Summit Voices: Attendees Share Their Experience | Airflow Reconnect Online"
+  cat: "Airflow Summit 2026"
+  sub: "Airflow Summit Voices interview"
+  alt: "Airflow Summit Voices: Attendees Share Their Experience | Airflow Reconnect Online"
