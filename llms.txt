@@ -4,7 +4,7 @@ sitemap: false
 ---
 # {{ site.author.name }}
 
-> {{ site.author.title }} with 10+ years of experience in data engineering, AI/ML and test automation. Astronomer Champion for Apache Airflow, open-source contributor, builder of RAG and LLM pipelines, and NJ chapter lead for Women in Data. Based in {{ site.author.location }}. Available for freelance work, Airflow consulting, mentorship and writing collaborations.
+> {{ site.author.title }} with 10+ years of experience in data engineering, AI/ML and test automation. Apache Airflow Champion recognized by Astronomer, open-source contributor, builder of RAG and LLM pipelines, and NJ chapter lead for Women in Data. Based in {{ site.author.location }}. Available for freelance work, Airflow consulting, mentorship and writing collaborations.
 
 ## Key pages
 - [Home / profile]({{ site.url }}/): Overview, experience, skills and featured work

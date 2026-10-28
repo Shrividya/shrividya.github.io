@@ -2,11 +2,11 @@
 # Fields: q, a (plain text, no HTML)
 
 - q: "Who is Shrividya Hegde?"
-  a: "Shrividya Hegde is a Senior AI Data Engineer with 10+ years of experience in data engineering, AI/ML and test automation. She is an Astronomer Champion for Apache Airflow, an open-source contributor who builds RAG and LLM pipelines, and the NJ chapter lead for Women in Data. She is also the Chapter Director of the Women in Big Data Atlanta chapter and an AI Implementation Engineer at AI Engine Labs (Women Applying AI)."
+  a: "Shrividya Hegde is a Senior AI Data Engineer with 10+ years of experience in data engineering, AI/ML and test automation. She is an Apache Airflow Champion recognized by Astronomer, an open-source contributor who builds RAG and LLM pipelines, and the NJ chapter lead for Women in Data. She is also the Chapter Director of the Women in Big Data Atlanta chapter and an AI Implementation Engineer at AI Engine Labs (Women Applying AI)."
 - q: "Does Shrividya Hegde offer Apache Airflow consulting?"
   a: "Yes. She offers Airflow and DAG reviews, pipeline audits, performance tuning and Airflow 3 migration guidance, drawing on her experience owning Airflow regression testing and release gating at Astronomer."
 - q: "Is Shrividya Hegde available for freelance work?"
-  a: "Yes. She is currently freelancing and is available for project-based or ongoing work in data engineering, Apache Airflow pipelines, ETL/ELT systems and RAG / generative AI applications."
+  a: "Yes. She is currently freelancing and is open to project-based or ongoing work, and to new roles, in data engineering, Apache Airflow pipelines, ETL/ELT systems and RAG / generative AI applications."
 - q: "How can I book a meeting or mentorship session?"
   a: "Book a 1:1 session on Topmate at https://topmate.io/shrividya_hegde. Sessions cover career advice, data engineering, Apache Airflow, AI/ML, mentorship and freelance project scoping. You can also email shrividyahegde222@gmail.com."
 - q: "Where is Shrividya Hegde based?"

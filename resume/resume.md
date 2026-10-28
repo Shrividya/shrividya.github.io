@@ -20,13 +20,13 @@ Senior AI Data Engineer with 10+ years of experience across data engineering, AI
 - Sole engineer owning quality & release reliability for Astro Observe; fully owned Airflow 3 regression testing end-to-end, partnering with the Astro Build and Run teams on Airflow 3 adoption
 - Developed Airflow DAGs to trigger the release-gating process; set up release gating & sign-off process for the Observability team, driving process improvements and transparency across teams
 - Rebuilt the QA automation framework into the Astro release pipeline and built an LLM-powered test log summarizer to speed up debugging
-- Designed cloud-native Airflow pipeline frameworks (throughput ↑ 30%) and RAG pipelines with LangChain + ChromaDB (developer productivity ↑ 40%)
+- Designed cloud-native Airflow pipeline frameworks (throughput ↑ 30%, infra costs ↓ 60%) and RAG pipelines with LangChain + ChromaDB (developer productivity ↑ 40%)
 - 7 PRs merged to Apache Airflow OSS; awarded Airflow Champion by Astronomer (Jan 2026)
 
 ### Commonwealth Bank of Australia — Senior Test Automation Engineer
 *May 2021 – Feb 2022 · Sydney, AU*
 
-- 95% test coverage for Core Payments microservices; awarded Best Partner
+- 95% automation coverage for Core Payments microservices; awarded Best Partner
 
 ### KPMG India — Consultant, Automation Specialist
 *May 2020 – May 2021 · Bengaluru, India*
@@ -38,13 +38,13 @@ Senior AI Data Engineer with 10+ years of experience across data engineering, AI
 ### Tata Consultancy Services — IT Analyst / Software Engineer
 *Jun 2014 – Apr 2020 · Bengaluru & Sydney*
 
-- 6 years across Banking & Finance — 50% effort reduction via framework optimization; 5x internal awards
+- 6 years across Banking & Finance — 50% effort reduction via framework optimization; 5x awards
 
 ---
 
 ## Skills
 
-Apache Airflow · RAG · LangChain · Python · Kubernetes · GCP / AWS / Azure · Terraform · Azure DevOps · dbt · Snowflake · Java · Selenium · SQL · CI/CD
+Apache Airflow · RAG · LangChain · Azure OpenAI · Amazon Bedrock · Python · Kubernetes · GCP / AWS / Azure · Terraform · Azure DevOps · dbt · Snowflake · DuckDB · PySpark · Databricks · Java · Selenium · SQL · CI/CD
 
 ---
 
