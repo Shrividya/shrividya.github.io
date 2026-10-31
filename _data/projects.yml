@@ -2,20 +2,12 @@
 # Fields: title, tag, category, description, stack, link, link_label
 # Categories: "AI & RAG" | "Data Engineering & MLOps" | "Open Source"
 
-- title: "Resume Analyser RAG"
-  tag: "RAG · LangChain"
+- title: "DuckDB Data Analyst Agent"
+  tag: "Agents · Claude API"
   category: "AI & RAG"
-  description: "LangChain + FAISS RAG pipeline that answers natural language questions about uploaded resumes. Supports multi-document retrieval and prompt chaining for nuanced comparisons."
-  stack: "LangChain · FAISS · OpenAI · Python"
-  link: "https://github.com/Shrividya/article-insights-pipeline/tree/main/rag_resume"
-  link_label: "GitHub →"
-
-- title: "OpenAI Sample Chatbot"
-  tag: "Gen AI · OpenAI"
-  category: "AI & RAG"
-  description: "Chatbot with advanced prompt engineering and OpenAI API integration patterns. Demonstrates system message design, context management, and streaming responses."
-  stack: "OpenAI API · Python · Prompt Engineering"
-  link: "https://github.com/Shrividya/OpenAISampleProject"
+  description: "Claude-powered agent that answers natural-language questions by writing and running read-only SQL on DuckDB's Olist e-commerce data, with JSON logging and SQL-based evals."
+  stack: "Python · Claude API · DuckDB · SQL · MotherDuck"
+  link: "https://github.com/Shrividya/duckdbAgents"
   link_label: "GitHub →"
 
 - title: "Article Insights NLP Pipeline"
