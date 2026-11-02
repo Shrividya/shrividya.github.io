@@ -54,7 +54,6 @@ Apache Airflow · RAG · LangChain · Azure OpenAI · Amazon Bedrock · Python �
 **Apache Airflow & Astronomer**
 
 - AI Orchestration with Apache Airflow — Astronomer (2026)
-- Astronomer Champions Program — Astronomer (Jan 2026)
 - DAG Authoring — Airflow 3 — Astronomer (Jun 2025)
 - Airflow 3 Fundamentals — Astronomer (Jun 2025)
 - DAG Authoring — Airflow 2 — Astronomer (May 2025)
@@ -77,7 +76,6 @@ Apache Airflow · RAG · LangChain · Azure OpenAI · Amazon Bedrock · Python �
 
 - Java Certified — HackerRank
 - Certified Selenium Professional — Vskills
-- WES Canadian Credentials — WES
 <!-- AUTO:CERTIFICATIONS:END -->
 
 ---
