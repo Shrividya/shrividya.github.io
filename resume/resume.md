@@ -44,7 +44,7 @@ Senior AI Data Engineer with 10+ years of experience across data engineering, AI
 
 ## Skills
 
-Apache Airflow · RAG · LangChain · Azure OpenAI · Amazon Bedrock · Python · Kubernetes · GCP / AWS / Azure · Terraform · Azure DevOps · dbt · Snowflake · DuckDB · Apache Superset · PySpark · Databricks · Java · Selenium · SQL · T-SQL · Azure Blob Storage · Azure Data Factory (ADF) · CI/CD
+Apache Airflow · RAG · LangChain · Azure OpenAI · Amazon Bedrock · Python · Kubernetes · GCP / AWS / Azure · Terraform · Azure DevOps · dbt · Snowflake · DuckDB · Hex · Apache Superset · PySpark · Databricks · Java · Selenium · SQL · T-SQL · Azure Blob Storage · Azure Data Factory (ADF) · CI/CD
 
 ---
 
