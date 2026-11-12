@@ -9,8 +9,40 @@ description: "Hire Shrividya Hegde for freelance data and AI engineering, Apache
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
   {% seo %}
   {% include page-schema.html %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "{{ site.url }}/services/#service",
+        "name": "Shrividya Hegde, Apache Airflow Consulting & Data/AI Engineering",
+        "url": "{{ site.url }}/services/",
+        "image": "{{ site.url }}/assets/images/og-card.png",
+        "description": "Apache Airflow consulting, DAG reviews, pipeline audits, performance tuning, Airflow 3 migration guidance, and freelance data and AI engineering.",
+        "provider": {"@id": "{{ site.url }}/#person"},
+        "founder": {"@id": "{{ site.url }}/#person"},
+        "areaServed": "Worldwide",
+        "availableLanguage": "English",
+        "knowsAbout": ["Apache Airflow","Data Engineering","RAG","Generative AI","LLMs","Python"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Services",
+          "itemListElement": [
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Airflow DAG Review & Pipeline Audit", "serviceType": "Apache Airflow consulting", "description": "Review of DAG design, idempotency, retries, backfills and failure recovery, with a prioritized findings report."}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Airflow Performance Tuning", "serviceType": "Apache Airflow consulting", "description": "Scheduler, pool and concurrency tuning and DAG parsing optimization to cut runtime and cost."}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Airflow 3 Migration Guidance", "serviceType": "Apache Airflow consulting", "description": "Compatibility assessment, migration planning and test strategy for upgrading to Airflow 3."}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Freelance Data & AI Engineering", "serviceType": "Data engineering", "description": "Production Airflow pipelines, ETL/ELT systems, and RAG and generative AI applications."}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "1:1 Career & Technical Mentorship", "serviceType": "Mentorship", "description": "Career guidance and technical mentorship in data engineering and AI."}}
+          ]
+        }
+      }
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="/assets/css/style.css"/>
   <script>
     const _t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -77,7 +109,7 @@ description: "Hire Shrividya Hegde for freelance data and AI engineering, Apache
     <div class="wr-card">
       <span class="wr-tag">Women in Data</span>
       <div class="wr-title">👩‍💼 Community Workshops</div>
-      <div class="wr-desc">Bootcamps and workshops on SQL, Python, PySpark, and applied ML — organized through the Women in Data™ NJ chapter.</div>
+      <div class="wr-desc">Bootcamps and workshops on SQL, Python, PySpark, and applied ML — organized through Women in Data™ chapters.</div>
       <a class="wr-link" href="/community/">Learn more →</a>
     </div>
   </div>

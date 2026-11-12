@@ -9,8 +9,39 @@ description: "Technical articles by Shrividya Hegde on Apache Airflow, RAG, AI a
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
   {% seo %}
   {% include page-schema.html %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "{{ site.url }}/writing/#collection",
+    "url": "{{ site.url }}/writing/",
+    "name": "Articles on Apache Airflow, RAG, AI Agents & Data Engineering",
+    "isPartOf": {"@id": "{{ site.url }}/#website"},
+    "author": {"@id": "{{ site.url }}/#person"},
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": {{ site.data.articles | size }},
+      "itemListElement": [
+        {% for a in site.data.articles %}{
+          "@type": "ListItem",
+          "position": {{ forloop.index }},
+          "item": {
+            "@type": "Article",
+            "headline": {{ a.title | jsonify }},
+            "description": {{ a.description | jsonify }},
+            "url": {{ a.link | jsonify }},
+            "author": {"@id": "{{ site.url }}/#person"},
+            "publisher": {"@type": "Organization", "name": {{ a.publication | split: " · " | first | jsonify }}}
+          }
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }
+  }
+  </script>
   <link rel="stylesheet" href="/assets/css/style.css"/>
   <script>
     const _t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -48,6 +79,10 @@ description: "Technical articles by Shrividya Hegde on Apache Airflow, RAG, AI a
   <div class="page-hero">
     <h1 class="page-hero-title">Technical Writing</h1>
     <div class="page-hero-sub">Articles on AI, Apache Airflow, Data Engineering, and Python · Medium &amp; Substack</div>
+    <div style="display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:1rem;">
+      <a class="n-cta-primary" href="https://shrividyahegde.substack.com/subscribe" target="_blank" rel="noopener noreferrer">Subscribe on Substack</a>
+      <a class="n-cta-secondary" href="https://medium.com/{{ site.author.medium }}" target="_blank" rel="noopener noreferrer">Follow on Medium</a>
+    </div>
   </div>
 
   <div class="wr-roles" style="margin-bottom:2rem;">

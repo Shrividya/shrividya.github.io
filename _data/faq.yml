@@ -2,7 +2,7 @@
 # Fields: q, a (plain text, no HTML)
 
 - q: "Who is Shrividya Hegde?"
-  a: "Shrividya Hegde is a Senior AI Data Engineer with 10+ years of experience in data engineering, AI/ML and test automation. She is an Apache Airflow Champion recognized by Astronomer, an open-source contributor who builds RAG and LLM pipelines, and the NJ chapter lead for Women in Data. She is also the Chapter Director of the Women in Big Data Atlanta chapter and an AI Implementation Engineer at AI Engine Labs (Women Applying AI)."
+  a: "Shrividya Hegde is a Senior AI Data Engineer with 10+ years of experience in data engineering, AI/ML and test automation. She is an Apache Airflow Champion recognized by Astronomer, an open-source contributor who builds RAG and LLM pipelines, and the Atlanta chapter lead for Women in Data. She is also the Chapter Director of the Women in Big Data Atlanta chapter and an AI Implementation Engineer at AI Engine Labs (Women Applying AI)."
 - q: "Does Shrividya Hegde offer Apache Airflow consulting?"
   a: "Yes. She offers Airflow and DAG reviews, pipeline audits, performance tuning and Airflow 3 migration guidance, drawing on her experience owning Airflow regression testing and release gating at Astronomer."
 - q: "Is Shrividya Hegde available for freelance work?"
@@ -10,6 +10,10 @@
 - q: "How can I book a meeting or mentorship session?"
   a: "Book a 1:1 session on Topmate at https://topmate.io/shrividya_hegde. Sessions cover career advice, data engineering, Apache Airflow, AI/ML, mentorship and freelance project scoping. You can also email shrividyahegde222@gmail.com."
 - q: "Where is Shrividya Hegde based?"
-  a: "She is based in Atlanta, Georgia, USA, having relocated from Parsippany, New Jersey in September 2026. She still leads the New Jersey chapter of Women in Data and is the Chapter Director of Women in Big Data, Atlanta."
+  a: "She is based in Atlanta, Georgia, USA, having relocated from Parsippany, New Jersey in September 2026. She leads the Atlanta chapter of Women in Data (since November 2026), is Chapter Director of Women in Big Data, Atlanta (since October 2026), and is the former Chapter Lead of Women in Data NJ (April 2026 to November 2026)."
 - q: "Does Shrividya Hegde speak at conferences and meetups?"
   a: "Yes. She has given sessions on Apache Airflow, data orchestration and generative AI pipelines at events such as Airflow Summit and the Airflow NYC Meetup, and is open to conference, meetup and podcast invitations. Her speaker profile is at https://sessionize.com/shrividya-hegde."
+- q: "What is Shrividya Hegde's Apache Airflow experience?"
+  a: "Shrividya Hegde is an Apache Airflow Champion, recognized by Astronomer in January 2026. She has 7 merged pull requests in the Apache Airflow core repository, is 5x Apache Airflow certified, and from 2022 to 2025 was a Senior Software Engineer at Astronomer, where she owned Airflow 3 regression testing and release gating for Astro Observe."
+- q: "Is Shrividya Hegde open to full-time roles?"
+  a: "Yes. She is open to Senior AI Data Engineer roles as well as freelance and consulting work. Her resume is available at https://shrividya.github.io/assets/resume.pdf and she can be reached through the Connect page."

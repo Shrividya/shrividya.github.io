@@ -4,7 +4,7 @@ sitemap: false
 ---
 # {{ site.author.name }}
 
-> {{ site.author.title }} with 10+ years of experience in data engineering, AI/ML and test automation. Apache Airflow Champion recognized by Astronomer, open-source contributor, builder of RAG and LLM pipelines, and NJ chapter lead for Women in Data. Based in {{ site.author.location }}. Available for freelance work, Airflow consulting, mentorship and writing collaborations.
+> {{ site.author.title }} with 10+ years of experience in data engineering, AI/ML and test automation. Apache Airflow Champion recognized by Astronomer, open-source contributor, builder of RAG and LLM pipelines, Atlanta chapter lead for Women in Data and Chapter Director of Women in Big Data Atlanta. Based in {{ site.author.location }}. Available for freelance work, Airflow consulting, mentorship and writing collaborations.
 
 ## Key pages
 - [Home / profile]({{ site.url }}/): Overview, experience, skills and featured work
@@ -14,7 +14,7 @@ sitemap: false
 - [Writing]({{ site.url }}/writing/): Articles on Apache Airflow, RAG, AI agents and data engineering
 - [Events]({{ site.url }}/events/): Talks, workshops and bootcamps
 - [Certifications]({{ site.url }}/certifications/): Apache Airflow, AWS and data engineering certifications
-- [Community]({{ site.url }}/community/): Women in Data NJ and open-source community work
+- [Community]({{ site.url }}/community/): Women in Data Atlanta (former NJ Chapter Lead), Women in Big Data Atlanta and open-source community work
 - [Connect]({{ site.url }}/connect/): Contact and booking
 - [Resume (PDF)]({{ site.url }}/assets/resume.pdf)
 
@@ -25,6 +25,17 @@ sitemap: false
 - GitHub: https://github.com/{{ site.author.github }}
 - Medium: https://medium.com/{{ site.author.medium }}
 - YouTube: https://www.youtube.com/{{ site.author.youtube }}
+
+## Key facts (as of November 2026)
+- Title: Senior AI Data Engineer, 10+ years in data engineering, AI/ML and test automation.
+- Recognition: Apache Airflow Champion, recognized by Astronomer in January 2026.
+- Open source: 7 merged pull requests in the Apache Airflow core repository (Airflow 3 and provider packages).
+- Certifications: 5x Apache Airflow certified plus AWS Certified Cloud Practitioner; 14 certifications listed in total.
+- Industry: Senior Software Engineer, Observability at Astronomer (Mar 2022 to Nov 2025); owned Airflow 3 regression testing and release gating for Astro Observe.
+- Community: Chapter Lead of Women in Data Atlanta (since November 2026); Chapter Director of Women in Big Data, Atlanta (since October 2026); former Chapter Lead of Women in Data New Jersey (April 2026 to November 2026).
+- Mentorship: 5.0 rating across 10 reviews and 20 bookings on Topmate.
+- Availability: open to Senior AI Data Engineer roles, freelance work and Apache Airflow consulting.
+- Bluesky: https://bsky.app/profile/shribhashitam.bsky.social
 
 ## FAQ
 {% for item in site.data.faq %}
