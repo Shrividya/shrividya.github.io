@@ -2,8 +2,8 @@ title: "Shrividya Hegde"
 tagline: "Senior AI Data Engineer | Apache Airflow Champion | RAG & LLM Pipelines"
 description: >
   Senior AI Data Engineer with 10+ years of experience in data engineering,
-  AI/ML, Apache Airflow, and test automation. Airflow Champion, OSS contributor,
-  building LLM & RAG pipelines. NJ Women in Data Chapter Lead. Available for
+  AI/ML, Apache Airflow, and test automation. Apache Airflow Champion, OSS contributor,
+  building LLM & RAG pipelines. Women in Data Atlanta Chapter Lead. Available for
   freelance projects, Airflow consulting, mentorship, and writing collaborations.
 url: "https://shrividya.github.io"
 baseurl: ""
@@ -22,9 +22,9 @@ author:
   devto: "shrividya_hegde"
 
 keywords: >
-  Apache Airflow, RAG, Data Engineering, AI Engineer, NJ, Generative AI,
+  Apache Airflow, RAG, Data Engineering, AI Engineer, Atlanta, Generative AI,
   LangChain, Astronomer, dbt, Snowflake, Python, Kubernetes, MLOps, LLMs,
-  Airflow Champion, Women in Data
+  Apache Airflow Champion, Women in Data
 
 markdown: kramdown
 highlighter: rouge

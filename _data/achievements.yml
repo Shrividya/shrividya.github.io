@@ -2,7 +2,7 @@
 # Fields: title, org, date (optional), icon, category, description, image (optional, filename in assets/images/gallery/), link (optional)
 # Categories: "Recognition" | "Work" | "Community"
 
-- title: "Airflow Champion"
+- title: "Apache Airflow Champion"
   org: "Astronomer"
   date: "Jan 2026"
   icon: "🏆"
