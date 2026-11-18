@@ -1722,10 +1722,36 @@ a.n-gcard { text-decoration: none; }
   letter-spacing: 0.12em; color: var(--accent-n);
 }
 .n-section-title { font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.1; letter-spacing: -0.01em; }
+:root { --lotus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 62'%3E%3Cg fill='%23000' fill-opacity='.22' stroke='%23000' stroke-width='1.6' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M50 50C34 52 15 45 6 31c15-3 32 4 44 19z'/%3E%3Cpath d='M50 50c16 2 35-5 44-19-15-3-32 4-44 19z'/%3E%3Cpath d='M50 50C37 44 27 31 29 14c12 5 20 19 21 36z'/%3E%3Cpath d='M50 50c13-6 23-19 21-36-12 5-20 19-21 36z'/%3E%3Cpath d='M50 4c11 13 12 32 0 46C38 36 39 17 50 4z'/%3E%3C/g%3E%3Cpath d='M20 56c18 5 42 5 60 0' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E"); }
+/* Lotus divider under section headings: line · lotus · line */
 .n-section-title::after {
-  content: ""; display: block; width: 44px; height: 4px; border-radius: 2px; margin-top: 0.6rem;
+  content: ""; display: block; width: 112px; height: 16px; margin-top: 0.55rem;
   background: linear-gradient(90deg, var(--accent-n), var(--accent-af));
+  -webkit-mask: var(--lotus) 50% 50% / 26px 16px no-repeat,
+                linear-gradient(#000 0 0) 0 50% / 38px 2px no-repeat,
+                linear-gradient(#000 0 0) 100% 50% / 38px 2px no-repeat;
+          mask: var(--lotus) 50% 50% / 26px 16px no-repeat,
+                linear-gradient(#000 0 0) 0 50% / 38px 2px no-repeat,
+                linear-gradient(#000 0 0) 100% 50% / 38px 2px no-repeat;
 }
+
+/* Faint, slowly breathing lotus behind the hero */
+.n-hero { position: relative; overflow: hidden; isolation: isolate; }
+.n-hero::after {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  right: -70px; bottom: 40px; width: 640px; height: 397px;
+  background: linear-gradient(160deg, var(--accent-n), var(--accent-af));
+  -webkit-mask: var(--lotus) center / contain no-repeat;
+          mask: var(--lotus) center / contain no-repeat;
+  opacity: .09;
+  animation: lotus-breathe 9s ease-in-out infinite;
+}
+[data-theme="dark"] .n-hero::after { opacity: .12; }
+@keyframes lotus-breathe { 0%, 100% { transform: scale(1); opacity: .08; } 50% { transform: scale(1.04); opacity: .12; } }
+@media (max-width: 820px) {
+  .n-hero::after { right: 50%; bottom: auto; top: 30px; width: 440px; height: 273px; margin-right: -220px; }
+}
+@media (prefers-reduced-motion: reduce) { .n-hero::after { animation: none; } }
 
 /* shared card polish */
 .n-exp-body, .n-skill-group, .n-comm-card, .n-testi-card, .n-scard, .sec-card, .n-proj-card {
@@ -1792,3 +1818,130 @@ a.n-gcard { text-decoration: none; }
   .n-skills-grid, .n-proj-grid, .n-connect-grid, .n-comm-grid, .n-testi-grid { grid-template-columns: 1fr; }
   .n-exp-body { padding: 1rem 1.1rem; }
 }
+
+/* ── Gamified pointer effects (assets/js/fx.js) ───────────── */
+.fx-canvas { position: fixed; inset: 0; pointer-events: none; z-index: 10000; }
+
+/* Springy press feedback on interactive elements while effects are on */
+/* 1. Buttons: hover lift + glow, squash on press, spring back */
+.fx-on :is(.n-cta-primary, .n-cta-secondary, .n-social-btn, .resume-dl-btn, .audio-btn, .dark-toggle, .back-btn, .electric-btn, .n-plink, .fx-btn) {
+  transition: transform .35s cubic-bezier(.34,1.8,.5,1), box-shadow .25s ease, background .2s ease, color .2s ease, border-color .2s ease;
+}
+.fx-on :is(.n-cta-primary, .n-cta-secondary, .n-social-btn, .resume-dl-btn, .audio-btn, .back-btn, .electric-btn):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px -4px color-mix(in srgb, var(--accent-af) 55%, transparent), 0 0 0 3px color-mix(in srgb, var(--accent-n) 22%, transparent);
+}
+.fx-on .n-cta-secondary:hover {
+  box-shadow: 0 6px 18px -4px color-mix(in srgb, var(--success) 55%, transparent), 0 0 0 3px color-mix(in srgb, var(--success) 22%, transparent);
+}
+.fx-on :is(a, button):active,
+.fx-on :is(.n-cta-primary, .n-cta-secondary, .n-social-btn, .resume-dl-btn, .audio-btn, .back-btn, .electric-btn):active {
+  transform: translateY(1px) scale(.94, .88);
+  transition-duration: .07s;
+}
+
+/* Shine sweep across the main CTAs every few seconds */
+.fx-on :is(.n-cta-primary, .n-primary-ctas .n-cta-secondary) { position: relative; overflow: hidden; isolation: isolate; }
+.fx-on :is(.n-cta-primary, .n-primary-ctas .n-cta-secondary)::before {
+  content: ""; position: absolute; top: -20%; bottom: -20%; left: -60%; width: 40%; z-index: -1;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.55), transparent);
+  transform: skewX(-20deg); pointer-events: none;
+  animation: fx-shine 4.5s ease-in-out infinite;
+}
+.fx-on .n-primary-ctas > :nth-child(2)::before { animation-delay: .35s; }
+.fx-on .n-primary-ctas > :nth-child(3)::before { animation-delay: .7s; }
+.fx-on .n-primary-ctas > :nth-child(4)::before { animation-delay: 1.05s; }
+@keyframes fx-shine { 0%, 65% { left: -60%; } 90%, 100% { left: 130%; } }
+
+/* 2. Cards: tilt (JS) + pointer-following glare + brighter glowing border */
+.fx-card { position: relative; transition: transform .18s ease-out, box-shadow .25s ease, border-color .2s ease; }
+.fx-card::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: radial-gradient(260px circle at var(--fx-mx, 50%) var(--fx-my, 50%), color-mix(in srgb, var(--accent-n) 18%, transparent), transparent 65%);
+  opacity: 0; transition: opacity .25s ease;
+}
+.fx-card:hover::after { opacity: 1; }
+.fx-card:hover {
+  border-color: var(--accent-af);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-af) 45%, transparent), 0 18px 40px -16px color-mix(in srgb, var(--accent-af) 60%, transparent);
+}
+
+/* 3. Badges bounce, social icons wiggle */
+.fx-on .n-badge:hover { animation: fx-bounce .6s cubic-bezier(.3,1.6,.5,1); }
+@keyframes fx-bounce { 0% { transform: scale(1); } 30% { transform: scale(1.15, .88) translateY(-4px); } 55% { transform: scale(.95, 1.06); } 100% { transform: scale(1); } }
+.fx-on :is(.n-social-btn, .resume-dl-btn, .n-cta-primary, .n-cta-secondary):hover .ic { animation: fx-wiggle .5s ease; }
+@keyframes fx-wiggle { 0%, 100% { transform: rotate(0); } 20% { transform: rotate(-16deg) scale(1.15); } 45% { transform: rotate(12deg) scale(1.15); } 70% { transform: rotate(-6deg); } }
+
+/* 5. Scroll reveal for sections and cards */
+.fx-reveal { opacity: 0; transform: translateY(22px) scale(.98); transition: opacity .55s ease, transform .6s cubic-bezier(.2,1.2,.4,1); }
+.fx-reveal.fx-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-on .n-badge:hover, .fx-on :is(a, button):hover .ic, .fx-on :is(.n-cta-primary, .n-cta-secondary)::before { animation: none !important; }
+  .fx-reveal { opacity: 1; transform: none; }
+}
+@media print { .fx-canvas { display: none !important; } }
+
+/* ── Quick chat shortcuts (Topmate) ───────────────────────── */
+.qc-dot {
+  position: relative; display: inline-block; flex-shrink: 0;
+  width: 7px; height: 7px; border-radius: 50%; background: var(--success);
+}
+.qc-dot::after {
+  content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--success);
+  animation: qc-ping 1.8s ease-out infinite;
+}
+@keyframes qc-ping { 0% { transform: scale(1); opacity: .7; } 100% { transform: scale(2.8); opacity: 0; } }
+
+.qc-bar-btn {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font-family: var(--mono); font-size: 0.62rem; font-weight: 700;
+  padding: 0.28rem 0.85rem; border-radius: var(--radius);
+  border: 1px solid var(--success); color: #fff; background: var(--success);
+  text-decoration: none; white-space: nowrap;
+  transition: transform .35s cubic-bezier(.34,1.8,.5,1), box-shadow .25s ease, filter .2s ease;
+}
+.qc-bar-btn .qc-dot, .qc-bar-btn .qc-dot::after { background: #fff; }
+.qc-bar-btn:hover { opacity: 1; filter: brightness(1.06); transform: translateY(-2px);
+  box-shadow: 0 6px 16px -4px color-mix(in srgb, var(--success) 60%, transparent); }
+[data-theme="dark"] .qc-bar-btn { color: #04140a; }
+[data-theme="dark"] .qc-bar-btn .qc-dot, [data-theme="dark"] .qc-bar-btn .qc-dot::after { background: #04140a; }
+.qc-bar-short { display: none; }
+@media (max-width: 768px) { .qc-bar-long { display: none; } .qc-bar-short { display: inline; } .qc-bar-btn { padding: 0.28rem 0.6rem; } }
+
+.qc-fab {
+  position: fixed; right: 18px; bottom: 18px; z-index: 9000;
+  display: inline-flex; align-items: center; gap: 0;
+  height: 52px; min-width: 52px; padding: 0 15px; border-radius: 999px;
+  background: linear-gradient(135deg, var(--success), color-mix(in srgb, var(--success) 70%, var(--accent-af)));
+  color: #fff; text-decoration: none;
+  font: 700 0.78rem/1 var(--mono);
+  box-shadow: 0 10px 28px -8px color-mix(in srgb, var(--success) 70%, transparent), 0 2px 6px rgba(0,0,0,.15);
+  transition: gap .3s ease, padding .3s ease, transform .35s cubic-bezier(.34,1.8,.5,1), box-shadow .25s ease;
+  animation: qc-fab-in .6s cubic-bezier(.34,1.6,.5,1) .8s both;
+}
+.qc-fab-ic { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linejoin: round; flex-shrink: 0; }
+.qc-fab-text { max-width: 0; overflow: hidden; white-space: nowrap; transition: max-width .35s ease; }
+.qc-fab .qc-dot { position: absolute; top: 9px; right: 11px; width: 9px; height: 9px; background: #fff; border: 2px solid var(--success); box-sizing: content-box; }
+.qc-fab .qc-dot::after { background: #fff; }
+.qc-fab:hover, .qc-fab:focus-visible { opacity: 1; gap: .55rem; padding: 0 20px 0 16px; transform: translateY(-3px);
+  box-shadow: 0 14px 34px -8px color-mix(in srgb, var(--success) 80%, transparent), 0 2px 6px rgba(0,0,0,.15); }
+.qc-fab:hover .qc-fab-text, .qc-fab:focus-visible .qc-fab-text { max-width: 180px; }
+[data-theme="dark"] .qc-fab { color: #04140a; }
+@keyframes qc-fab-in { from { opacity: 0; transform: translateY(20px) scale(.6); } to { opacity: 1; transform: none; } }
+@media (max-width: 640px) { .qc-fab { right: 14px; bottom: 14px; } }
+@media (prefers-reduced-motion: reduce) { .qc-dot::after, .qc-fab { animation: none; } }
+@media print { .qc-fab { display: none; } }
+/* Floating button repurposed for "Ask AI about me": lavender instead of chat green */
+.ai-fab {
+  background: linear-gradient(135deg, var(--accent-af), color-mix(in srgb, var(--accent-af) 55%, #f4a7c8));
+  color: #fff;
+  box-shadow: 0 10px 28px -8px color-mix(in srgb, var(--accent-af) 70%, transparent), 0 2px 6px rgba(0,0,0,.15);
+}
+.ai-fab:hover, .ai-fab:focus-visible {
+  box-shadow: 0 14px 34px -8px color-mix(in srgb, var(--accent-af) 80%, transparent), 0 2px 6px rgba(0,0,0,.15);
+}
+[data-theme="dark"] .ai-fab { color: #fff; }
+.ai-fab .qc-fab-ic { animation: ai-twinkle 3.2s ease-in-out infinite; }
+@keyframes ai-twinkle { 0%, 80%, 100% { transform: scale(1) rotate(0); } 88% { transform: scale(1.2) rotate(12deg); } }
+@media (prefers-reduced-motion: reduce) { .ai-fab .qc-fab-ic { animation: none; } }

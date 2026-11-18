@@ -98,5 +98,6 @@ function toggleDark() {
 const _s = localStorage.getItem('theme');
 if (_s) { document.documentElement.setAttribute('data-theme', _s); document.getElementById('dark-toggle').textContent = _s === 'dark' ? '🌙' : '☀️'; }
 </script>
+{% include site-extras.html %}
 </body>
 </html>

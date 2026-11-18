@@ -1,0 +1,6 @@
+{% capture ai_query %}Who is {{ site.author.name }}, {{ site.author.title }} and Apache Airflow Champion?{% endcapture %}
+<a class="qc-fab ai-fab" href="https://www.google.com/search?udm=50&amp;q={{ ai_query | url_encode }}" target="_blank" rel="noopener noreferrer" aria-label="Ask AI about me (opens Google AI Mode)">
+  <svg class="qc-fab-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.14-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.14a.5.5 0 0 1 .96 0L14.06 8.5A2 2 0 0 0 15.5 9.94l6.14 1.58a.5.5 0 0 1 0 .96L15.5 14.06a2 2 0 0 0-1.44 1.44l-1.58 6.14a.5.5 0 0 1-.96 0z"/><path d="M20 3v4M22 5h-4"/></svg>
+  <span class="qc-fab-text">Ask AI about me</span>
+</a>
+<script src="{{ '/assets/js/fx.js' | relative_url }}" defer></script>

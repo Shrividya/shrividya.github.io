@@ -14,6 +14,7 @@ description: "Senior AI Data Engineer and Apache Airflow Champion with 10+ years
   </button>
   <button class="back-btn" id="back-btn" onclick="switchTheme('airflow')">Try the Airflow view →</button>
   <div class="bar-actions">
+    <a class="qc-bar-btn" href="{{ site.author.quick_chat }}" target="_blank" rel="noopener noreferrer" title="Book a free 15-minute quick chat on Topmate"><span class="qc-dot" aria-hidden="true"></span><span class="qc-bar-long">15-min chat</span><span class="qc-bar-short">Chat</span></a>
     <button class="audio-btn" id="audio-btn" onclick="toggleSummary()" title="Listen to a short profile summary" aria-label="Listen to a short profile summary"><span class="audio-icon" id="audio-icon"><svg class="ic" aria-hidden="true"><use href="#i-mic"/></svg></span><span class="audio-text">Listen</span></button>
     <button class="dark-toggle" id="dark-toggle" onclick="toggleDark()" title="Toggle light/dark mode" aria-label="Toggle light/dark mode"><svg class="ic" aria-hidden="true"><use href="#i-moon"/></svg></button>
     <a class="resume-dl-btn" href="/assets/resume.pdf" download="Shrividya_Hegde_Resume.pdf" title="Download Resume"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg> Resume</a>
@@ -347,9 +348,7 @@ description: "Senior AI Data Engineer and Apache Airflow Champion with 10+ years
     <div class="n-primary-ctas">
       <a class="n-cta-primary" href="/services/"><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg> Hire Me</a>
       <a class="n-cta-secondary" href="#ns-projects"><svg class="ic" aria-hidden="true"><use href="#i-folder"/></svg> View Projects</a>
-      <a class="n-cta-secondary" href="https://topmate.io/shrividya_hegde" target="_blank" rel="noopener noreferrer"><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg> Book a Meeting</a>
-      {% capture ai_query %}Who is {{ site.author.name }}, {{ site.author.title }} and Apache Airflow Champion?{% endcapture %}
-      <a class="n-cta-secondary" href="https://www.google.com/search?udm=50&amp;q={{ ai_query | url_encode }}" target="_blank" rel="noopener noreferrer" title="Ask Google AI Mode about me"><svg class="ic" aria-hidden="true"><use href="#i-sparkles"/></svg> Ask AI about me</a>
+      <a class="n-cta-secondary" href="{{ site.author.quick_chat }}" target="_blank" rel="noopener noreferrer"><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg> Quick intro call</a>
     </div>
       </div>
     <div class="n-avatar">
