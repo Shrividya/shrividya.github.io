@@ -1767,7 +1767,7 @@ a.n-gcard { text-decoration: none; }
 .n-exp-co { font-size: 0.78rem; }
 .n-exp-dt { font-size: 0.66rem; }
 
-/* skills: 4 across, each group gets its own accent */
+/* skills: 3 across (stays 3 until the 640px single-column break), each group gets its own accent */
 .n-skills-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 .n-skill-group { border-radius: 14px; border-top: 3px solid var(--accent-n); }
 .n-skill-group:nth-child(2) { border-top-color: var(--accent-af); }
@@ -1809,7 +1809,6 @@ a.n-gcard { text-decoration: none; }
 .n-footer { padding: 2rem 1rem 2.5rem; }
 
 @media (max-width: 960px) {
-  .n-skills-grid { grid-template-columns: repeat(2, 1fr); }
   .n-proj-grid, .n-connect-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {

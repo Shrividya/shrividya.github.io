@@ -253,7 +253,7 @@ last_modified_at: 2026-11-24
         <div class="pg-tile-label">{{ photo.title }}</div>
       {% elsif photo.type == 'video' %}
         <div class="pg-tile-frame">
-          <video src="/assets/videos/gallery/{{ photo.file }}" autoplay muted loop playsinline></video>
+          <video class="pg-lazyvid" src="/assets/videos/gallery/{{ photo.file }}" poster="/assets/videos/gallery/{{ photo.file | replace: '.mp4', '-poster.webp' }}" preload="none" muted loop playsinline></video>
         </div>
       {% elsif photo.type == 'embed' %}
         <div class="pg-tile-frame">
@@ -372,7 +372,7 @@ function renderCard() {
       thumbsEl.appendChild(th);
     });
   } else if (photo.type === 'video') {
-    front.innerHTML = '<video src="' + VID_BASE + photo.file + '" autoplay muted loop playsinline controls></video>';
+    front.innerHTML = '<video src="' + VID_BASE + photo.file + '" poster="' + VID_BASE + photo.file.replace('.mp4', '-poster.webp') + '" autoplay muted loop playsinline controls></video>';
     setupLoopingVideo(front.querySelector('video'));
     back.innerHTML = backHTML(photo, photo.title, photo.sub);
   } else if (photo.type === 'embed') {
@@ -484,6 +484,22 @@ window.addEventListener('resize', () => {
 
 const _s = localStorage.getItem('theme');
 if (_s) document.documentElement.setAttribute('data-theme', _s);
+
+// Tile videos: load and play only when scrolled into view; stay on the poster for reduced-motion users.
+(function () {
+  var vids = document.querySelectorAll('.pg-lazyvid');
+  if (!vids.length) return;
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (calm || !('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      var v = e.target;
+      if (e.isIntersecting) { v.play().catch(function () {}); }
+      else { v.pause(); }
+    });
+  }, { threshold: 0.25 });
+  vids.forEach(function (v) { io.observe(v); });
+})();
 </script>
 {% include site-extras.html %}
 </body>

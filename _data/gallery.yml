@@ -1,40 +1,40 @@
-- file: airflow-nyc-speaking.jpg
+- file: airflow-nyc-speaking.webp
   title: "Airflow + AI: Orchestrating the Intelligent Stack"
   cat: "Speaking · Jun 2026"
   sub: "Airflow NYC MeetUp · New York City · Jun 2026"
   alt: "Shrividya presenting at Airflow NYC MeetUp June 2026"
 
-- file: airflow-nyc-audience.jpg
+- file: airflow-nyc-audience.webp
   title: "Airflow + AI: Orchestrating the Intelligent Stack"
   cat: "Speaking · Jun 2026"
   sub: "Airflow NYC MeetUp · New York City · Jun 2026"
   alt: "Full house at Airflow NYC MeetUp June 2026"
 
-- file: WiD-session-for-Data-Viz-club.png
+- file: wid-session-for-data-viz-club.webp
   title: "WiD Data Viz Club:Real time stock sentiment analyser with streamlit"
   cat: "Hands-on session · April 2026"
   sub: "Women in Data Pro events"
   alt: "Pro member events for Data Visualization club in WiD"
 
-- file: 1778804945245.jpeg
+- file: 1778804945245.webp
   title: "The DataFlow cast by Kenten Danas"
   cat: "Podcast appearance"
   sub: "Getting into DE"
   alt: "The DataFlow cast by Kenten Danas"
 
-- file: Airflow+dbt session .jpg
+- file: airflow-dbt-session.webp
   title: "Session at dbt community channel"
   cat: "Technical session + Demo"
   sub: "women in data @ dbt labs"
   alt: "Session at dbt community channel"
 
-- file: Wid_hackathon_judge.jpg
+- file: wid-hackathon-judge.webp
   title: "Participated in Datathon as a Judge"
   cat: "Hackathon Judging"
   sub: "Judge for hackathon in WiD"
   alt: "Linkedin announcement post"
 
-- file: BTD_hackathon.jpg
+- file: btd-hackathon.webp
   title: "Participated in Beyond the DAG as a Judge"
   cat: "Hackathon Judging @ Astronomer"
   sub: "Judge for hackathon in Astronomer"
@@ -45,31 +45,31 @@
   cat: "Awards"
   sub: "6 awards · 2014–2019"
   covers:
-    - On-the-spot-award.jpg
-    - la2.jpg
-    - special-initiative-award.jpg
+    - on-the-spot-award.webp
+    - la2.webp
+    - special-initiative-award.webp
   alt: "TCS Gems awards collection"
   items:
     - title: "On the Spot Award"
       sub: "TCS Gems · 21 Mar 2018"
-      file: On-the-spot-award.jpg
+      file: on-the-spot-award.webp
     - title: "On the Spot Award"
       sub: "TCS Gems · 19 May 2015"
-      file: On_The_Spot_Award_19th_may.jpg
+      file: on-the-spot-award-19th-may.webp
     - title: "Learning Achievement Award"
       sub: "TCS Gems · 09 Oct 2018"
-      file: la1.jpg
+      file: la1.webp
     - title: "Learning Achievement Award"
       sub: "TCS Gems · 04 Jan 2019"
-      file: la2.jpg
+      file: la2.webp
     - title: "Learning Achievement Award"
       sub: "TCS Gems · 14 Aug 2019"
-      file: la3.jpg
+      file: la3.webp
     - title: "Special Initiative Award"
       sub: "TCS Gems · 19 Dec 2014"
-      file: special-initiative-award.jpg
+      file: special-initiative-award.webp
 
-- file: tcs-star-award.jpeg
+- file: tcs-star-award.webp
   title: "Star of the Month award at TCS"
   cat: "Awards"
   sub: "Star of the Month"
@@ -80,82 +80,82 @@
   cat: "Community Recognition"
   sub: "3 recognitions"
   covers:
-    - Top5-champions-of-Q2.png
-    - Quarterly champions recognition_second_time.jpg
-    - Champion of the Quarter.jpg
+    - top5-champions-of-q2.webp
+    - quarterly-champions-recognition-second-time.webp
+    - champion-of-the-quarter.webp
   alt: "Apache Airflow community champion recognitions"
   items:
     - title: "Top 5 Airflow Champions"
       sub: "Q2 recognition"
-      file: Top5-champions-of-Q2.png
+      file: top5-champions-of-q2.webp
     - title: "Top 5 Champions"
       sub: "Recognised for the 2nd time"
-      file: Quarterly champions recognition_second_time.jpg
+      file: quarterly-champions-recognition-second-time.webp
     - title: "Champion of the Quarter"
       sub: "Recognised for the 2nd time"
-      file: Champion of the Quarter.jpg
+      file: champion-of-the-quarter.webp
 
-- file: airflow-day-2-workshop.jpeg
+- file: airflow-day-2-workshop.webp
   title: "2 day workshop at Data Engineering Club"
   cat: "WiD Pro events"
   sub: "Tech session + Workshop for Airflow"
   alt: "2 day workshop at Data Engineering Club"
 
-- file: parsippany-lead.jpeg
+- file: parsippany-lead.webp
   title: "Became the Chapter Lead for Parsippany NJ Chapter"
   cat: "WiD Pro"
   sub: "Leadership"
   alt: "Became the Chapter Lead for Parsippany NJ Chapter"
 
-- file: 1791297961419.jpeg
+- file: 1791297961419.webp
   title: "Became the Chapter Director for Women in Big Data Atlanta Chapter"
   cat: "WiBD Atlanta"
   sub: "Leadership"
   alt: "Became the Chapter Director for Women in Big Data Atlanta Chapter"
 
-- file: sql-to-alchemy-session.jpeg
+- file: sql-to-alchemy-session.webp
   title: "SQL to Alchemy practical session"
   cat: "WiD Community Chapter events"
   sub: "Tech session"
   alt: "SQL to Alchemy practical session"
 
-- file: sql+pyspark_session.jpeg
+- file: sql-pyspark-session.webp
   title: "SQL to PySpark practical session"
   cat: "WiD Community Chapter events"
   sub: "Tech session"
   alt: "SQL to PySpark practical session"
 
-- file: GlobalTechCommunityAwardNomination.jpeg
+- file: globaltechcommunityawardnomination.webp
   title: "Women in Tech Community awards Nomination"
   cat: "Women Tech Network Global Awards"
   sub : "Recognition"
   alt: "award nomination WIT"
 
-- file: Future World Alliance.jpg
+- file: future-world-alliance.webp
   title: "Future World Alliance Event Poster"
   cat: "Technical session"
   sub: "Airflow session"
   alt: "Session on using Airflow for AI and Data workloads"
 
-- file: Future World Conversations.jpg
+- file: future-world-conversations.webp
   title: "Future World Conversations Session"
   cat: "Technical demo"
   sub: "Airflow session"
   alt: "Session on using Airflow for AI and Data workloads"
 
-- file: 1000264377.jpg
+- file: 1000264377.webp
   title: "Airflow Summit Speaker"
   cat: "Speaker"
   sub: "Airflow Summit"
   alt: "Session on Orchestrating and Testing RAG Pipelines using Airflow"
 
-- file: Airflow Summit Reconnect.jpg
+- file: airflow-summit-reconnect.webp
   title: "Online Airflow Summit - Reconnect"
   cat: "Speaker"
   sub: "Online Airflow Summit"
   alt: "Session on self healing pipelines"
 
-- file: ediso.jpeg
+- file: ediso.webp
   title: "Founding Expert Spotlight by Ediso"
   cat: "Mentoring"
   sub: "Expert recognition"
@@ -165,26 +165,26 @@
   cat: "Speaker and Volunteering"
   sub: "Community events"
   covers:
-    - 1000262718.jpg
-    - Airflow summit.jpg
-    - 1000262706.jpg
-    - 1000262696.jpg
+    - 1000262718.webp
+    - airflow-summit.webp
+    - 1000262706.webp
+    - 1000262696.webp
   alt: "Apache Airflow summit pics 2026"
   items:
     - title: "Airflow Summit 2026"
       sub: "Speaker and Volunteer"
-      file: Airflow summit.jpg
+      file: airflow-summit.webp
     - title: "With Software Guru and volunteers"
       sub: "Team work"
-      file: 1000262706.jpg
+      file: 1000262706.webp
     - title: "With Databricks team at the booth"
       sub: "Booth visits"
-      file: 1000262696.jpg
+      file: 1000262696.webp
     - title: "Speaker session"
       sub: "My talk"
-      file: 1000262993.jpg
+      file: 1000262993.webp
 
-- file: SQL, DAG Recovery, and Idempotency Outlast Any Tool.mp4
+- file: sql-dag-recovery-idempotency.mp4
   type: video
   title: "My Talk Highlight"
   cat: "Speaking · Jun 2026"
