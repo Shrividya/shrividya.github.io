@@ -1,0 +1,57 @@
+---
+permalink: /llms-full.txt
+sitemap: false
+---
+# {{ site.author.name }}: full profile
+
+> {{ site.description | strip_newlines | normalize_whitespace }}
+
+Location: {{ site.author.location }} (Atlanta metro), USA
+Contact: {{ site.author.email }}
+Website: {{ site.url }}/
+Short version: {{ site.url }}/llms.txt
+
+## Roles of interest
+Senior AI Engineer, Generative AI Engineer, Senior AI Platform Engineer, Forward Deployed Engineer, Senior AI Data Engineer, Apache Airflow roles, and freelance or consulting work.
+
+## Profiles
+- LinkedIn: https://www.linkedin.com/in/{{ site.author.linkedin }}/
+- GitHub: https://github.com/{{ site.author.github }}
+- Medium: https://medium.com/{{ site.author.medium }}
+- Substack: https://substack.com/{{ site.author.substack }}
+- YouTube: https://www.youtube.com/{{ site.author.youtube }}
+- dev.to: https://dev.to/{{ site.author.devto }}
+- Bluesky: https://bsky.app/profile/shribhashitam.bsky.social
+- Mentoring and quick chats: {{ site.author.quick_chat }}
+- Resume (PDF): {{ site.url }}/assets/resume.pdf
+
+## Frequently asked questions
+{% for item in site.data.faq %}
+### {{ item.q }}
+{{ item.a }}
+{% endfor %}
+
+## Projects
+{% for p in site.data.projects %}
+- {{ p.title }} ({{ p.category }}; {{ p.tag }}): {{ p.description }} Stack: {{ p.stack }}.{% if p.link %} {{ p.link }}{% endif %}
+{% endfor %}
+
+## Writing
+{% for a in site.data.articles %}
+- {{ a.title }} ({{ a.publication }}): {{ a.description }} {{ a.link }}
+{% endfor %}
+
+## Talks, workshops and events
+{% for e in site.data.events %}
+- {{ e.date }}: {{ e.title }} ({{ e.type }}; {{ e.venue }}, {{ e.location }}). {{ e.description }}{% if e.recap %} Recap: {{ e.recap }}{% endif %}{% if e.link %} Event page: {{ e.link }}{% endif %}
+{% endfor %}
+
+## Certifications
+{% for c in site.data.certifications %}
+- {{ c.name }}, {{ c.org }}{% if c.date %} ({{ c.date }}){% endif %}{% if c.link %}: {{ c.link }}{% endif %}
+{% endfor %}
+
+## Awards and recognition
+{% for a in site.data.achievements %}
+- {{ a.title }}, {{ a.org }}{% if a.date %} ({{ a.date }}){% endif %}: {{ a.description }}
+{% endfor %}

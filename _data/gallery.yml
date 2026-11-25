@@ -1,10 +1,10 @@
-- file: airflow-nyc-speaking.png
+- file: airflow-nyc-speaking.jpg
   title: "Airflow + AI: Orchestrating the Intelligent Stack"
   cat: "Speaking · Jun 2026"
   sub: "Airflow NYC MeetUp · New York City · Jun 2026"
   alt: "Shrividya presenting at Airflow NYC MeetUp June 2026"
 
-- file: airflow-nyc-audience.png
+- file: airflow-nyc-audience.jpg
   title: "Airflow + AI: Orchestrating the Intelligent Stack"
   cat: "Speaking · Jun 2026"
   sub: "Airflow NYC MeetUp · New York City · Jun 2026"
@@ -22,19 +22,19 @@
   sub: "Getting into DE"
   alt: "The DataFlow cast by Kenten Danas"
 
-- file: Airflow+dbt session .png
+- file: Airflow+dbt session .jpg
   title: "Session at dbt community channel"
   cat: "Technical session + Demo"
   sub: "women in data @ dbt labs"
   alt: "Session at dbt community channel"
 
-- file: Wid_hackathon_judge.png
+- file: Wid_hackathon_judge.jpg
   title: "Participated in Datathon as a Judge"
   cat: "Hackathon Judging"
   sub: "Judge for hackathon in WiD"
   alt: "Linkedin announcement post"
 
-- file: BTD_hackathon.png
+- file: BTD_hackathon.jpg
   title: "Participated in Beyond the DAG as a Judge"
   cat: "Hackathon Judging @ Astronomer"
   sub: "Judge for hackathon in Astronomer"
@@ -45,29 +45,29 @@
   cat: "Awards"
   sub: "6 awards · 2014–2019"
   covers:
-    - On-the-spot-award.jpeg
-    - la2.png
-    - special-initiative-award.png
+    - On-the-spot-award.jpg
+    - la2.jpg
+    - special-initiative-award.jpg
   alt: "TCS Gems awards collection"
   items:
     - title: "On the Spot Award"
       sub: "TCS Gems · 21 Mar 2018"
-      file: On-the-spot-award.jpeg
+      file: On-the-spot-award.jpg
     - title: "On the Spot Award"
       sub: "TCS Gems · 19 May 2015"
-      file: On_The_Spot_Award_19th_may.png
+      file: On_The_Spot_Award_19th_may.jpg
     - title: "Learning Achievement Award"
       sub: "TCS Gems · 09 Oct 2018"
-      file: la1.png
+      file: la1.jpg
     - title: "Learning Achievement Award"
       sub: "TCS Gems · 04 Jan 2019"
-      file: la2.png
+      file: la2.jpg
     - title: "Learning Achievement Award"
       sub: "TCS Gems · 14 Aug 2019"
-      file: la3.png
+      file: la3.jpg
     - title: "Special Initiative Award"
       sub: "TCS Gems · 19 Dec 2014"
-      file: special-initiative-award.png
+      file: special-initiative-award.jpg
 
 - file: tcs-star-award.jpeg
   title: "Star of the Month award at TCS"
@@ -81,8 +81,8 @@
   sub: "3 recognitions"
   covers:
     - Top5-champions-of-Q2.png
-    - Quarterly champions recognition_second_time.png
-    - Champion of the Quarter.png
+    - Quarterly champions recognition_second_time.jpg
+    - Champion of the Quarter.jpg
   alt: "Apache Airflow community champion recognitions"
   items:
     - title: "Top 5 Airflow Champions"
@@ -90,10 +90,10 @@
       file: Top5-champions-of-Q2.png
     - title: "Top 5 Champions"
       sub: "Recognised for the 2nd time"
-      file: Quarterly champions recognition_second_time.png
+      file: Quarterly champions recognition_second_time.jpg
     - title: "Champion of the Quarter"
       sub: "Recognised for the 2nd time"
-      file: Champion of the Quarter.png
+      file: Champion of the Quarter.jpg
 
 - file: airflow-day-2-workshop.jpeg
   title: "2 day workshop at Data Engineering Club"
@@ -131,13 +131,13 @@
   sub : "Recognition"
   alt: "award nomination WIT"
 
-- file: Future World Alliance.png
+- file: Future World Alliance.jpg
   title: "Future World Alliance Event Poster"
   cat: "Technical session"
   sub: "Airflow session"
   alt: "Session on using Airflow for AI and Data workloads"
 
-- file: Future World Conversations.png
+- file: Future World Conversations.jpg
   title: "Future World Conversations Session"
   cat: "Technical demo"
   sub: "Airflow session"
@@ -149,7 +149,7 @@
   sub: "Airflow Summit"
   alt: "Session on Orchestrating and Testing RAG Pipelines using Airflow"
 
-- file: Airflow Summit Reconnect.png
+- file: Airflow Summit Reconnect.jpg
   title: "Online Airflow Summit - Reconnect"
   cat: "Speaker"
   sub: "Online Airflow Summit"

@@ -1,22 +1,14 @@
 ---
 layout: null
 permalink: /projects/
-title: "AI, RAG & Data Engineering Projects"
+title: "Generative AI, RAG & Data Engineering Projects"
 description: "Open-source and portfolio projects by Shrividya Hegde: RAG pipelines, Airflow DAGs, LLM tooling, MLOps and data engineering."
+last_modified_at: 2026-11-24
 ---
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
-  {% seo %}
-  {% include page-schema.html %}
-  <link rel="stylesheet" href="/assets/css/style.css"/>
-  <script>
-    const _t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', _t);
-  </script>
+  {% include page-head.html %}
 </head>
 <body>
 
@@ -34,7 +26,7 @@ description: "Open-source and portfolio projects by Shrividya Hegde: RAG pipelin
 
   {% assign ai_projects = site.data.projects | where: "category", "AI & RAG" %}
   {% if ai_projects.size > 0 %}
-  <div class="n-sh">AI &amp; RAG</div>
+  <h2 class="n-sh">AI &amp; RAG</h2>
   <div class="n-proj-grid">
     {% for project in ai_projects %}
     <div class="n-pcard">
@@ -50,7 +42,7 @@ description: "Open-source and portfolio projects by Shrividya Hegde: RAG pipelin
 
   {% assign de_projects = site.data.projects | where: "category", "Data Engineering & MLOps" %}
   {% if de_projects.size > 0 %}
-  <div class="n-sh">Data Engineering &amp; MLOps</div>
+  <h2 class="n-sh">Data Engineering &amp; MLOps</h2>
   <div class="n-proj-grid">
     {% for project in de_projects %}
     <div class="n-pcard">
@@ -66,7 +58,7 @@ description: "Open-source and portfolio projects by Shrividya Hegde: RAG pipelin
 
   {% assign oss_projects = site.data.projects | where: "category", "Open Source" %}
   {% if oss_projects.size > 0 %}
-  <div class="n-sh">Open Source</div>
+  <h2 class="n-sh">Open Source</h2>
   <div class="n-proj-grid">
     {% for project in oss_projects %}
     <div class="n-pcard">

@@ -1,8 +1,8 @@
 title: "Shrividya Hegde"
-tagline: "Senior AI Data Engineer | Apache Airflow Champion | RAG & LLM Pipelines"
+tagline: "Senior AI Engineer | Generative AI & AI Platform | Apache Airflow Champion | RAG & LLM Pipelines"
 description: >
-  Senior AI Data Engineer with 10+ years of experience in data engineering,
-  AI/ML, Apache Airflow, and test automation. Apache Airflow Champion, OSS contributor,
+  Senior AI Engineer (generative AI, RAG, AI platforms and data engineering) with 10+ years
+  of experience in data engineering, AI/ML, Apache Airflow, and test automation. Apache Airflow Champion, OSS contributor,
   building LLM & RAG pipelines. Women in Data Atlanta Chapter Lead. Available for
   freelance projects, Airflow consulting, mentorship, and writing collaborations.
 url: "https://shrividya.github.io"
@@ -12,7 +12,7 @@ author:
   name: "Shrividya Hegde"
   title: "Senior AI Data Engineer"
   company: "Self-employed"
-  location: "Atlanta, GA"
+  location: "Alpharetta, GA"
   email: "shrividyahegde222@gmail.com"
   github: "Shrividya"
   linkedin: "shrividya-hegde-shri-91562365"
@@ -24,7 +24,8 @@ author:
   quick_chat: "https://topmate.io/shrividya_hegde"
 
 keywords: >
-  Apache Airflow, RAG, Data Engineering, AI Engineer, Atlanta, Generative AI,
+  Apache Airflow, RAG, Data Engineering, Senior AI Engineer, Generative AI Engineer,
+  AI Platform Engineer, Forward Deployed Engineer, Alpharetta, Atlanta, Generative AI,
   LangChain, Astronomer, dbt, Snowflake, Python, Kubernetes, MLOps, LLMs,
   Apache Airflow Champion, Women in Data
 
@@ -50,7 +51,14 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
-image: /assets/images/og-card.png
+# Search Console / Bing verification: paste the content value from each console, then uncomment.
+# google_site_verification: ""
+# bing_site_verification: ""
+image:
+  path: /assets/images/og-card.png
+  width: 1200
+  height: 630
+  alt: "Shrividya Hegde, Senior AI Engineer and Apache Airflow Champion"
 lang: en_US
 logo: https://github.com/Shrividya.png
 social:
@@ -61,9 +69,15 @@ social:
     - https://medium.com/@shrihegde
     - https://www.youtube.com/@shrividyahegde
     - https://dev.to/shrividya_hegde
+    - https://substack.com/@shrividyahegde
+    - https://bsky.app/profile/shribhashitam.bsky.social
 
 defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/og-card.png
+      image:
+        path: /assets/images/og-card.png
+        width: 1200
+        height: 630
+        alt: "Shrividya Hegde, Senior AI Engineer and Apache Airflow Champion"

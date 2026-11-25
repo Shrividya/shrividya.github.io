@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 /* ══════════════════════════════════════
    DESIGN TOKENS — DARK MODE (default)
@@ -664,7 +663,7 @@ a.cert-card:hover, a.n-cert-card:hover { opacity: 1; }
 .n-main { max-width: 920px; margin: 0 auto; padding: 1.5rem; }
 
 .n-sh {
-  font-family: var(--mono); font-size: 0.72rem;
+  font-family: var(--mono); font-size: 0.72rem; font-weight: 400;
   text-transform: uppercase; letter-spacing: 0.1em;
   color: var(--text-dim); border-bottom: 1px solid var(--border);
   padding-bottom: 0.4rem; margin: 2rem 0 1rem;
@@ -1769,7 +1768,7 @@ a.n-gcard { text-decoration: none; }
 .n-exp-dt { font-size: 0.66rem; }
 
 /* skills: 4 across, each group gets its own accent */
-.n-skills-grid { grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.n-skills-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 .n-skill-group { border-radius: 14px; border-top: 3px solid var(--accent-n); }
 .n-skill-group:nth-child(2) { border-top-color: var(--accent-af); }
 .n-skill-group:nth-child(3) { border-top-color: var(--amber); }

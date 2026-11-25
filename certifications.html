@@ -3,20 +3,12 @@ layout: null
 permalink: /certifications/
 title: "Apache Airflow, AWS & Data Engineering Certifications"
 description: "Professional certifications held by Shrividya Hegde — 5x Apache Airflow certified, AWS, AI/ML, Data Engineering and Python."
+last_modified_at: 2026-11-24
 ---
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
-  {% seo %}
-  {% include page-schema.html %}
-  <link rel="stylesheet" href="/assets/css/style.css"/>
-  <script>
-    const _t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', _t);
-  </script>
+  {% include page-head.html %}
 </head>
 <body>
 
@@ -34,7 +26,7 @@ description: "Professional certifications held by Shrividya Hegde — 5x Apache 
 
   {% assign af_certs = site.data.certifications | where: "category", "Apache Airflow & Astronomer" %}
   {% if af_certs.size > 0 %}
-  <div class="n-sh">Apache Airflow &amp; Astronomer</div>
+  <h2 class="n-sh">Apache Airflow &amp; Astronomer</h2>
   <div class="n-cert-grid">
     {% for cert in af_certs %}
     {% if cert.link %}<a class="n-cert-card" href="{{ cert.link }}" target="_blank" rel="noopener noreferrer">{% else %}<div class="n-cert-card">{% endif %}
@@ -51,7 +43,7 @@ description: "Professional certifications held by Shrividya Hegde — 5x Apache 
 
   {% assign cloud_certs = site.data.certifications | where: "category", "Cloud & AI" %}
   {% if cloud_certs.size > 0 %}
-  <div class="n-sh">Cloud &amp; AI</div>
+  <h2 class="n-sh">Cloud &amp; AI</h2>
   <div class="n-cert-grid">
     {% for cert in cloud_certs %}
     {% if cert.link %}<a class="n-cert-card" href="{{ cert.link }}" target="_blank" rel="noopener noreferrer">{% else %}<div class="n-cert-card">{% endif %}
@@ -68,7 +60,7 @@ description: "Professional certifications held by Shrividya Hegde — 5x Apache 
 
   {% assign de_certs = site.data.certifications | where: "category", "Data Engineering & Python" %}
   {% if de_certs.size > 0 %}
-  <div class="n-sh">Data Engineering &amp; Python</div>
+  <h2 class="n-sh">Data Engineering &amp; Python</h2>
   <div class="n-cert-grid">
     {% for cert in de_certs %}
     {% if cert.link %}<a class="n-cert-card" href="{{ cert.link }}" target="_blank" rel="noopener noreferrer">{% else %}<div class="n-cert-card">{% endif %}
@@ -85,7 +77,7 @@ description: "Professional certifications held by Shrividya Hegde — 5x Apache 
 
   {% assign tq_certs = site.data.certifications | where: "category", "Testing & Quality" %}
   {% if tq_certs.size > 0 %}
-  <div class="n-sh">Testing &amp; Quality</div>
+  <h2 class="n-sh">Testing &amp; Quality</h2>
   <div class="n-cert-grid">
     {% for cert in tq_certs %}
     {% if cert.link %}<a class="n-cert-card" href="{{ cert.link }}" target="_blank" rel="noopener noreferrer">{% else %}<div class="n-cert-card">{% endif %}
@@ -101,7 +93,7 @@ description: "Professional certifications held by Shrividya Hegde — 5x Apache 
   {% endif %}
 
   {% if site.data.achievements.size > 0 %}
-  <div class="n-sh">Recognition &amp; Awards</div>
+  <h2 class="n-sh">Recognition &amp; Awards</h2>
   <div class="n-cert-grid">
     {% for ach in site.data.achievements %}
     <div class="n-cert-card">

@@ -3,20 +3,12 @@ layout: null
 permalink: /events/
 title: "Speaking Sessions, Workshops & Events on Apache Airflow and AI"
 description: "Upcoming and past talks, workshops and bootcamps by Shrividya Hegde on Apache Airflow, RAG pipelines, SQL, PySpark and data engineering — Airflow Summit, Airflow NYC Meetup, Women in Data NJ."
+last_modified_at: 2026-11-24
 ---
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
-  {% seo %}
-  {% include page-schema.html %}
-  <link rel="stylesheet" href="/assets/css/style.css"/>
-  <script>
-    const _t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', _t);
-  </script>
+  {% include page-head.html %}
 
 <script type="application/ld+json">
 {
@@ -55,10 +47,10 @@ description: "Upcoming and past talks, workshops and bootcamps by Shrividya Hegd
   </div>
 
   <!-- UPCOMING SESSIONS -->
-  <div class="n-sh" style="margin-top:1.5rem;">
+  <h2 class="n-sh" style="margin-top:1.5rem;">
     Upcoming Sessions
     <span class="ev-count ev-count-upcoming" id="upcoming-count" style="display:none;"></span>
-  </div>
+  </h2>
   <div class="n-proj-grid" id="upcoming-list"></div>
   <div class="ev-empty" id="upcoming-empty" style="display:none;">
     <span class="ev-empty-icon">🗓</span>
@@ -71,10 +63,10 @@ description: "Upcoming and past talks, workshops and bootcamps by Shrividya Hegd
   </div>
 
   <!-- PAST EVENTS -->
-  <div class="n-sh" style="margin-top:2.5rem;">
+  <h2 class="n-sh" style="margin-top:2.5rem;">
     Past Events
     <span class="ev-count ev-count-past" id="past-count" style="display:none;"></span>
-  </div>
+  </h2>
   <div class="n-proj-grid" id="past-list"></div>
 
   <div style="text-align:center;margin-top:2.5rem;">
@@ -97,6 +89,7 @@ description: "Upcoming and past talks, workshops and bootcamps by Shrividya Hegd
        data-location="{{ event.location | escape }}"
        data-description="{{ event.description | escape }}"
        data-link="{{ event.link }}"
+       data-recap="{{ event.recap }}"
        data-tags="{{ event.tags | join: '|' | escape }}">
   </div>
   {% endfor %}
@@ -133,7 +126,7 @@ function fmtDate(iso) {
 }
 
 function buildCard(tpl, isPast) {
-  const { date, type, title, venue, location, description, link, tags: rawTags } = tpl.dataset;
+  const { date, type, title, venue, location, description, link, recap, tags: rawTags } = tpl.dataset;
   const tags = rawTags ? rawTags.split('|').filter(Boolean) : [];
   const tc = TYPE_COLORS[type] || TYPE_COLORS.Workshop;
 
@@ -145,9 +138,12 @@ function buildCard(tpl, isPast) {
   const tagsHtml = tags.length
     ? `<div class="ev-tags">${tags.map(t => `<span class="ev-tag">${t}</span>`).join('')}</div>`
     : '';
-  const linkHtml = link
-    ? `<a class="n-plink" href="${link}" target="_blank" rel="noopener noreferrer">${isPast ? 'View recap →' : 'Learn more →'}</a>`
+  const recapHtml = recap
+    ? `<a class="n-plink" href="${recap}" target="_blank" rel="noopener noreferrer">Watch recap →</a> `
     : '';
+  const linkHtml = recapHtml + (link
+    ? `<a class="n-plink" href="${link}" target="_blank" rel="noopener noreferrer">${recap ? 'Event page →' : (isPast ? 'View recap →' : 'Learn more →')}</a>`
+    : '');
 
   card.innerHTML = `
     <div class="ev-card-top">${typeTag}${dateBadge}</div>

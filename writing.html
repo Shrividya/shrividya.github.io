@@ -3,15 +3,12 @@ layout: null
 permalink: /writing/
 title: "Articles on Apache Airflow, RAG, AI Agents & Data Engineering"
 description: "Technical articles by Shrividya Hegde on Apache Airflow, RAG, AI agents, Kubernetes cost and data engineering, published on Medium and Substack."
+last_modified_at: 2026-11-24
 ---
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
-  {% seo %}
-  {% include page-schema.html %}
+  {% include page-head.html %}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -41,11 +38,6 @@ description: "Technical articles by Shrividya Hegde on Apache Airflow, RAG, AI a
       ]
     }
   }
-  </script>
-  <link rel="stylesheet" href="/assets/css/style.css"/>
-  <script>
-    const _t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', _t);
   </script>
 
 <script type="application/ld+json">
@@ -112,7 +104,7 @@ description: "Technical articles by Shrividya Hegde on Apache Airflow, RAG, AI a
 
   {% assign ai_articles = site.data.articles | where: "category", "AI & Agents" %}
   {% if ai_articles.size > 0 %}
-  <div class="n-sh">AI &amp; Agents</div>
+  <h2 class="n-sh">AI &amp; Agents</h2>
   <div class="wr-grid">
     {% for article in ai_articles %}
     <div class="wr-card">
@@ -128,7 +120,7 @@ description: "Technical articles by Shrividya Hegde on Apache Airflow, RAG, AI a
 
   {% assign airflow_articles = site.data.articles | where: "category", "Apache Airflow" %}
   {% if airflow_articles.size > 0 %}
-  <div class="n-sh">Apache Airflow</div>
+  <h2 class="n-sh">Apache Airflow</h2>
   <div class="wr-grid">
     {% for article in airflow_articles %}
     <div class="wr-card">
@@ -144,7 +136,7 @@ description: "Technical articles by Shrividya Hegde on Apache Airflow, RAG, AI a
 
   {% assign devops_articles = site.data.articles | where: "category", "DevOps & Infrastructure" %}
   {% if devops_articles.size > 0 %}
-  <div class="n-sh">DevOps &amp; Infrastructure</div>
+  <h2 class="n-sh">DevOps &amp; Infrastructure</h2>
   <div class="wr-grid">
     {% for article in devops_articles %}
     <div class="wr-card">
@@ -160,7 +152,7 @@ description: "Technical articles by Shrividya Hegde on Apache Airflow, RAG, AI a
 
   {% assign python_articles = site.data.articles | where: "category", "Python" %}
   {% if python_articles.size > 0 %}
-  <div class="n-sh">Python</div>
+  <h2 class="n-sh">Python</h2>
   <div class="wr-grid">
     {% for article in python_articles %}
     <div class="wr-card">

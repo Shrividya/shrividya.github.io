@@ -3,23 +3,13 @@ layout: null
 permalink: /gallery/
 title: "Gallery — Conference Talks, Podcasts & Community Events"
 description: "Photos and videos of Shrividya Hegde speaking at Airflow Summit, Airflow NYC Meetup, podcasts and Women in Data events."
+last_modified_at: 2026-11-24
 ---
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  {% include page-head.html %}
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet"/>
-  {% seo %}
-  {% include page-schema.html %}
-  <link rel="stylesheet" href="/assets/css/style.css"/>
-  <script>
-    const _t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', _t);
-  </script>
   <style>
     .pg-nav {
       position: sticky; top: 0; z-index: 100;
@@ -256,7 +246,7 @@ description: "Photos and videos of Shrividya Hegde speaking at Airflow Summit, A
       {% if photo.type == 'group' %}
         <div class="pg-stack">
           {% for cover in photo.covers %}
-            <img src="/assets/images/gallery/{{ cover }}" alt="{{ photo.alt | default: photo.title }}" loading="lazy">
+            <img src="/assets/images/gallery/thumbs/{{ cover }}" alt="{{ photo.alt | default: photo.title }}" loading="lazy">
           {% endfor %}
           <div class="pg-badge">×{{ photo.items.size }}</div>
         </div>
@@ -274,7 +264,7 @@ description: "Photos and videos of Shrividya Hegde speaking at Airflow Summit, A
         </div>
       {% else %}
         <div class="pg-tile-frame">
-          <img class="pg-kb" src="/assets/images/gallery/{{ photo.file }}" alt="{{ photo.alt | default: photo.title }}" loading="lazy">
+          <img class="pg-kb" src="/assets/images/gallery/thumbs/{{ photo.file }}" alt="{{ photo.alt | default: photo.title }}" loading="lazy">
         </div>
       {% endif %}
     </div>
@@ -371,7 +361,7 @@ function renderCard() {
       const th = document.createElement('div');
       th.className = 'pg-thumb' + (idx === curItem ? ' active' : '');
       const tf = gi.file || photo.covers[idx % photo.covers.length];
-      th.innerHTML = '<img src="' + IMG_BASE + tf + '" alt="' + gi.title + '" loading="lazy">';
+      th.innerHTML = '<img src="' + IMG_BASE + 'thumbs/' + tf + '" alt="' + gi.title + '" loading="lazy">';
       th.onclick = (e) => {
         e.stopPropagation();
         curItem = idx; flipped = false;

@@ -108,4 +108,5 @@
   location: "Online"
   description: "This session is about how to make the datapipelines heal themselves instead of alerting immediately on failures, thus creating meaningful alerts"
   link: "https://airflowsummit.org/onlinereconnect/"
+  recap: "https://youtu.be/B9l_N5rAA8Q"
   tags: ["AI", "Data Orchestration", "Data Engineering", "Speaking"]
