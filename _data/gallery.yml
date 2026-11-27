@@ -131,6 +131,12 @@
   sub : "Recognition"
   alt: "award nomination WIT"
 
+- file: global-awards-finalist.webp
+  title: "Global Awards 2026 Finalist · Certificate of Recognition"
+  cat: "Women Tech Network Global Awards"
+  sub: "Recognition"
+  alt: "Certificate of Recognition naming Shrividya Hegde a 2026 WomenTech Network Global Awards finalist"
+
 - file: future-world-alliance.webp
   title: "Future World Alliance Event Poster"
   cat: "Technical session"
