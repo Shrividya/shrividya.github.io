@@ -31,7 +31,7 @@
           "https://dev.to/{{ site.author.devto }}",
           "https://bsky.app/profile/shribhashitam.bsky.social"
         ],
-        "knowsAbout": ["Apache Airflow","Data Engineering","Generative AI","RAG","LLMs","AI Agents","AI Platform Engineering","LLM Evaluation","Python","Kubernetes","dbt","Snowflake","LangChain","MLOps","Observability"],
+        "knowsAbout": ["Apache Airflow","Data Engineering","Generative AI","RAG","LLMs","AI Agents","AI Platform Engineering","LLM Evaluation","Python","Kubernetes","dbt","Snowflake","LangChain","MLOps","MLflow","Databricks","Observability"],
         "alumniOf": {"@type": "Organization", "name": "Astronomer", "url": "https://www.astronomer.io/"},
         "hasCredential": [
           {% for c in site.data.certifications %}{"@type": "EducationalOccupationalCredential", "name": {{ c.name | jsonify }}, "credentialCategory": "certification", "recognizedBy": {"@type": "Organization", "name": {{ c.org | jsonify }}}{% if c.link %}, "url": {{ c.link | jsonify }}{% endif %}}{% unless forloop.last %},{% endunless %}

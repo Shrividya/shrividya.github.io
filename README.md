@@ -37,4 +37,4 @@ A clean, familiar profile layout for visitors who aren't data engineers:
 
 ---
 
-⭐ [Shrividya Hegde](https://github.com/Shrividya) · Senior AI Data Engineer · Apache Airflow Champion
+⭐ [Shrividya Hegde](https://github.com/Shrividya) · Senior AI & Data Engineer · Apache Airflow Champion

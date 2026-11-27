@@ -2,7 +2,7 @@
 # Fields: q, a (plain text, no HTML)
 
 - q: "Who is Shrividya Hegde?"
-  a: "Shrividya Hegde is a Senior AI Engineer (generative AI, RAG, AI platforms and data engineering) with 10+ years of experience in data engineering, AI/ML and test automation. She is an Apache Airflow Champion recognized by Astronomer, an open-source contributor who builds RAG and LLM pipelines, and the Atlanta chapter lead for Women in Data. She is also the Chapter Director of the Women in Big Data Atlanta chapter and an AI Implementation Engineer at AI Engine Labs (Women Applying AI)."
+  a: "Shrividya Hegde is a Senior AI & Data Engineer (generative AI, RAG, AI platforms and data engineering) with 10+ years of experience in data engineering, AI/ML and test automation. She is an Apache Airflow Champion recognized by Astronomer, an open-source contributor who builds RAG and LLM pipelines, and the Atlanta chapter lead for Women in Data. She is also the Chapter Director of the Women in Big Data Atlanta chapter and an AI Implementation Engineer at AI Engine Labs (Women Applying AI)."
 - q: "Does Shrividya Hegde offer Apache Airflow consulting?"
   a: "Yes. She offers Airflow and DAG reviews, pipeline audits, performance tuning and Airflow 3 migration guidance, drawing on her experience owning Airflow regression testing and release gating at Astronomer."
 - q: "Is Shrividya Hegde available for freelance work?"
@@ -16,10 +16,10 @@
 - q: "What is Shrividya Hegde's Apache Airflow experience?"
   a: "Shrividya Hegde is an Apache Airflow Champion, recognized by Astronomer in January 2026. She has 7 merged pull requests in the Apache Airflow core repository, is 5x Apache Airflow certified, and from 2022 to 2025 was a Senior Software Engineer at Astronomer, where she owned Airflow 3 regression testing and release gating for Astro Observe."
 - q: "Is Shrividya Hegde open to full-time roles?"
-  a: "Yes. She is open to Senior AI Engineer, Generative AI Engineer, AI Platform Engineer, Forward Deployed Engineer and Senior AI Data Engineer roles as well as freelance and consulting work. Her resume is available at https://shrividya.github.io/assets/resume.pdf and she can be reached through the Connect page."
+  a: "Yes. She is open to Senior AI Engineer, Generative AI Engineer, AI Platform Engineer, Forward Deployed Engineer and Senior AI & Data Engineer roles as well as freelance and consulting work. Her resume is available at https://shrividya.github.io/assets/resume.pdf and she can be reached through the Connect page."
 
 - q: "Which roles is Shrividya Hegde looking for?"
-  a: "She is looking for Senior AI Engineer, Generative AI Engineer, Senior AI Platform Engineer, Forward Deployed Engineer and Senior AI Data Engineer roles. She also takes freelance and Apache Airflow consulting work. She is based in Alpharetta, Georgia (Atlanta metro)."
+  a: "She is looking for Senior AI Engineer, Generative AI Engineer, Senior AI Platform Engineer, Forward Deployed Engineer and Senior AI & Data Engineer roles. She also takes freelance and Apache Airflow consulting work. She is based in Alpharetta, Georgia (Atlanta metro)."
 - q: "What generative AI and RAG work has Shrividya Hegde done?"
   a: "She built a Claude-powered DuckDB Data Analyst Agent that answers natural-language questions by writing and running read-only SQL, with JSON logging and SQL-based evals. She also writes about RAG architectures, AI agents and LLM tooling, including the article RAG Without Vectors. Her projects are listed at https://shrividya.github.io/projects/ and her articles at https://shrividya.github.io/writing/."
 - q: "Where can I read Shrividya Hegde's technical writing?"

@@ -12,7 +12,7 @@ Website: {{ site.url }}/
 Short version: {{ site.url }}/llms.txt
 
 ## Roles of interest
-Senior AI Engineer, Generative AI Engineer, Senior AI Platform Engineer, Forward Deployed Engineer, Senior AI Data Engineer, Apache Airflow roles, and freelance or consulting work.
+Senior AI Engineer, Generative AI Engineer, Senior AI Platform Engineer, Forward Deployed Engineer, Senior AI & Data Engineer, Apache Airflow roles, and freelance or consulting work.
 
 ## Profiles
 - LinkedIn: https://www.linkedin.com/in/{{ site.author.linkedin }}/

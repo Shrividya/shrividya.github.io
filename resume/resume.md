@@ -1,6 +1,6 @@
 # Shrividya Hegde
 
-Senior AI Data Engineer | Apache Airflow Champion
+Senior AI & Data Engineer | Apache Airflow Champion
 Alpharetta, GA (Atlanta metro), USA · shrividyahegde222@gmail.com
 linkedin.com/in/shrividya-hegde-shri-91562365 · github.com/Shrividya · medium.com/@shrihegde
 
@@ -8,7 +8,7 @@ linkedin.com/in/shrividya-hegde-shri-91562365 · github.com/Shrividya · medium.
 
 ## Summary
 
-Senior AI Data Engineer with 10+ years of experience across data engineering, AI/ML, Apache Airflow, and test automation. Apache Airflow Champion and OSS contributor building LLM and RAG pipelines. NJ Women in Data chapter lead.
+Senior AI & Data Engineer with 10+ years of experience across data engineering, AI/ML, Apache Airflow, and test automation. Apache Airflow Champion and OSS contributor building LLM and RAG pipelines. NJ Women in Data chapter lead.
 
 ---
 
@@ -44,7 +44,7 @@ Senior AI Data Engineer with 10+ years of experience across data engineering, AI
 
 ## Skills
 
-Apache Airflow · RAG · LangChain · Azure OpenAI · Amazon Bedrock · Python · Kubernetes · GCP / AWS / Azure · Terraform · Azure DevOps · dbt · Snowflake · DuckDB · Hex · Apache Superset · PySpark · Databricks · Java · Selenium · SQL · T-SQL · Azure Blob Storage · Azure Data Factory (ADF) · CI/CD
+Apache Airflow · RAG · LangChain · Azure OpenAI · Amazon Bedrock · Python · Kubernetes · GCP / AWS / Azure · Terraform · Azure DevOps · dbt · Snowflake · DuckDB · Hex · Apache Superset · PySpark · Databricks · MLflow · Java · Selenium · SQL · T-SQL · Azure Blob Storage · Azure Data Factory (ADF) · CI/CD
 
 ---
 
