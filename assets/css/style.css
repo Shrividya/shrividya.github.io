@@ -671,7 +671,7 @@ a.cert-card:hover, a.n-cert-card:hover { opacity: 1; }
 }
 .n-sh::before { content: '//'; color: var(--accent-n); font-size: 0.72rem; }
 
-.gh-panel { background: #0d1117; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.1rem 0.9rem; margin-top: 0.85rem; }
+.gh-panel { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.1rem 0.9rem; margin-top: 0.85rem; }
 .gh-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.85rem; text-align: center; }
 .gh-stats img { max-width: 100%; height: auto; }
 
